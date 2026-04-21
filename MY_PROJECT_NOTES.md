@@ -235,6 +235,75 @@ All scripts are idempotent — safe to re-run.
 
 ---
 
+## Week 4 — Natural-language query layer (2026-04-21)
+
+### What I built
+
+A terminal-only question-answering pipeline over the Neo4j graph. No UI, no web server.
+
+**Scripts added:**
+- `generate_schema.py` — introspects the live graph and writes `graph_schema.md`
+- `graph_schema.md` — LLM context doc: all node labels, property types, relationship directions, annotated notes, and 6 example Cypher patterns
+- `ask.py` — the full pipeline in one file
+- `requirements.txt` — pinned deps (`neo4j`, `anthropic`, `python-dotenv`)
+- `test_queries.md` — Stage 7 results: 10 questions, generated Cypher, result counts, answers, judgments
+
+**Usage:**
+```bash
+python3 ask.py "who are the Straw Hat Pirates?"   # single question
+python3 ask.py                                      # interactive REPL
+```
+
+### Pipeline architecture
+
+```
+User question
+  → build prompt (graph_schema.md as context)
+  → Claude API call 1 → Cypher query
+  → validate (reject destructive keywords)
+  → run against Neo4j (5s timeout)
+  → Claude API call 2 → natural-language answer
+  → print to terminal
+```
+
+Two LLM calls, one Cypher execution. Model: `claude-sonnet-4-6`.
+
+### Key prompt engineering decisions
+
+- **Schema doc as system context** — full `graph_schema.md` injected into the Cypher-generation system prompt. Quality of the doc directly determines Cypher quality.
+- **Case-insensitive partial match enforced** — prompt explicitly instructs `toLower() + CONTAINS` for all name matching. Fans type "luffy", not "Monkey D. Luffy".
+- **4 few-shot examples** in the Cypher prompt covering the most common query patterns.
+- **Answer step is grounded** — system prompt instructs: only use data from results, don't hallucinate from training. If data is absent, say so.
+- **Cypher safety** — `validate_cypher()` rejects CREATE, MERGE, DELETE, SET, REMOVE, DROP, LOAD, and non-schema CALL keywords before any query touches the DB.
+- **Failures logged** — any validation failure or execution error appends to `failure_cases.md` with the question + bad query for later prompt improvement.
+
+### Stage 7 test results (10 questions)
+
+| Q | Question | Judgment |
+|---|---|---|
+| 1 | Who are the Straw Hat Pirates? | ✅ Correct |
+| 2 | What Devil Fruits has Luffy eaten? | ✅ Correct |
+| 3 | List all Logia users | ✅ Correct |
+| 4 | Which characters debuted in the Wano arc? | ✅ Correct |
+| 5 | Who are the current Four Emperors? | ✅ Correct |
+| 6 | What is Roronoa Zoro's affiliation? | ✅ Correct |
+| 7 | Former members of the Seven Warlords? | ✅ Correct |
+| 8 | Which arc has the most character debuts? | ✅ Correct |
+| 9 | Who are the Five Elders? | ⚠️ Partial — Garling returned as 6th "Elder" (affiliation edge exists but he's not one of the five) |
+| 10 | Does Imu have a known Devil Fruit? | ✅ Honest — correctly says no data rather than hallucinating |
+
+**9/10 correct or better.**
+
+### Gaps discovered from testing
+
+- **No ability/Haki data** — any question about what a fruit does, or what Haki a character uses, returns "not in graph". Expected — not in source data.
+- **No bounty data** — confirmed unusable as-is (concatenated field, known since Week 2).
+- **Graph staleness** — Imu's fruit was revealed in a recent chapter (after the data scrape). First confirmed case of the graph being behind current manga. Needs a re-scrape pipeline.
+- **Garling / Five Elders ambiguity** — Garling has an `AFFILIATED_WITH` edge to the Five Elders org but is not one of the five. A `rank` or `role` property on the relationship, or a more specific org node, would fix this.
+- **LLM draws on training knowledge** — for large result sets (Wano, 282 rows) the LLM correctly describes characters using training knowledge (e.g. "the young girl Luffy befriends"). Harmless when accurate, but could hallucinate for obscure characters. No failures seen in testing.
+
+---
+
 ## v2 Backlog (deferred, not blocking MVP)
 
 - **72 additional malformed org names** found after `fix_org_names.py` ran:
@@ -251,7 +320,8 @@ All scripts are idempotent — safe to re-run.
 
 ## Next up
 
-- [ ] Load Locations as `:Location` nodes + `:BORN_IN` / `:RESIDES_IN` relationships
 - [ ] Load Occupations as `:Occupation` nodes (same semicolon-delimited source field)
-- [ ] Build text-to-Cypher LLM query layer
-- [ ] Add `name_ja` / `name_romanized` as indexed properties for Japanese-name lookups
+- [ ] Load Locations as `:Location` nodes + `:BORN_IN` / `:RESIDES_IN` relationships
+- [ ] Build re-scrape / graph update pipeline — diff new scrape against current graph, patch only changed nodes (first use case: Imu's fruit)
+- [ ] Improve Five Elders query — add `rank` or `role` property to `:AFFILIATED_WITH` so Garling doesn't appear as an Elder
+- [ ] Prompt improvement pass using `failure_cases.md` once more failures accumulate
