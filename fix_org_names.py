@@ -32,7 +32,7 @@ NEO4J_URI      = "bolt://localhost:7687"
 NEO4J_USER     = "neo4j"
 NEO4J_PASSWORD = "Mussa1234"
 
-LOG_FILE = os.path.join(os.path.dirname(__file__), "logs", "org_fix.log")
+LOG_FILE = os.path.join(os.path.dirname(__file__), "..", "logs", "org_fix.log")
 
 # ── fix table ─────────────────────────────────────────────────────────────────
 # key   = current malformed org name (must match exactly what's in Neo4j)

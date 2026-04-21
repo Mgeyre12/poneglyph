@@ -44,8 +44,8 @@ NEO4J_URI      = "bolt://localhost:7687"
 NEO4J_USER     = "neo4j"
 NEO4J_PASSWORD = "Mussa1234"
 
-DATA_FILE = os.path.join(os.path.dirname(__file__), "data", "full-character-data-processed-2.json")
-LOG_FILE  = os.path.join(os.path.dirname(__file__), "logs", "affiliations_skipped.log")
+DATA_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "full-character-data-processed-2.json")
+LOG_FILE  = os.path.join(os.path.dirname(__file__), "..", "logs", "affiliations_skipped.log")
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 

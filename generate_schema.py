@@ -14,7 +14,7 @@ NEO4J_URI      = "bolt://localhost:7687"
 NEO4J_USER     = "neo4j"
 NEO4J_PASSWORD = "Mussa1234"
 
-OUT_FILE = os.path.join(os.path.dirname(__file__), "graph_schema.md")
+OUT_FILE = os.path.join(os.path.dirname(__file__), "..", "graph_schema.md")
 
 
 def infer_type(value) -> str:
