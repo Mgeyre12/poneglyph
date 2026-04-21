@@ -1,10 +1,13 @@
-# One Piece Knowledge Graph — Project Notes
+# Poneglyph — Project Notes
 
 A One Piece knowledge graph + natural-language LLM query layer for fans.
 Track foreshadowing, validate theories, get grounded answers with chapter citations.
 
-**Stack:** Neo4j (graph DB) + Python + LLM query layer (coming later)
+Named after the indestructible stones containing encoded world history — readable only by those who know the ancient language. The graph is the stone. The LLM is Robin.
+
+**Stack:** Neo4j (graph DB) + Python + LLM query layer (`ask.py`)
 **Data source:** Forked from [kalnassag/one-piece-ontology](https://github.com/kalnassag/one-piece-ontology)
+**GitHub:** https://github.com/Mgeyre12/poneglyph
 **Builder:** Solo, ~15 hrs/week
 
 ---

@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-One Piece knowledge graph with a natural-language LLM query layer. Data lives in Neo4j; Python scripts handle ingestion. Long-term goal: fans can query lore, track foreshadowing, and validate theories with chapter-grounded answers.
+**Poneglyph** — One Piece knowledge graph with a natural-language LLM query layer. Data lives in Neo4j; Python scripts handle ingestion. Long-term goal: fans can query lore, track foreshadowing, and validate theories with chapter-grounded answers.
+
+Named after the indestructible stones in One Piece that contain encoded world history — readable only by those who know the ancient language. Here, the graph is the stone and the LLM is Robin.
 
 Data sourced from [kalnassag/one-piece-ontology](https://github.com/kalnassag/one-piece-ontology) (MIT). The raw/processed JSON files in `data/` came from that fork — do not overwrite them without re-running the upstream scraper.
 
