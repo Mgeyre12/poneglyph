@@ -1,0 +1,2 @@
+{"opwikiID": "Gan_Fall", "computed": "Ganfor", "note": "first OEN variant differs from wiki slug \u2014 verify manually", "suggested_fix": "MATCH (c:Character {opwikiID: 'Gan_Fall'}) SET c.name = 'Gan Fall'"}
+{"opwikiID": "Brannew", "computed": "Brandnew", "note": "first OEN variant differs from wiki slug \u2014 verify manually", "suggested_fix": "MATCH (c:Character {opwikiID: 'Brannew'}) SET c.name = 'Brannew'"}

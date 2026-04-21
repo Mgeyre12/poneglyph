@@ -152,13 +152,106 @@ Example: `"Straw Hat Pirates"` → `"straw_hat_pirates"`, `"Clan of D."` → `"c
 
 ---
 
+---
+
+## Week 3 — Data quality fixes + Arc nodes (2026-04-21)
+
+### What I did
+
+**Part 1a — Name normalization (`fix_character_names.py`)**
+
+Migrated the `name` property on all 1,517 `:Character` nodes from the raw multi-value string to a single canonical English display name. Algorithm:
+1. Paren-aware `;` split (handles `"Ganfor (VIZ; Funimation simulcast)"` correctly)
+2. Take first segment
+3. Strip translator attribution parentheticals (VIZ, Funimation, 4Kids, WT100, OPCG, Odex, Netflix, Crunchyroll, formerly, Live-Action, uncut, edited, subs, dub, BStation, former)
+4. Detect fused names via `(?<![Mm]c)(?<![Mm]ac)[a-z][A-Z]|\d[A-Z]` — fall back to wiki slug
+5. Strip trailing `*`
+
+- 1,517 names processed; most were already clean; 206 meaningfully changed
+- 2 known edge cases logged to `logs/name_fix_edge_cases.log`:
+  - `Brannew` — algorithm picks "Brandnew" (first OEN variant). Correct name is "Brannew". Patch: `MATCH (c:Character {opwikiID: "Brannew"}) SET c.name = "Brannew"`
+  - `Gan_Fall` — algorithm picks "Ganfor" (VIZ). Wiki slug is "Gan Fall". Either is valid; patch if preferred.
+
+Also added `name_ja` and `name_romanized` aliases (were already stored as `nameJapanese` / `nameRomanized`).
+
+**Part 1b — Org name fixes (`fix_org_names.py`)**
+
+Targeted 31 malformed `:Organization` nodes from a hand-compiled `FIXES` lookup table. Two fix types:
+- **Simple rename** — one malformed org → one correctly-named org. If target exists, characters are re-wired and the malformed node is deleted.
+- **Split** — one phantom fused org → 2–3 component orgs. Each character gets relationships to all component orgs.
+
+Sample fixes applied:
+- `"Whitebeard Pirates2nd Division"` → `"Whitebeard Pirates 2nd Division"`
+- `"Marines(Headquarters"` → `"Marines"` (re-wires to existing Marines node)
+- `"Kid PiratesNinja-Pirate-Mink-Samurai Alliance"` → `["Kid Pirates", "Ninja-Pirate-Mink-Samurai Alliance"]`
+- `"Tontatta KingdomTontatta PiratesStraw Hat Grand Fleet"` → 3-way split
+- `"Marines(SWORD), Marine153rd Branch"` → `["Marines", "Marine 153rd Branch"]`
+
+Discovered 72 additional malformed org names after running, deferred to v2 backlog (see below).
+
+**Part 2 — Arc nodes (`import_arcs.py` + `data/arcs.json`)**
+
+Added 33 `:Arc` nodes and linked all `:Chapter` nodes via `(:Chapter)-[:IN_ARC]->(:Arc)`.
+
+- `data/arcs.json` — hand-compiled, Romance Dawn (Ch 1) through Elbaf (Ch 1126–). Elbaf uses `end_chapter: 9999` as ongoing sentinel.
+- Arc fields: `arc_order` (stable int key), `name`, `saga`, `start_chapter`, `end_chapter`
+- 514 of 515 `:Chapter` nodes linked; Chapter 0 (Strong World special) is intentionally unlinked.
+- Uniqueness constraint on `arc_order`.
+
+### Graph state after Week 3
+
+| Label | Count |
+|---|---|
+| `:Character` | 1,517 |
+| `:Organization` | ~372 (after fixes) |
+| `:DevilFruit` | 134 |
+| `:Chapter` | 515 |
+| `:Arc` | 33 |
+
+| Relationship | Count |
+|---|---|
+| `:AFFILIATED_WITH` | ~1,912 |
+| `:ATE_FRUIT` | 143 |
+| `:DEBUTED_IN` | 1,473 |
+| `:IN_ARC` | 514 |
+
+### Arc debuts (top arcs by character count)
+
+| Arc | Character debuts |
+|---|---|
+| Wano Country Arc | 282 |
+| Whole Cake Island Arc | 123 |
+| Dressrosa Arc | 95 |
+| Marineford Arc | 86 |
+
+### Scripts added this week
+
+- `fix_character_names.py` — name normalization
+- `fix_org_names.py` — targeted org name fixes (31 nodes)
+- `import_arcs.py` — Arc nodes + IN_ARC relationships
+- `data/arcs.json` — arc chapter range data
+
+All scripts are idempotent — safe to re-run.
+
+---
+
+## v2 Backlog (deferred, not blocking MVP)
+
+- **72 additional malformed org names** found after `fix_org_names.py` ran:
+  - ~20 comma-fusion orgs (e.g. `"Beasts Pirates, Numbers"`) — same root cause as semicolon fusions; fix needs comma-splitting in `import_affiliations.py`
+  - ~12 annotation-in-name orgs (e.g. `"Beasts Pirates(Tobiroppo)"`, `"Marines(SSG)"`) — annotation wasn't separated from org name
+  - ~40 single-person orgs (character names used as affiliations) — reclassify or drop
+- **`Brannew` name patch** — `MATCH (c:Character {opwikiID: "Brannew"}) SET c.name = "Brannew"`
+- **`Gan_Fall` name review** — `SET c.name = "Gan Fall"` if Funimation spelling preferred over VIZ "Ganfor"
+- **Bounty field parse** — all bounty values are concatenated with no separator; needs full reparse of raw data before it can be loaded
+- **Full chapter list** — 515 `:Chapter` nodes cover only debut chapters; all 1100+ manga chapters need a separate data source
+- **Haki** — needs scrape or manual data; not in source JSON
+
+---
+
 ## Next up
 
-- [ ] Clean up multi-value `name` fields on `:Character` nodes (parse out a single canonical name)
-- [ ] Patch malformed org `"Whitebeard Pirates2nd Division"`
 - [ ] Load Locations as `:Location` nodes + `:BORN_IN` / `:RESIDES_IN` relationships
 - [ ] Load Occupations as `:Occupation` nodes (same semicolon-delimited source field)
 - [ ] Build text-to-Cypher LLM query layer
-- [ ] Full chapter list as `:Chapter` nodes (needs a separate data source beyond debut chapters)
-- [ ] Add Haki as a character property or node (needs scrape/manual data)
-- [ ] Parse `Bounty` field (currently concatenated with no separator — needs reparse)
+- [ ] Add `name_ja` / `name_romanized` as indexed properties for Japanese-name lookups
