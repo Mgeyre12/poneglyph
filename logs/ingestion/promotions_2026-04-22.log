@@ -1,0 +1,61 @@
+# Promotions log
+# Run: 2026-04-22T13:57:20.385263
+# Apply: False
+
+# Promotions log
+# Run: 2026-04-22T13:57:29.918631
+# Apply: False
+
+# Promotions log
+# Run: 2026-04-22T13:58:09.091054
+# Apply: False
+
+# Promotions log
+# Run: 2026-04-22T13:58:09.479939
+# Apply: False
+
+# Promotions log
+# Run: 2026-04-22T13:59:02.729425
+# Apply: False
+
+# Promotions log
+# Run: 2026-04-22T14:04:26.164059
+# Apply: False
+
+# Promotions log
+# Run: 2026-04-22T14:04:46.477821
+# Apply: True
+
+CHAR  Billy_the_Yabuki  name=Birī za Yabukī
+MOVED Billy_the_Yabuki → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Billy_the_Yabuki.json
+CHAR  Bjorn_(Pirate)  name=Bjorn
+AFF   Bjorn_(Pirate) → Giant Warrior Pirates (current)
+DEBUT Bjorn_(Pirate) → Chapter 1118
+MOVED Bjorn_(Pirate) → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Bjorn_(Pirate).json
+CHAR  Gantonio  name=Gantonio
+AFF   Gantonio → Giant Warrior Pirates (current)
+DEBUT Gantonio → Chapter 1177
+MOVED Gantonio → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Gantonio.json
+CHAR  Love  name=Love
+AFF   Love → Baroque Works(Millions) (former)
+DEBUT Love → Chapter 107
+MOVED Love → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Love.json
+CHAR  Magnolia  name=Magnolia
+DEBUT Magnolia → Chapter 1158
+MOVED Magnolia → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Magnolia.json
+CHAR  Misty  name=Misty
+AFF   Misty → Baroque Works(Millions) (former)
+DEBUT Misty → Chapter 107
+MOVED Misty → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Misty.json
+CHAR  Ragnir  name=Ragnir
+AFF   Ragnir → Loki (current)
+AFF   Ragnir → ElbaphRoyal Family (current)
+DEBUT Ragnir → Chapter 1130
+MOVED Ragnir → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Ragnir.json
+CHAR  Ratatoskr  name=Ratatoskr
+AFF   Ratatoskr → Warrior God (current)
+DEBUT Ratatoskr → Chapter 1175
+MOVED Ratatoskr → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Ratatoskr.json
+CHAR  Warrior_God  name=Warrior God
+DEBUT Warrior_God → Chapter 1175
+MOVED Warrior_God → /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22/characters/Warrior_God.json

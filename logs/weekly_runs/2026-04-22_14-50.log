@@ -1,0 +1,8 @@
+[14:50:19] ============================================================
+[14:50:19] Poneglyph weekly update — 2026-04-22 [FULL]
+[14:50:19] Log: /Users/mussageyre/Desktop/poneglyph/logs/weekly_runs/2026-04-22_14-50.log
+[14:50:19] ============================================================
+[14:50:19] 
+[14:50:19] ── Step 1: Refresh snapshot from wiki ──────────────────────
+[14:50:19] ▶ refresh_data.py --full
+[14:50:19]   cmd: /Library/Frameworks/Python.framework/Versions/3.13/bin/python3 refresh_data.py --full

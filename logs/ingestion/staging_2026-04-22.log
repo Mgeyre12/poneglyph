@@ -1,0 +1,12 @@
+# Character staging log
+# Run: 2026-04-22T14:47:31.905451
+# Slugs: 2
+
+FAIL  slug=D._D._Tee  reason=no infobox found
+FAIL  slug=Rhodes  reason=no infobox found
+
+# Summary
+Staged: 0
+Failed: 2
+  FAIL: D._D._Tee — no infobox found
+  FAIL: Rhodes — no infobox found

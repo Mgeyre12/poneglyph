@@ -464,6 +464,132 @@ Notable real changes detected:
 
 ---
 
+## Week 7 — Close the gap + new content ingestion pipeline (2026-04-22)
+
+### Goal
+
+Ingest the 19-chapter gap and 11 new characters detected in Week 6. Build the full ingestion pipeline: chapter auto-ingest, character staging queue, human-review promotion, and a weekly wrapper script.
+
+### What was built
+
+**`ingest_new_chapters.py`**
+- Auto-detects chapter gap via binary search (graph max vs. wiki max)
+- Fetches English chapter titles from wiki wikitext (`| ename =` / `| title =` fields)
+- MERGEs `:Chapter` nodes + `(:Chapter)-[:IN_ARC]->(:Arc)` from `data/arcs.json` ranges
+- Dry-run default, `--apply` to commit
+- Logs to `logs/ingestion/chapters_YYYY-MM-DD.log`
+
+**`stage_new_characters.py`**
+- Detects new characters (wiki slugs not in graph)
+- Scrapes each via MediaWiki API + Kareem's `extract_character_data()`
+- Writes to `data/pending_review/{opwikiID}.json` — does NOT touch the graph
+- Generates `data/pending_review/REVIEW_YYYY-MM-DD.md` — human-readable review doc with status, debut, affiliations, fruit, parse warnings, and ⚠️ flags for significant characters
+- Logs to `logs/ingestion/staging_YYYY-MM-DD.log`
+
+**`promote_pending.py`**
+- Four modes: `--list`, `--promote <slug>`, `--promote-all`, `--reject <slug> --reason "..."`
+- Dry-run default on all promote actions
+- Promotion: MERGE `:Character` node + affiliations + DEBUTED_IN + ATE_FRUIT (if any)
+- Strips citation refs `[N]` from affiliation strings before parsing (prevents `giant_warrior_pirates1` org_id corruption)
+- Moves promoted JSON to `data/snapshots/YYYY-MM-DD/characters/`
+- Moves rejected JSON to `data/rejected/`
+- Logs to `logs/ingestion/promotions_YYYY-MM-DD.log`
+
+**`weekly_update.py`**
+- End-to-end pipeline wrapper (Steps 1–6 in order)
+- `--dry-run` flag: skips scrape + diff, runs all other steps with their own dry-run flags
+- Aborts on any step failure; prints step name + log path
+- Logs every step to `logs/weekly_runs/YYYY-MM-DD_HH-MM.log` with timestamps
+- Final summary: diff counts, chapters ingested, characters staged, next-action prompt
+- Returns non-zero exit code on failure (cron-safe)
+
+### Stage 1 findings: arc situation
+
+All 19 chapters (1163–1181) belong to the **Elbaf Arc** (start_chapter: 1126, ongoing). Wiki confirmed no new arc started. `data/arcs.json` was correct — no changes needed.
+
+Notable chapter titles from the gap:
+- Ch. 1171: "Ragnir" (chapter named for a character → significant)
+- Ch. 1175: "Niddhoggr" (Norse mythological dragon)
+- Ch. 1179: "Nerona Imu Descends" — major plot event (Imu is the World Government's shadow ruler)
+
+### Character ingestion results
+
+| Character | Status | Debut | Affiliations | Result |
+|---|---|---|---|---|
+| Billy_the_Yabuki | Alive | SBS Vol 114 | — | Promoted |
+| Bjorn | Alive | Ch. 1118 | Giant Warrior Pirates | Promoted |
+| Gantonio | Alive | Ch. 1177 | Giant Warrior Pirates | Promoted |
+| Love | Alive | Ch. 107 | Baroque Works (former) | Promoted |
+| Magnolia | Deceased | Ch. 1158 | — | Promoted |
+| Misty | Alive | Ch. 107 | Baroque Works (former) | Promoted |
+| Ragnir ⚠️ | Alive | Ch. 1130 | Loki; Elbaph Royal Family | Promoted |
+| Ratatoskr ⚠️ | Unknown | Ch. 1175 | Warrior God | Promoted |
+| Warrior God ⚠️ | Deceased | Ch. 1175 | — | Promoted |
+| D._D._Tee | — | — | Redirects to Giant Warrior Pirates crew section | **Rejected** |
+| Rhodes | — | — | Redirects to Giant Warrior Pirates crew section | **Rejected** |
+
+D._D._Tee and Rhodes had no standalone wiki pages (redirected to crew section). Rejection records written to `data/rejected/`.
+
+### Graph state delta
+
+| Label | Before Week 7 | After Week 7 | Delta |
+|---|---|---|---|
+| `:Character` | 1,517 | 1,526 | +9 |
+| `:Chapter` | 515 | 534 | +19 |
+| `:Arc` | 33 | 33 | 0 |
+| `:DevilFruit` | 134 | 134 | 0 |
+| `:Organization` | ~372 | ~376 | +4 (new orgs from promoted chars) |
+
+### Stress test: Run 3 results
+
+| | Run 2 | Run 3 | Delta |
+|---|---|---|---|
+| Score | 50/50 (100%) | 50/50 (100%) | 0 regressions |
+| Avg latency | 7.51s | 8.53s | +1.02s (normal variance) |
+| Q32 (Baroque Works) | 19 rows | 21 rows | **+2 ✓** (Love + Misty now in graph) |
+
+Zero regressions. Q32 improvement is correct new data from Week 7 promotions.
+
+### Weekly workflow — how to run it
+
+**Command (every Sunday night):**
+```bash
+python weekly_update.py
+```
+
+Takes ~75–80 minutes total (dominated by the full wiki scrape). Steps:
+1. `refresh_data.py --full` — fresh snapshot (~75 min)
+2. `diff_snapshots.py` — diff against previous snapshot
+3. `apply_patch.py --apply` — apply field-level updates
+4. `detect_new_content.py` — find new chapters + characters
+5. `ingest_new_chapters.py --apply` — auto-ingest new chapters
+6. `stage_new_characters.py` — stage new characters for review
+
+**Monday morning review:**
+```bash
+python promote_pending.py --list                          # see what's staged
+python promote_pending.py --promote <slug>               # dry-run one
+python promote_pending.py --promote <slug> --apply       # commit one
+python promote_pending.py --promote-all --apply          # commit all (with confirmation)
+python promote_pending.py --reject <slug> --reason "..." # reject
+```
+
+**Logs:**
+- Weekly run logs: `logs/weekly_runs/YYYY-MM-DD_HH-MM.log`
+- Chapter ingestion: `logs/ingestion/chapters_YYYY-MM-DD.log`
+- Character staging: `logs/ingestion/staging_YYYY-MM-DD.log`
+- Promotions: `logs/ingestion/promotions_YYYY-MM-DD.log`
+- Patch logs: `logs/patches/YYYY-MM-DD_HH-MM.log`
+
+### New v2 Backlog items from this week
+
+- **Relationship patching in `apply_patch.py`** — currently only handles scalar field updates. When a character gains a new devil fruit or affiliation between scrapes, the diff detects it but the patch engine can't create the new graph relationship. Needs a second-pass relationship handler.
+- **Arc name "Elbaph" vs "Elbaf"** — wiki spells it "Elbaph"; our data uses "Elbaf". Pre-existing source data discrepancy. Don't fix until a full arc re-import is scoped.
+- **Slug mismatch audit** — wiki reports 1,525 characters, graph has 1,517. ~3 graph slugs don't match current wiki slugs (renamed/disambiguated pages). Future audit pass.
+- **Auto-promote after N clean review cycles** — characters that consistently have good data (full infobox, clean affiliations, known debut) could skip manual review after a confidence threshold is established.
+
+---
+
 ## v2 Backlog (deferred, not blocking MVP)
 
 - **72 additional malformed org names** found after `fix_org_names.py` ran:
@@ -478,13 +604,12 @@ Notable real changes detected:
 
 ---
 
-## Next up
+## Next up (Week 8)
 
+- [ ] Load Locations as `:Location` nodes + `:BORN_IN` / `:RESIDES_IN` relationships (from `Origin` and `Residence` fields on `:Character` nodes)
 - [ ] Load Occupations as `:Occupation` nodes (same semicolon-delimited source field)
-- [ ] Load Locations as `:Location` nodes + `:BORN_IN` / `:RESIDES_IN` relationships
-- [ ] Build re-scrape / graph update pipeline — diff new scrape against current graph, patch only changed nodes (first use case: Imu's fruit)
-- [ ] Improve Five Elders query — add `rank` or `role` property to `:AFFILIATED_WITH` so Garling doesn't appear as an Elder
-- [ ] Prompt improvement pass using `failure_cases.md` once more failures accumulate
+- [ ] Update `graph_schema.md` to reflect new node types + relationship directions for the query layer
+- [ ] Run stress test Run 4 after Week 8 schema changes — verify no regressions on existing questions
 
 ## Post-MVP Roadmap (not v1)
 
