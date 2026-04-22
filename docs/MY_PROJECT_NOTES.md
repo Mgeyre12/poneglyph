@@ -381,6 +381,89 @@ tests/    — stress test runner + results
 
 ---
 
+## Week 6 — Re-scrape + diff + patch pipeline (2026-04-21)
+
+### Goal
+
+Build the infrastructure to keep the graph current: scrape fresh data, diff against baseline, apply patches safely. Detection of new chapters/characters but no ingestion.
+
+### Scraper audit verdict: ENHANCE
+
+Audited Kareem's `onepiece_scraper.py` (851 lines). Full audit in `audit/scraper_audit.md`.
+
+Key findings:
+- **User-Agent IS set** — Week 1 notes were wrong about this
+- **Height = 91 bug is in the importer, not the scraper** — scraper returns the full raw string with all three heights; `import_characters.py` took the first value. Already fixed in graph.
+- **0 missing characters** — Week 1's "56 missing" claim was wrong. Graph and raw scrape are 1,517/1,517 perfect alignment.
+- **Direct wiki requests now return 403** — Fandom tightened bot detection since the original scrape. Fix: use MediaWiki API (`action=parse&prop=text`) which returns rendered HTML including the infobox and is not blocked.
+- Decision: keep Kareem's scraper untouched. Wrapper handles output format and API routing.
+
+### What was built
+
+**`refresh_data.py`** — wrapper around Kareem's scraper
+- `--test`: scrape 50-char subset (Straw Hats, Emperors, Marines, Five Elders, misc)
+- `--full`: scrape all 1,517 characters (~75 min at 3s delay)
+- `--make-baseline`: convert original `characters_raw.json` to snapshot format (run once)
+- Uses `action=parse&prop=text` MediaWiki API route (not blocked)
+- Output: `data/snapshots/YYYY-MM-DD/characters/{slug}.json` per character
+- Each file has `_meta: { scraped_at, wiki_url, content_hash }` for stable diffing
+- `data/snapshots/baseline/` — 1,517 character baseline from Kareem's original scrape
+
+**`diff_snapshots.py`** — field-level diff engine
+- Input: two snapshot directories
+- Compares by content_hash first; field-by-field only on hash mismatch
+- Output: `diff/YYYY-MM-DD_diff.md` (human) + `diff/YYYY-MM-DD_diff.json` (machine)
+- Buckets: NEW / REMOVED / CHANGED / UNCHANGED
+- REMOVED section automatically suppressed for partial snapshots (< 90% coverage) to prevent false removals
+
+**`apply_patch.py`** — safe graph patcher
+- Default: `--dry-run`. Must pass `--apply` to write.
+- CHANGED: updates Neo4j properties field-by-field. Maps known fields to graph property names; unknown fields stored as `raw_*` properties.
+- REMOVED: marks nodes `removed_at = timestamp` — never deletes.
+- NEW: stub — deferred to Week 7.
+- Logs every before/after to `logs/patches/YYYY-MM-DD_HH-MM.log`.
+
+**`detect_new_content.py`** — wiki vs graph gap detector
+- Chapter gap: binary search for highest existing `Chapter_N` wiki page
+- Character gap: parses `List_of_Canon_Characters` via API parse
+- Output: `reports/pending_updates_YYYY-MM-DD.md`
+
+### Detection findings (as of 2026-04-21)
+
+| | |
+|---|---|
+| Graph latest chapter | 1162 |
+| Wiki latest chapter | 1181 |
+| **Chapter gap** | **19 chapters** |
+| Characters in graph | 1,517 |
+| Characters on wiki | 1,525 |
+| **New characters** | **11** |
+
+New characters detected: Billy_the_Yabuki, Bjorn_(Pirate), D._D._Tee, Gantonio, Love, Magnolia, Misty, Ragnir, Ratatoskr, Rhodes, Warrior_God
+
+These are the ingestion targets for Week 7.
+
+### Test run results (50-char subset)
+
+50/50 scraped successfully via API. Diff against baseline:
+- **16 changed** (mostly live-action cast additions, minor voice actor updates, formatting tweaks)
+- **34 unchanged**
+- 17 property updates applied to Neo4j
+
+Notable real changes detected:
+- Bartolomeo, Brook, Tony Chopper, Nami: live-action portrayal actors added
+- Emporio Ivankov: epithet spacing fixed ("OkamaKing" → "Okama King")
+- Jinbe: Crunchyroll name variant added to Official English Name
+- Edward Newgate: occupation text updated
+
+### v2 Backlog additions
+
+- Full 1,517-character refresh not yet run (requires dedicated ~75 min window)
+- `Affiliations` and `Occupations` changes are stored as raw strings — not yet re-processed through affiliation import logic. Patching graph relationships from diffs is a future improvement.
+- Slug correction map: some characters have different wiki slugs vs. opwikiIDs in the graph (e.g. `Sanji` vs `Vinsmoke_Sanji`). The `--test` set hit this; full run will expose more. Needs a slug→opwikiID normalization step.
+
+---
+
 ## v2 Backlog (deferred, not blocking MVP)
 
 - **72 additional malformed org names** found after `fix_org_names.py` ran:

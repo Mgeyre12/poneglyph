@@ -1,0 +1,6067 @@
+{
+  "generated_at": "2026-04-21T22:42:48.230358",
+  "old_snapshot": "data/snapshots/baseline",
+  "new_snapshot": "data/snapshots/2026-04-21",
+  "summary": {
+    "new": 0,
+    "removed": 1467,
+    "changed": 16,
+    "unchanged": 34,
+    "total_old": 1517,
+    "total_new": 50
+  },
+  "new": [],
+  "removed": [
+    {
+      "slug": "A_O",
+      "wiki_url": "https://onepiece.fandom.com/wiki/A_O"
+    },
+    {
+      "slug": "Abdullah",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Abdullah"
+    },
+    {
+      "slug": "Absalom",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Absalom"
+    },
+    {
+      "slug": "Acilia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Acilia"
+    },
+    {
+      "slug": "Adele",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Adele"
+    },
+    {
+      "slug": "Aegir",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aegir"
+    },
+    {
+      "slug": "Ageha_Woman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ageha_Woman"
+    },
+    {
+      "slug": "Aggie_68",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aggie_68"
+    },
+    {
+      "slug": "Agotogi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Agotogi"
+    },
+    {
+      "slug": "Agsilly",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Agsilly"
+    },
+    {
+      "slug": "Agyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Agyo"
+    },
+    {
+      "slug": "Ahho_Desunen_IX",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ahho_Desunen_IX"
+    },
+    {
+      "slug": "Ahho_Zurako",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ahho_Zurako"
+    },
+    {
+      "slug": "Ahiru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ahiru"
+    },
+    {
+      "slug": "Aisa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aisa"
+    },
+    {
+      "slug": "Akehende",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Akehende"
+    },
+    {
+      "slug": "Akudai_Kanzaburo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Akudai_Kanzaburo"
+    },
+    {
+      "slug": "Akumai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Akumai"
+    },
+    {
+      "slug": "Aladine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aladine"
+    },
+    {
+      "slug": "Albion",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Albion"
+    },
+    {
+      "slug": "Alice",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Alice"
+    },
+    {
+      "slug": "Ally",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ally"
+    },
+    {
+      "slug": "Alpacaman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Alpacaman"
+    },
+    {
+      "slug": "Alpha",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Alpha"
+    },
+    {
+      "slug": "Alvida",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Alvida"
+    },
+    {
+      "slug": "Amadob",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Amadob"
+    },
+    {
+      "slug": "Amazon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Amazon"
+    },
+    {
+      "slug": "An_Zengaiina",
+      "wiki_url": "https://onepiece.fandom.com/wiki/An_Zengaiina"
+    },
+    {
+      "slug": "Anba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Anba"
+    },
+    {
+      "slug": "Andre",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Andre"
+    },
+    {
+      "slug": "Ange",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ange"
+    },
+    {
+      "slug": "Anjo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Anjo"
+    },
+    {
+      "slug": "Ankoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ankoro"
+    },
+    {
+      "slug": "Antonio",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Antonio"
+    },
+    {
+      "slug": "Aphelandra",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aphelandra"
+    },
+    {
+      "slug": "Aramaki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aramaki"
+    },
+    {
+      "slug": "Aremo_Ganmi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aremo_Ganmi"
+    },
+    {
+      "slug": "Arlong",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Arlong"
+    },
+    {
+      "slug": "Arthur",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Arthur"
+    },
+    {
+      "slug": "Aruyutayan_V",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aruyutayan_V"
+    },
+    {
+      "slug": "Asahija",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Asahija"
+    },
+    {
+      "slug": "Asashichi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Asashichi"
+    },
+    {
+      "slug": "Ashura_Doji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ashura_Doji"
+    },
+    {
+      "slug": "Asla",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Asla"
+    },
+    {
+      "slug": "Aswa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Aswa"
+    },
+    {
+      "slug": "Atagoyama",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Atagoyama"
+    },
+    {
+      "slug": "Atmos",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Atmos"
+    },
+    {
+      "slug": "Attach",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Attach"
+    },
+    {
+      "slug": "Avalo_Pizarro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Avalo_Pizarro"
+    },
+    {
+      "slug": "Ayesé_Mar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ayesé_Mar"
+    },
+    {
+      "slug": "Azuki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Azuki"
+    },
+    {
+      "slug": "Babanuki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Babanuki"
+    },
+    {
+      "slug": "Babe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Babe"
+    },
+    {
+      "slug": "Baburu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Baburu"
+    },
+    {
+      "slug": "Baby_5",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Baby_5"
+    },
+    {
+      "slug": "Bacura",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bacura"
+    },
+    {
+      "slug": "Baggaley",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Baggaley"
+    },
+    {
+      "slug": "Bakezo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bakezo"
+    },
+    {
+      "slug": "Ban_Dedessinée",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ban_Dedessinée"
+    },
+    {
+      "slug": "Banchi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Banchi"
+    },
+    {
+      "slug": "Banchina",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Banchina"
+    },
+    {
+      "slug": "Bankuro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bankuro"
+    },
+    {
+      "slug": "Banshee",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Banshee"
+    },
+    {
+      "slug": "Banzaburo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Banzaburo"
+    },
+    {
+      "slug": "Bao_Huang",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bao_Huang"
+    },
+    {
+      "slug": "Barbel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Barbel"
+    },
+    {
+      "slug": "Bariete",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bariete"
+    },
+    {
+      "slug": "Barry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Barry"
+    },
+    {
+      "slug": "Basilisk",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Basilisk"
+    },
+    {
+      "slug": "Baskerville",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Baskerville"
+    },
+    {
+      "slug": "Bastille",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bastille"
+    },
+    {
+      "slug": "Batchee",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Batchee"
+    },
+    {
+      "slug": "Batman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Batman"
+    },
+    {
+      "slug": "Battaman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Battaman"
+    },
+    {
+      "slug": "Baxcon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Baxcon"
+    },
+    {
+      "slug": "Beak_Remark",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Beak_Remark"
+    },
+    {
+      "slug": "Beegirl",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Beegirl"
+    },
+    {
+      "slug": "Beer_VI",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Beer_VI"
+    },
+    {
+      "slug": "Beetleman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Beetleman"
+    },
+    {
+      "slug": "Bekori",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bekori"
+    },
+    {
+      "slug": "Bell-mère",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bell-mère"
+    },
+    {
+      "slug": "Belladonna",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Belladonna"
+    },
+    {
+      "slug": "Bellamy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bellamy"
+    },
+    {
+      "slug": "Bellett",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bellett"
+    },
+    {
+      "slug": "Belly#Overview",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Belly#Overview"
+    },
+    {
+      "slug": "Belo_Betty",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Belo_Betty"
+    },
+    {
+      "slug": "Benn_Beckman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Benn_Beckman"
+    },
+    {
+      "slug": "Bent",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bent"
+    },
+    {
+      "slug": "Bentham",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bentham"
+    },
+    {
+      "slug": "Bepo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bepo"
+    },
+    {
+      "slug": "Bian",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bian"
+    },
+    {
+      "slug": "Biblo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Biblo"
+    },
+    {
+      "slug": "Big_Pan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Big_Pan"
+    },
+    {
+      "slug": "Billy_(Pirate)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Billy_(Pirate)"
+    },
+    {
+      "slug": "Bimine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bimine"
+    },
+    {
+      "slug": "Bingo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bingo"
+    },
+    {
+      "slug": "Birdy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Birdy"
+    },
+    {
+      "slug": "Bishamon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bishamon"
+    },
+    {
+      "slug": "Bishonure-Onna",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bishonure-Onna"
+    },
+    {
+      "slug": "Bisley",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bisley"
+    },
+    {
+      "slug": "Biyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Biyo"
+    },
+    {
+      "slug": "Bizarre",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bizarre"
+    },
+    {
+      "slug": "Bjorn",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bjorn"
+    },
+    {
+      "slug": "Bjorn_(Student)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bjorn_(Student)"
+    },
+    {
+      "slug": "Black_Maria",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Black_Maria"
+    },
+    {
+      "slug": "Blackback",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blackback"
+    },
+    {
+      "slug": "Blade",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blade"
+    },
+    {
+      "slug": "Blakey",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blakey"
+    },
+    {
+      "slug": "Blamenco",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blamenco"
+    },
+    {
+      "slug": "Blenheim",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blenheim"
+    },
+    {
+      "slug": "Blondie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blondie"
+    },
+    {
+      "slug": "Blue_Fan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blue_Fan"
+    },
+    {
+      "slug": "Blue_Gilly",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blue_Gilly"
+    },
+    {
+      "slug": "Bluegrass",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bluegrass"
+    },
+    {
+      "slug": "Bluejam",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bluejam"
+    },
+    {
+      "slug": "Blueno",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blueno"
+    },
+    {
+      "slug": "Blumarine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Blumarine"
+    },
+    {
+      "slug": "Boa_Marigold",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Boa_Marigold"
+    },
+    {
+      "slug": "Boa_Sandersonia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Boa_Sandersonia"
+    },
+    {
+      "slug": "Bobbin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bobbin"
+    },
+    {
+      "slug": "Bobby_Funk",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bobby_Funk"
+    },
+    {
+      "slug": "Bobomba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bobomba"
+    },
+    {
+      "slug": "Bogard",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bogard"
+    },
+    {
+      "slug": "Bomba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bomba"
+    },
+    {
+      "slug": "Bomba_(Marine)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bomba_(Marine)"
+    },
+    {
+      "slug": "Bongo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bongo"
+    },
+    {
+      "slug": "Bonk_Punch",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bonk_Punch"
+    },
+    {
+      "slug": "Boo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Boo"
+    },
+    {
+      "slug": "Boodle",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Boodle"
+    },
+    {
+      "slug": "Boogie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Boogie"
+    },
+    {
+      "slug": "Braham",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Braham"
+    },
+    {
+      "slug": "Brannew",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Brannew"
+    },
+    {
+      "slug": "Brew",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Brew"
+    },
+    {
+      "slug": "Briscola",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Briscola"
+    },
+    {
+      "slug": "Brocca",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Brocca"
+    },
+    {
+      "slug": "Brogy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Brogy"
+    },
+    {
+      "slug": "Brontosaurus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Brontosaurus"
+    },
+    {
+      "slug": "Bubblegum",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bubblegum"
+    },
+    {
+      "slug": "Buche",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Buche"
+    },
+    {
+      "slug": "Buchi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Buchi"
+    },
+    {
+      "slug": "Buckingham_Stussy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Buckingham_Stussy"
+    },
+    {
+      "slug": "Buffalo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Buffalo"
+    },
+    {
+      "slug": "Buhichuck",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Buhichuck"
+    },
+    {
+      "slug": "Building_Snake",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Building_Snake"
+    },
+    {
+      "slug": "Bulldog",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bulldog"
+    },
+    {
+      "slug": "Bunbuku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bunbuku"
+    },
+    {
+      "slug": "Bungo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bungo"
+    },
+    {
+      "slug": "Bunny_Joe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bunny_Joe"
+    },
+    {
+      "slug": "Bushon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bushon"
+    },
+    {
+      "slug": "Busshiri",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Busshiri"
+    },
+    {
+      "slug": "Byron",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Byron"
+    },
+    {
+      "slug": "CB_Gallant",
+      "wiki_url": "https://onepiece.fandom.com/wiki/CB_Gallant"
+    },
+    {
+      "slug": "Cabaji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cabaji"
+    },
+    {
+      "slug": "Caesar_Clown",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Caesar_Clown"
+    },
+    {
+      "slug": "Caimanlady",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Caimanlady"
+    },
+    {
+      "slug": "Camel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Camel"
+    },
+    {
+      "slug": "Camie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Camie"
+    },
+    {
+      "slug": "Cancer",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cancer"
+    },
+    {
+      "slug": "Candre",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Candre"
+    },
+    {
+      "slug": "Cands",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cands"
+    },
+    {
+      "slug": "Candy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Candy"
+    },
+    {
+      "slug": "Capone_Bege",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Capone_Bege"
+    },
+    {
+      "slug": "Capone_Pez",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Capone_Pez"
+    },
+    {
+      "slug": "Capote",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Capote"
+    },
+    {
+      "slug": "Caribou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Caribou"
+    },
+    {
+      "slug": "Carmel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Carmel"
+    },
+    {
+      "slug": "Carne",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Carne"
+    },
+    {
+      "slug": "Carrot",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Carrot"
+    },
+    {
+      "slug": "Catacombo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Catacombo"
+    },
+    {
+      "slug": "Catarina_Devon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Catarina_Devon"
+    },
+    {
+      "slug": "Caucasusman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Caucasusman"
+    },
+    {
+      "slug": "Cerberus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cerberus"
+    },
+    {
+      "slug": "Cerberus_(Sword)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cerberus_(Sword)"
+    },
+    {
+      "slug": "Cezar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cezar"
+    },
+    {
+      "slug": "Chabo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chabo"
+    },
+    {
+      "slug": "Chadros_Higelyges",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chadros_Higelyges"
+    },
+    {
+      "slug": "Chaka",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chaka"
+    },
+    {
+      "slug": "Chao",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chao"
+    },
+    {
+      "slug": "Chap",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chap"
+    },
+    {
+      "slug": "Chappe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chappe"
+    },
+    {
+      "slug": "Charlotte_Akimeg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Akimeg"
+    },
+    {
+      "slug": "Charlotte_Allmeg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Allmeg"
+    },
+    {
+      "slug": "Charlotte_Amande",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Amande"
+    },
+    {
+      "slug": "Charlotte_Anana",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Anana"
+    },
+    {
+      "slug": "Charlotte_Angel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Angel"
+    },
+    {
+      "slug": "Charlotte_Anglais",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Anglais"
+    },
+    {
+      "slug": "Charlotte_Basans",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Basans"
+    },
+    {
+      "slug": "Charlotte_Basskarte",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Basskarte"
+    },
+    {
+      "slug": "Charlotte_Bavarois",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Bavarois"
+    },
+    {
+      "slug": "Charlotte_Brownie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Brownie"
+    },
+    {
+      "slug": "Charlotte_Broyé",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Broyé"
+    },
+    {
+      "slug": "Charlotte_Brûlée",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Brûlée"
+    },
+    {
+      "slug": "Charlotte_Cabaletta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Cabaletta"
+    },
+    {
+      "slug": "Charlotte_Cadenza",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Cadenza"
+    },
+    {
+      "slug": "Charlotte_Chiboust",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Chiboust"
+    },
+    {
+      "slug": "Charlotte_Chiffon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Chiffon"
+    },
+    {
+      "slug": "Charlotte_Cinnamon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Cinnamon"
+    },
+    {
+      "slug": "Charlotte_Citron",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Citron"
+    },
+    {
+      "slug": "Charlotte_Compo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Compo"
+    },
+    {
+      "slug": "Charlotte_Compote",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Compote"
+    },
+    {
+      "slug": "Charlotte_Cornstarch",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Cornstarch"
+    },
+    {
+      "slug": "Charlotte_Counter",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Counter"
+    },
+    {
+      "slug": "Charlotte_Cracker",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Cracker"
+    },
+    {
+      "slug": "Charlotte_Custard",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Custard"
+    },
+    {
+      "slug": "Charlotte_Dacquoise",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Dacquoise"
+    },
+    {
+      "slug": "Charlotte_Daifuku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Daifuku"
+    },
+    {
+      "slug": "Charlotte_De-Chat",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_De-Chat"
+    },
+    {
+      "slug": "Charlotte_Decuplets",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Decuplets"
+    },
+    {
+      "slug": "Charlotte_Dolce_and_Dragée",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Dolce_and_Dragée"
+    },
+    {
+      "slug": "Charlotte_Dosmarche",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Dosmarche"
+    },
+    {
+      "slug": "Charlotte_Effilée",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Effilée"
+    },
+    {
+      "slug": "Charlotte_Flampe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Flampe"
+    },
+    {
+      "slug": "Charlotte_Fuyumeg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Fuyumeg"
+    },
+    {
+      "slug": "Charlotte_Gala",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Gala"
+    },
+    {
+      "slug": "Charlotte_Galette",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Galette"
+    },
+    {
+      "slug": "Charlotte_Hachée",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Hachée"
+    },
+    {
+      "slug": "Charlotte_Harumeg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Harumeg"
+    },
+    {
+      "slug": "Charlotte_High-Fat",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_High-Fat"
+    },
+    {
+      "slug": "Charlotte_Joconde",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Joconde"
+    },
+    {
+      "slug": "Charlotte_Joscarpone",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Joscarpone"
+    },
+    {
+      "slug": "Charlotte_Kanten",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Kanten"
+    },
+    {
+      "slug": "Charlotte_Katakuri",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Katakuri"
+    },
+    {
+      "slug": "Charlotte_Kato",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Kato"
+    },
+    {
+      "slug": "Charlotte_Laurin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Laurin"
+    },
+    {
+      "slug": "Charlotte_Lola",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Lola"
+    },
+    {
+      "slug": "Charlotte_Maple",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Maple"
+    },
+    {
+      "slug": "Charlotte_Marble",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Marble"
+    },
+    {
+      "slug": "Charlotte_Marnier",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Marnier"
+    },
+    {
+      "slug": "Charlotte_Mascarpone",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Mascarpone"
+    },
+    {
+      "slug": "Charlotte_Mash",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Mash"
+    },
+    {
+      "slug": "Charlotte_Melise",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Melise"
+    },
+    {
+      "slug": "Charlotte_Mobile",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Mobile"
+    },
+    {
+      "slug": "Charlotte_Mondée",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Mondée"
+    },
+    {
+      "slug": "Charlotte_Mont-d'Or",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Mont-d'Or"
+    },
+    {
+      "slug": "Charlotte_Montb",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Montb"
+    },
+    {
+      "slug": "Charlotte_Moscato",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Moscato"
+    },
+    {
+      "slug": "Charlotte_Mozart",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Mozart"
+    },
+    {
+      "slug": "Charlotte_Myukuru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Myukuru"
+    },
+    {
+      "slug": "Charlotte_Newshi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Newshi"
+    },
+    {
+      "slug": "Charlotte_Noisette",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Noisette"
+    },
+    {
+      "slug": "Charlotte_Normande",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Normande"
+    },
+    {
+      "slug": "Charlotte_Nougat",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Nougat"
+    },
+    {
+      "slug": "Charlotte_Nusstorte",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Nusstorte"
+    },
+    {
+      "slug": "Charlotte_Nutmeg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Nutmeg"
+    },
+    {
+      "slug": "Charlotte_Opera",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Opera"
+    },
+    {
+      "slug": "Charlotte_Oven",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Oven"
+    },
+    {
+      "slug": "Charlotte_Panna",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Panna"
+    },
+    {
+      "slug": "Charlotte_Perospero",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Perospero"
+    },
+    {
+      "slug": "Charlotte_Poire",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Poire"
+    },
+    {
+      "slug": "Charlotte_Praline",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Praline"
+    },
+    {
+      "slug": "Charlotte_Prim",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Prim"
+    },
+    {
+      "slug": "Charlotte_Pudding",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Pudding"
+    },
+    {
+      "slug": "Charlotte_Raisin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Raisin"
+    },
+    {
+      "slug": "Charlotte_Saint-Marc",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Saint-Marc"
+    },
+    {
+      "slug": "Charlotte_Smoothie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Smoothie"
+    },
+    {
+      "slug": "Charlotte_Snack",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Snack"
+    },
+    {
+      "slug": "Charlotte_Tablet",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Tablet"
+    },
+    {
+      "slug": "Charlotte_Wafers",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Wafers"
+    },
+    {
+      "slug": "Charlotte_Wiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Wiro"
+    },
+    {
+      "slug": "Charlotte_Yuen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Yuen"
+    },
+    {
+      "slug": "Charlotte_Zuccotto",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Charlotte_Zuccotto"
+    },
+    {
+      "slug": "Chess",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chess"
+    },
+    {
+      "slug": "Chesskippa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chesskippa"
+    },
+    {
+      "slug": "Chessmarimo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chessmarimo"
+    },
+    {
+      "slug": "Chew",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chew"
+    },
+    {
+      "slug": "Chichilisia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chichilisia"
+    },
+    {
+      "slug": "Chicken",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chicken"
+    },
+    {
+      "slug": "Chicory",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chicory"
+    },
+    {
+      "slug": "Chihaya",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chihaya"
+    },
+    {
+      "slug": "Chimney",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chimney"
+    },
+    {
+      "slug": "Chinjao",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chinjao"
+    },
+    {
+      "slug": "Chiya",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chiya"
+    },
+    {
+      "slug": "Cho",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cho"
+    },
+    {
+      "slug": "Chochinman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chochinman"
+    },
+    {
+      "slug": "Chocho",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chocho"
+    },
+    {
+      "slug": "Choco_Police",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Choco_Police"
+    },
+    {
+      "slug": "Chocolat",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chocolat"
+    },
+    {
+      "slug": "Choi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Choi"
+    },
+    {
+      "slug": "Chokyumei-no_Chosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chokyumei-no_Chosuke"
+    },
+    {
+      "slug": "Chome",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chome"
+    },
+    {
+      "slug": "Chouchou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chouchou"
+    },
+    {
+      "slug": "Chuchun",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chuchun"
+    },
+    {
+      "slug": "Chuji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Chuji"
+    },
+    {
+      "slug": "Clapp",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Clapp"
+    },
+    {
+      "slug": "Clione",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Clione"
+    },
+    {
+      "slug": "Clou_D._Clover",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Clou_D._Clover"
+    },
+    {
+      "slug": "Coburn",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Coburn"
+    },
+    {
+      "slug": "Cocoa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cocoa"
+    },
+    {
+      "slug": "Cocox",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cocox"
+    },
+    {
+      "slug": "Colon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Colon"
+    },
+    {
+      "slug": "Colscon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Colscon"
+    },
+    {
+      "slug": "Columbus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Columbus"
+    },
+    {
+      "slug": "Comil",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Comil"
+    },
+    {
+      "slug": "Compo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Compo"
+    },
+    {
+      "slug": "Concelot",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Concelot"
+    },
+    {
+      "slug": "Conis",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Conis"
+    },
+    {
+      "slug": "Conney",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Conney"
+    },
+    {
+      "slug": "Corgi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Corgi"
+    },
+    {
+      "slug": "Coribou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Coribou"
+    },
+    {
+      "slug": "Cornelia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cornelia"
+    },
+    {
+      "slug": "Cosette",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cosette"
+    },
+    {
+      "slug": "Cosmo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cosmo"
+    },
+    {
+      "slug": "Cosmos",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cosmos"
+    },
+    {
+      "slug": "Cotton",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cotton"
+    },
+    {
+      "slug": "Couran",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Couran"
+    },
+    {
+      "slug": "Cowboy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cowboy"
+    },
+    {
+      "slug": "Crocus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Crocus"
+    },
+    {
+      "slug": "Curiel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Curiel"
+    },
+    {
+      "slug": "Curly_Dadan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Curly_Dadan"
+    },
+    {
+      "slug": "Cyrano",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Cyrano"
+    },
+    {
+      "slug": "D.R.",
+      "wiki_url": "https://onepiece.fandom.com/wiki/D.R."
+    },
+    {
+      "slug": "Dachoman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dachoman"
+    },
+    {
+      "slug": "Daddy_Dee",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daddy_Dee"
+    },
+    {
+      "slug": "Dagama",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dagama"
+    },
+    {
+      "slug": "Dago",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dago"
+    },
+    {
+      "slug": "Daidalos",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daidalos"
+    },
+    {
+      "slug": "Daifugo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daifugo"
+    },
+    {
+      "slug": "Daigin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daigin"
+    },
+    {
+      "slug": "Daikoku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daikoku"
+    },
+    {
+      "slug": "Daikon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daikon"
+    },
+    {
+      "slug": "Daisy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daisy"
+    },
+    {
+      "slug": "Dalmatian",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dalmatian"
+    },
+    {
+      "slug": "Dalton",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dalton"
+    },
+    {
+      "slug": "Damask",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Damask"
+    },
+    {
+      "slug": "Daruma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daruma"
+    },
+    {
+      "slug": "Dashiteyaro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dashiteyaro"
+    },
+    {
+      "slug": "Davy_D._Jones",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Davy_D._Jones"
+    },
+    {
+      "slug": "Daz_Bonez",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Daz_Bonez"
+    },
+    {
+      "slug": "Decalvan_Brothers",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Decalvan_Brothers"
+    },
+    {
+      "slug": "Deigoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Deigoro"
+    },
+    {
+      "slug": "Delacuaji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Delacuaji"
+    },
+    {
+      "slug": "Dellinger",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dellinger"
+    },
+    {
+      "slug": "Demalo_Black",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Demalo_Black"
+    },
+    {
+      "slug": "Demoni_Aiyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Demoni_Aiyo"
+    },
+    {
+      "slug": "Den",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Den"
+    },
+    {
+      "slug": "Denjiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Denjiro"
+    },
+    {
+      "slug": "Devil_Dias",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Devil_Dias"
+    },
+    {
+      "slug": "Diamante",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Diamante"
+    },
+    {
+      "slug": "Didit",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Didit"
+    },
+    {
+      "slug": "Diesel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Diesel"
+    },
+    {
+      "slug": "Diez_Barrels",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Diez_Barrels"
+    },
+    {
+      "slug": "Dirt_Boss",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dirt_Boss"
+    },
+    {
+      "slug": "Disc_J",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Disc_J"
+    },
+    {
+      "slug": "Disco",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Disco"
+    },
+    {
+      "slug": "Dive",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dive"
+    },
+    {
+      "slug": "Dobby_Ibadonbo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dobby_Ibadonbo"
+    },
+    {
+      "slug": "Doberman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Doberman"
+    },
+    {
+      "slug": "Dobon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dobon"
+    },
+    {
+      "slug": "Doc_Q",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Doc_Q"
+    },
+    {
+      "slug": "Dogra",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dogra"
+    },
+    {
+      "slug": "Dogya",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dogya"
+    },
+    {
+      "slug": "Doha_Ittanka_II",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Doha_Ittanka_II"
+    },
+    {
+      "slug": "Doll",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Doll"
+    },
+    {
+      "slug": "Doma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Doma"
+    },
+    {
+      "slug": "Domino",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Domino"
+    },
+    {
+      "slug": "Domo-kun_and_Nnke-kun",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Domo-kun_and_Nnke-kun"
+    },
+    {
+      "slug": "Donannoyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Donannoyo"
+    },
+    {
+      "slug": "Donovan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Donovan"
+    },
+    {
+      "slug": "Donquino",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Donquino"
+    },
+    {
+      "slug": "Donquixote_Homing",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Donquixote_Homing"
+    },
+    {
+      "slug": "Donquixote_Mjosgard",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Donquixote_Mjosgard"
+    },
+    {
+      "slug": "Donquixote_Rosinante",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Donquixote_Rosinante"
+    },
+    {
+      "slug": "Donquixote_Shivercalero",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Donquixote_Shivercalero"
+    },
+    {
+      "slug": "Doran",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Doran"
+    },
+    {
+      "slug": "Doringo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Doringo"
+    },
+    {
+      "slug": "Dorry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dorry"
+    },
+    {
+      "slug": "Dosun",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dosun"
+    },
+    {
+      "slug": "Dotaku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dotaku"
+    },
+    {
+      "slug": "Doubt_Brothers",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Doubt_Brothers"
+    },
+    {
+      "slug": "Dragon_Number_Thirteen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dragon_Number_Thirteen"
+    },
+    {
+      "slug": "Dragon_Number_Twenty-One",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dragon_Number_Twenty-One"
+    },
+    {
+      "slug": "Draw",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Draw"
+    },
+    {
+      "slug": "Drip",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Drip"
+    },
+    {
+      "slug": "Drophy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Drophy"
+    },
+    {
+      "slug": "Drug_Peclo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Drug_Peclo"
+    },
+    {
+      "slug": "Ducky_Bree",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ducky_Bree"
+    },
+    {
+      "slug": "Duval",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Duval"
+    },
+    {
+      "slug": "Eddy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Eddy"
+    },
+    {
+      "slug": "Edward_Weevil",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Edward_Weevil"
+    },
+    {
+      "slug": "Egana",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Egana"
+    },
+    {
+      "slug": "Eggplant_Soldier",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Eggplant_Soldier"
+    },
+    {
+      "slug": "Eikon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Eikon"
+    },
+    {
+      "slug": "Eiri",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Eiri"
+    },
+    {
+      "slug": "Elbow",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Elbow"
+    },
+    {
+      "slug": "Elizabello_II",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Elizabello_II"
+    },
+    {
+      "slug": "Elmy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Elmy"
+    },
+    {
+      "slug": "Emet",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Emet"
+    },
+    {
+      "slug": "Emma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Emma"
+    },
+    {
+      "slug": "Enel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Enel"
+    },
+    {
+      "slug": "Enishida",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Enishida"
+    },
+    {
+      "slug": "Epoida",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Epoida"
+    },
+    {
+      "slug": "Erik",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Erik"
+    },
+    {
+      "slug": "Erio",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Erio"
+    },
+    {
+      "slug": "Eris",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Eris"
+    },
+    {
+      "slug": "Esta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Esta"
+    },
+    {
+      "slug": "Estrid",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Estrid"
+    },
+    {
+      "slug": "Ettara_Chaunkai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ettara_Chaunkai"
+    },
+    {
+      "slug": "Farafra",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Farafra"
+    },
+    {
+      "slug": "Farul",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Farul"
+    },
+    {
+      "slug": "Faust",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Faust"
+    },
+    {
+      "slug": "Fen_Bock",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fen_Bock"
+    },
+    {
+      "slug": "Figarland_Garling",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Figarland_Garling"
+    },
+    {
+      "slug": "Figarland_Shamrock",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Figarland_Shamrock"
+    },
+    {
+      "slug": "Fillonce",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fillonce"
+    },
+    {
+      "slug": "Finamore",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Finamore"
+    },
+    {
+      "slug": "Fishbonen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fishbonen"
+    },
+    {
+      "slug": "Fisher_Tiger",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fisher_Tiger"
+    },
+    {
+      "slug": "Flapper",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Flapper"
+    },
+    {
+      "slug": "Flare",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Flare"
+    },
+    {
+      "slug": "Footbianco",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Footbianco"
+    },
+    {
+      "slug": "Forest_Boss",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Forest_Boss"
+    },
+    {
+      "slug": "Forliewbs",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Forliewbs"
+    },
+    {
+      "slug": "Fossa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fossa"
+    },
+    {
+      "slug": "Fourtricks",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fourtricks"
+    },
+    {
+      "slug": "Foxy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Foxy"
+    },
+    {
+      "slug": "Francois",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Francois"
+    },
+    {
+      "slug": "Fuga",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fuga"
+    },
+    {
+      "slug": "Fugar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fugar"
+    },
+    {
+      "slug": "Fugetsu_Kisaburo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fugetsu_Kisaburo"
+    },
+    {
+      "slug": "Fugetsu_Omusubi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fugetsu_Omusubi"
+    },
+    {
+      "slug": "Fujin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fujin"
+    },
+    {
+      "slug": "Fukaboshi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fukaboshi"
+    },
+    {
+      "slug": "Fukumi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fukumi"
+    },
+    {
+      "slug": "Fukurokuju",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fukurokuju"
+    },
+    {
+      "slug": "Fukurou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fukurou"
+    },
+    {
+      "slug": "Fullbody",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fullbody"
+    },
+    {
+      "slug": "Funkfreed",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Funkfreed"
+    },
+    {
+      "slug": "Furika",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Furika"
+    },
+    {
+      "slug": "Furrari",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Furrari"
+    },
+    {
+      "slug": "Fuza",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Fuza"
+    },
+    {
+      "slug": "Gab",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gab"
+    },
+    {
+      "slug": "Gaburu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gaburu"
+    },
+    {
+      "slug": "Gaimon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gaimon"
+    },
+    {
+      "slug": "Gal",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gal"
+    },
+    {
+      "slug": "Galaxy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Galaxy"
+    },
+    {
+      "slug": "Galdino",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Galdino"
+    },
+    {
+      "slug": "Gally",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gally"
+    },
+    {
+      "slug": "Gama_Pyonnosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gama_Pyonnosuke"
+    },
+    {
+      "slug": "Gambia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gambia"
+    },
+    {
+      "slug": "Gambo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gambo"
+    },
+    {
+      "slug": "Gan_Fall",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gan_Fall"
+    },
+    {
+      "slug": "Gancho",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gancho"
+    },
+    {
+      "slug": "Gangaru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gangaru"
+    },
+    {
+      "slug": "Ganryu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ganryu"
+    },
+    {
+      "slug": "Ganryu_(Roger_Pirates)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ganryu_(Roger_Pirates)"
+    },
+    {
+      "slug": "Ganzui",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ganzui"
+    },
+    {
+      "slug": "Garudan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Garudan"
+    },
+    {
+      "slug": "Gatherine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gatherine"
+    },
+    {
+      "slug": "Gattenshochinosukeo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gattenshochinosukeo"
+    },
+    {
+      "slug": "Gatz",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gatz"
+    },
+    {
+      "slug": "Gazelleman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gazelleman"
+    },
+    {
+      "slug": "Gecko_Moria",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gecko_Moria"
+    },
+    {
+      "slug": "Gedatsu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gedatsu"
+    },
+    {
+      "slug": "Gem",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gem"
+    },
+    {
+      "slug": "Genbo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Genbo"
+    },
+    {
+      "slug": "Genrin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Genrin"
+    },
+    {
+      "slug": "Genzo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Genzo"
+    },
+    {
+      "slug": "George_Black",
+      "wiki_url": "https://onepiece.fandom.com/wiki/George_Black"
+    },
+    {
+      "slug": "George_Mach",
+      "wiki_url": "https://onepiece.fandom.com/wiki/George_Mach"
+    },
+    {
+      "slug": "Gerd",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gerd"
+    },
+    {
+      "slug": "Gerotini",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gerotini"
+    },
+    {
+      "slug": "Giberson",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Giberson"
+    },
+    {
+      "slug": "Gig",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gig"
+    },
+    {
+      "slug": "Gill_Bastar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gill_Bastar"
+    },
+    {
+      "slug": "Gimlet",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gimlet"
+    },
+    {
+      "slug": "Gin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gin"
+    },
+    {
+      "slug": "Gina",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gina"
+    },
+    {
+      "slug": "Ginko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ginko"
+    },
+    {
+      "slug": "Ginnosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ginnosuke"
+    },
+    {
+      "slug": "Ginny",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ginny"
+    },
+    {
+      "slug": "Ginrummy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ginrummy"
+    },
+    {
+      "slug": "Giolla",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Giolla"
+    },
+    {
+      "slug": "Gion",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gion"
+    },
+    {
+      "slug": "Giovanni",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Giovanni"
+    },
+    {
+      "slug": "Giro_Chintaro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Giro_Chintaro"
+    },
+    {
+      "slug": "Gismonda",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gismonda"
+    },
+    {
+      "slug": "Gladius",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gladius"
+    },
+    {
+      "slug": "Gloriosa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gloriosa"
+    },
+    {
+      "slug": "Glove",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Glove"
+    },
+    {
+      "slug": "Glutbunny",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Glutbunny"
+    },
+    {
+      "slug": "Gode",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gode"
+    },
+    {
+      "slug": "Going_Merry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Going_Merry"
+    },
+    {
+      "slug": "Goki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Goki"
+    },
+    {
+      "slug": "Goldberg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Goldberg"
+    },
+    {
+      "slug": "Goldfish_Princess",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Goldfish_Princess"
+    },
+    {
+      "slug": "Gomorrah",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gomorrah"
+    },
+    {
+      "slug": "Gonbe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gonbe"
+    },
+    {
+      "slug": "Goo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Goo"
+    },
+    {
+      "slug": "Googly-Eyed",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Googly-Eyed"
+    },
+    {
+      "slug": "Gorilla",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gorilla"
+    },
+    {
+      "slug": "Gorishiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gorishiro"
+    },
+    {
+      "slug": "Goro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Goro"
+    },
+    {
+      "slug": "Gorobe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gorobe"
+    },
+    {
+      "slug": "Gotti",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gotti"
+    },
+    {
+      "slug": "Grabar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Grabar"
+    },
+    {
+      "slug": "Gram",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gram"
+    },
+    {
+      "slug": "Great_Michael",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Great_Michael"
+    },
+    {
+      "slug": "Guernika",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Guernika"
+    },
+    {
+      "slug": "Guillotine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Guillotine"
+    },
+    {
+      "slug": "Gurutaro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gurutaro"
+    },
+    {
+      "slug": "Gyaro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gyaro"
+    },
+    {
+      "slug": "Gyogyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gyogyo"
+    },
+    {
+      "slug": "Gyoro,_Nin,_and_Bao",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gyoro,_Nin,_and_Bao"
+    },
+    {
+      "slug": "Gyoru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gyoru"
+    },
+    {
+      "slug": "Gyro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gyro"
+    },
+    {
+      "slug": "Hack",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hack"
+    },
+    {
+      "slug": "Hack_(Archaeologist)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hack_(Archaeologist)"
+    },
+    {
+      "slug": "Hajrudin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hajrudin"
+    },
+    {
+      "slug": "Hakowan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hakowan"
+    },
+    {
+      "slug": "Hakugan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hakugan"
+    },
+    {
+      "slug": "Ham_Burger",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ham_Burger"
+    },
+    {
+      "slug": "Hamburg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hamburg"
+    },
+    {
+      "slug": "Hamlet",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hamlet"
+    },
+    {
+      "slug": "Hammond",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hammond"
+    },
+    {
+      "slug": "Han",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Han"
+    },
+    {
+      "slug": "Hana",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hana"
+    },
+    {
+      "slug": "Hanafuda",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hanafuda"
+    },
+    {
+      "slug": "Hangan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hangan"
+    },
+    {
+      "slug": "Hanger",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hanger"
+    },
+    {
+      "slug": "Hanji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hanji"
+    },
+    {
+      "slug": "Hanji_(Prisoner)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hanji_(Prisoner)"
+    },
+    {
+      "slug": "Hannyabal",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hannyabal"
+    },
+    {
+      "slug": "Hanzo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hanzo"
+    },
+    {
+      "slug": "Happa_Yamao",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Happa_Yamao"
+    },
+    {
+      "slug": "Happygun",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Happygun"
+    },
+    {
+      "slug": "Hara",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hara"
+    },
+    {
+      "slug": "Harald",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Harald"
+    },
+    {
+      "slug": "Haredas",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Haredas"
+    },
+    {
+      "slug": "Hareji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hareji"
+    },
+    {
+      "slug": "Haritsu_Kendiyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Haritsu_Kendiyo"
+    },
+    {
+      "slug": "Haruta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Haruta"
+    },
+    {
+      "slug": "Hasami",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hasami"
+    },
+    {
+      "slug": "Hatcha",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hatcha"
+    },
+    {
+      "slug": "Hatchan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hatchan"
+    },
+    {
+      "slug": "Hatsume",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hatsume"
+    },
+    {
+      "slug": "Hattori",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hattori"
+    },
+    {
+      "slug": "Hawkman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hawkman"
+    },
+    {
+      "slug": "Heat",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Heat"
+    },
+    {
+      "slug": "Helmeppo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Helmeppo"
+    },
+    {
+      "slug": "Heppoko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Heppoko"
+    },
+    {
+      "slug": "Hera",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hera"
+    },
+    {
+      "slug": "Hera_(Gladiator)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hera_(Gladiator)"
+    },
+    {
+      "slug": "Heracles",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Heracles"
+    },
+    {
+      "slug": "Herb",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Herb"
+    },
+    {
+      "slug": "Hewitt",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hewitt"
+    },
+    {
+      "slug": "Hibari",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hibari"
+    },
+    {
+      "slug": "Hidayu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hidayu"
+    },
+    {
+      "slug": "Higuma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Higuma"
+    },
+    {
+      "slug": "Hihimaru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hihimaru"
+    },
+    {
+      "slug": "Hikkomitsukumai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hikkomitsukumai"
+    },
+    {
+      "slug": "Hildon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hildon"
+    },
+    {
+      "slug": "Hilmungardr",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hilmungardr"
+    },
+    {
+      "slug": "Himuro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Himuro"
+    },
+    {
+      "slug": "Hina",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hina"
+    },
+    {
+      "slug": "Hinokizu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hinokizu"
+    },
+    {
+      "slug": "Hip",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hip"
+    },
+    {
+      "slug": "Hippan_Natte",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hippan_Natte"
+    },
+    {
+      "slug": "Hippie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hippie"
+    },
+    {
+      "slug": "Hippo_Gentleman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hippo_Gentleman"
+    },
+    {
+      "slug": "Hiramera",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hiramera"
+    },
+    {
+      "slug": "Hiriluk",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hiriluk"
+    },
+    {
+      "slug": "Hiro_Gomon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hiro_Gomon"
+    },
+    {
+      "slug": "Hiroshi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hiroshi"
+    },
+    {
+      "slug": "Hitsugisukan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hitsugisukan"
+    },
+    {
+      "slug": "Ho",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ho"
+    },
+    {
+      "slug": "Hocha",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hocha"
+    },
+    {
+      "slug": "Hocker",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hocker"
+    },
+    {
+      "slug": "Hody_Jones",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hody_Jones"
+    },
+    {
+      "slug": "Hoe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hoe"
+    },
+    {
+      "slug": "Hogback",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hogback"
+    },
+    {
+      "slug": "Hoisassa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hoisassa"
+    },
+    {
+      "slug": "Holed'em",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Holed'em"
+    },
+    {
+      "slug": "Holy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Holy"
+    },
+    {
+      "slug": "Home",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Home"
+    },
+    {
+      "slug": "Hongo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hongo"
+    },
+    {
+      "slug": "Honner",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Honner"
+    },
+    {
+      "slug": "Hop",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hop"
+    },
+    {
+      "slug": "Horseman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Horseman"
+    },
+    {
+      "slug": "Hotei",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hotei"
+    },
+    {
+      "slug": "Hotori_and_Kotori",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hotori_and_Kotori"
+    },
+    {
+      "slug": "Hototogisu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hototogisu"
+    },
+    {
+      "slug": "Hound",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hound"
+    },
+    {
+      "slug": "House",
+      "wiki_url": "https://onepiece.fandom.com/wiki/House"
+    },
+    {
+      "slug": "Hublot",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hublot"
+    },
+    {
+      "slug": "Humphrey",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Humphrey"
+    },
+    {
+      "slug": "Hustle",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hustle"
+    },
+    {
+      "slug": "Hyougoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hyougoro"
+    },
+    {
+      "slug": "Hyoutauros",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hyoutauros"
+    },
+    {
+      "slug": "Hyouzou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Hyouzou"
+    },
+    {
+      "slug": "Ibiributsu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ibiributsu"
+    },
+    {
+      "slug": "Ibusu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ibusu"
+    },
+    {
+      "slug": "Iceburg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Iceburg"
+    },
+    {
+      "slug": "Ida",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ida"
+    },
+    {
+      "slug": "Ideaman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ideaman"
+    },
+    {
+      "slug": "Ideo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ideo"
+    },
+    {
+      "slug": "Igaram",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Igaram"
+    },
+    {
+      "slug": "Ikaros_Much",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ikaros_Much"
+    },
+    {
+      "slug": "Ikkaku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ikkaku"
+    },
+    {
+      "slug": "Ikkaku_(Wano)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ikkaku_(Wano)"
+    },
+    {
+      "slug": "Imu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Imu"
+    },
+    {
+      "slug": "Inazuma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Inazuma"
+    },
+    {
+      "slug": "Inbi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Inbi"
+    },
+    {
+      "slug": "Indigo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Indigo"
+    },
+    {
+      "slug": "Inhel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Inhel"
+    },
+    {
+      "slug": "Inoichibannosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Inoichibannosuke"
+    },
+    {
+      "slug": "Inuarashi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Inuarashi"
+    },
+    {
+      "slug": "Inukai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Inukai"
+    },
+    {
+      "slug": "Inuppe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Inuppe"
+    },
+    {
+      "slug": "Ipponmatsu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ipponmatsu"
+    },
+    {
+      "slug": "Ipponume",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ipponume"
+    },
+    {
+      "slug": "Isa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Isa"
+    },
+    {
+      "slug": "Iscat",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Iscat"
+    },
+    {
+      "slug": "Ishigo_Shitemanna",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ishigo_Shitemanna"
+    },
+    {
+      "slug": "Ishilly",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ishilly"
+    },
+    {
+      "slug": "Island_Eater",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Island_Eater"
+    },
+    {
+      "slug": "Islewan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Islewan"
+    },
+    {
+      "slug": "Isuka",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Isuka"
+    },
+    {
+      "slug": "Itomimizu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Itomimizu"
+    },
+    {
+      "slug": "Iwatobi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Iwatobi"
+    },
+    {
+      "slug": "Iyan'eno_Chinode",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Iyan'eno_Chinode"
+    },
+    {
+      "slug": "Izou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Izou"
+    },
+    {
+      "slug": "Jabari",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jabari"
+    },
+    {
+      "slug": "Jabra",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jabra"
+    },
+    {
+      "slug": "Jack",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jack"
+    },
+    {
+      "slug": "Jacksonbanner",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jacksonbanner"
+    },
+    {
+      "slug": "Jaguar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jaguar"
+    },
+    {
+      "slug": "Jaguar_D._Saul",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jaguar_D._Saul"
+    },
+    {
+      "slug": "Jaki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jaki"
+    },
+    {
+      "slug": "Jalmack",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jalmack"
+    },
+    {
+      "slug": "Jango",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jango"
+    },
+    {
+      "slug": "Jarul",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jarul"
+    },
+    {
+      "slug": "Jean_Ango",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jean_Ango"
+    },
+    {
+      "slug": "Jean_Bart",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jean_Bart"
+    },
+    {
+      "slug": "Jean_Goen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jean_Goen"
+    },
+    {
+      "slug": "Jean_Noueilles",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jean_Noueilles"
+    },
+    {
+      "slug": "Jeep",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jeep"
+    },
+    {
+      "slug": "Jeet",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jeet"
+    },
+    {
+      "slug": "Jero",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jero"
+    },
+    {
+      "slug": "Jerry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jerry"
+    },
+    {
+      "slug": "Jesus_Burgess",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jesus_Burgess"
+    },
+    {
+      "slug": "Jew_Wall",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jew_Wall"
+    },
+    {
+      "slug": "Jibuemon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jibuemon"
+    },
+    {
+      "slug": "Jigoku_Benten",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jigoku_Benten"
+    },
+    {
+      "slug": "Jigokukamabuta_Megatenpanchiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jigokukamabuta_Megatenpanchiro"
+    },
+    {
+      "slug": "Jigoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jigoro"
+    },
+    {
+      "slug": "Jigra",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jigra"
+    },
+    {
+      "slug": "Jiron",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jiron"
+    },
+    {
+      "slug": "Jobo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jobo"
+    },
+    {
+      "slug": "Johanna",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Johanna"
+    },
+    {
+      "slug": "John",
+      "wiki_url": "https://onepiece.fandom.com/wiki/John"
+    },
+    {
+      "slug": "John_Giant",
+      "wiki_url": "https://onepiece.fandom.com/wiki/John_Giant"
+    },
+    {
+      "slug": "Johnny",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Johnny"
+    },
+    {
+      "slug": "Jorge",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jorge"
+    },
+    {
+      "slug": "Jorul",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jorul"
+    },
+    {
+      "slug": "Joseph",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Joseph"
+    },
+    {
+      "slug": "Joshu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Joshu"
+    },
+    {
+      "slug": "Joy_Boy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Joy_Boy"
+    },
+    {
+      "slug": "Jozu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jozu"
+    },
+    {
+      "slug": "Judy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Judy"
+    },
+    {
+      "slug": "Jugemu_Jugemuko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jugemu_Jugemuko"
+    },
+    {
+      "slug": "Jujiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jujiro"
+    },
+    {
+      "slug": "Juki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Juki"
+    },
+    {
+      "slug": "Julius",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Julius"
+    },
+    {
+      "slug": "Jumper",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jumper"
+    },
+    {
+      "slug": "Junan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Junan"
+    },
+    {
+      "slug": "Jörmungandr",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jörmungandr"
+    },
+    {
+      "slug": "Kabu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kabu"
+    },
+    {
+      "slug": "Kadar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kadar"
+    },
+    {
+      "slug": "Kagero",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kagero"
+    },
+    {
+      "slug": "Kagikko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kagikko"
+    },
+    {
+      "slug": "Kairen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kairen"
+    },
+    {
+      "slug": "Kairiken",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kairiken"
+    },
+    {
+      "slug": "Kairo_Kureyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kairo_Kureyo"
+    },
+    {
+      "slug": "Kaku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kaku"
+    },
+    {
+      "slug": "Kaku_(Wano)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kaku_(Wano)"
+    },
+    {
+      "slug": "Kakukaku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kakukaku"
+    },
+    {
+      "slug": "Kakunoshin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kakunoshin"
+    },
+    {
+      "slug": "Kalgara",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kalgara"
+    },
+    {
+      "slug": "Kalifa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kalifa"
+    },
+    {
+      "slug": "Kamakiri",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kamakiri"
+    },
+    {
+      "slug": "Kamakirigirl",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kamakirigirl"
+    },
+    {
+      "slug": "Kamekichi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kamekichi"
+    },
+    {
+      "slug": "Kamijiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kamijiro"
+    },
+    {
+      "slug": "Kaneshiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kaneshiro"
+    },
+    {
+      "slug": "Kanezenny",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kanezenny"
+    },
+    {
+      "slug": "Kappa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kappa"
+    },
+    {
+      "slug": "Karasu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Karasu"
+    },
+    {
+      "slug": "Karin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Karin"
+    },
+    {
+      "slug": "Karma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Karma"
+    },
+    {
+      "slug": "Karoo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Karoo"
+    },
+    {
+      "slug": "Kasa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kasa"
+    },
+    {
+      "slug": "Kasagoba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kasagoba"
+    },
+    {
+      "slug": "Kashigami",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kashigami"
+    },
+    {
+      "slug": "Kashigami's_Child",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kashigami's_Child"
+    },
+    {
+      "slug": "Kashii",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kashii"
+    },
+    {
+      "slug": "Katsuzo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Katsuzo"
+    },
+    {
+      "slug": "Kawamatsu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kawamatsu"
+    },
+    {
+      "slug": "Kaya",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kaya"
+    },
+    {
+      "slug": "Kazekage",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kazekage"
+    },
+    {
+      "slug": "Kazenbo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kazenbo"
+    },
+    {
+      "slug": "Kebi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kebi"
+    },
+    {
+      "slug": "Kechatch",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kechatch"
+    },
+    {
+      "slug": "Keith",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Keith"
+    },
+    {
+      "slug": "Kelly_Funk",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kelly_Funk"
+    },
+    {
+      "slug": "Kiba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kiba"
+    },
+    {
+      "slug": "Kibagaeru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kibagaeru"
+    },
+    {
+      "slug": "Kibin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kibin"
+    },
+    {
+      "slug": "Kiev",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kiev"
+    },
+    {
+      "slug": "Kikipatsu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kikipatsu"
+    },
+    {
+      "slug": "Kiku_(Kuja)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kiku_(Kuja)"
+    },
+    {
+      "slug": "Kikunojo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kikunojo"
+    },
+    {
+      "slug": "Kikyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kikyo"
+    },
+    {
+      "slug": "Kimel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kimel"
+    },
+    {
+      "slug": "Kin'emon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kin'emon"
+    },
+    {
+      "slug": "Kinbo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kinbo"
+    },
+    {
+      "slug": "Kinderella",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kinderella"
+    },
+    {
+      "slug": "King",
+      "wiki_url": "https://onepiece.fandom.com/wiki/King"
+    },
+    {
+      "slug": "Kinga",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kinga"
+    },
+    {
+      "slug": "Kingbaum",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kingbaum"
+    },
+    {
+      "slug": "Kingdew",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kingdew"
+    },
+    {
+      "slug": "Kinoko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kinoko"
+    },
+    {
+      "slug": "Kirinkodanuki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kirinkodanuki"
+    },
+    {
+      "slug": "Kirintauros",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kirintauros"
+    },
+    {
+      "slug": "Kisegawa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kisegawa"
+    },
+    {
+      "slug": "Kitton",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kitton"
+    },
+    {
+      "slug": "Koala",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Koala"
+    },
+    {
+      "slug": "Kobe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kobe"
+    },
+    {
+      "slug": "Koda",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Koda"
+    },
+    {
+      "slug": "Koito",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Koito"
+    },
+    {
+      "slug": "Koiwa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Koiwa"
+    },
+    {
+      "slug": "Kojuro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kojuro"
+    },
+    {
+      "slug": "Kokoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kokoro"
+    },
+    {
+      "slug": "Komachiyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Komachiyo"
+    },
+    {
+      "slug": "Komakkov",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Komakkov"
+    },
+    {
+      "slug": "Komane",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Komane"
+    },
+    {
+      "slug": "Konbu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Konbu"
+    },
+    {
+      "slug": "Kong",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kong"
+    },
+    {
+      "slug": "Kop",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kop"
+    },
+    {
+      "slug": "Koshi_Falcon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Koshi_Falcon"
+    },
+    {
+      "slug": "Kotatsu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kotatsu"
+    },
+    {
+      "slug": "Kotetsu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kotetsu"
+    },
+    {
+      "slug": "Kouzuki_Hiyori",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kouzuki_Hiyori"
+    },
+    {
+      "slug": "Kouzuki_Momonosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kouzuki_Momonosuke"
+    },
+    {
+      "slug": "Kouzuki_Moria",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kouzuki_Moria"
+    },
+    {
+      "slug": "Kouzuki_Sukiyaki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kouzuki_Sukiyaki"
+    },
+    {
+      "slug": "Kouzuki_Toki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kouzuki_Toki"
+    },
+    {
+      "slug": "Koyama",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Koyama"
+    },
+    {
+      "slug": "Koza",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Koza"
+    },
+    {
+      "slug": "Koze_and_Packy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Koze_and_Packy"
+    },
+    {
+      "slug": "Krieg",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Krieg"
+    },
+    {
+      "slug": "Kujaku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kujaku"
+    },
+    {
+      "slug": "Kukai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kukai"
+    },
+    {
+      "slug": "Kumadori",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kumadori"
+    },
+    {
+      "slug": "Kumadori_Yamanbako",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kumadori_Yamanbako"
+    },
+    {
+      "slug": "Kumae",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kumae"
+    },
+    {
+      "slug": "Kumagoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kumagoro"
+    },
+    {
+      "slug": "Kumashi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kumashi"
+    },
+    {
+      "slug": "Kuni",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kuni"
+    },
+    {
+      "slug": "Kunyun",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kunyun"
+    },
+    {
+      "slug": "Kureha",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kureha"
+    },
+    {
+      "slug": "Kuro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kuro"
+    },
+    {
+      "slug": "Kurokoma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kurokoma"
+    },
+    {
+      "slug": "Kuromarimo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kuromarimo"
+    },
+    {
+      "slug": "Kuroobi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kuroobi"
+    },
+    {
+      "slug": "Kurosawa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kurosawa"
+    },
+    {
+      "slug": "Kurotsuru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kurotsuru"
+    },
+    {
+      "slug": "Kurozumi_Higurashi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kurozumi_Higurashi"
+    },
+    {
+      "slug": "Kurozumi_Kanjuro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kurozumi_Kanjuro"
+    },
+    {
+      "slug": "Kurozumi_Orochi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kurozumi_Orochi"
+    },
+    {
+      "slug": "Kurozumi_Semimaru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kurozumi_Semimaru"
+    },
+    {
+      "slug": "Kurozumi_Tama",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kurozumi_Tama"
+    },
+    {
+      "slug": "Kyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kyo"
+    },
+    {
+      "slug": "Kyros",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kyros"
+    },
+    {
+      "slug": "Kyuin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kyuin"
+    },
+    {
+      "slug": "Kyuji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kyuji"
+    },
+    {
+      "slug": "Kyukyu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Kyukyu"
+    },
+    {
+      "slug": "Laboon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Laboon"
+    },
+    {
+      "slug": "Lacroix",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lacroix"
+    },
+    {
+      "slug": "Lacuba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lacuba"
+    },
+    {
+      "slug": "Lady_Tree",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lady_Tree"
+    },
+    {
+      "slug": "Laffitte",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Laffitte"
+    },
+    {
+      "slug": "Lao_G",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lao_G"
+    },
+    {
+      "slug": "Laskey",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Laskey"
+    },
+    {
+      "slug": "Lassoo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lassoo"
+    },
+    {
+      "slug": "Lemoncheese",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lemoncheese"
+    },
+    {
+      "slug": "Leo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Leo"
+    },
+    {
+      "slug": "Leonero",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Leonero"
+    },
+    {
+      "slug": "Lily",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lily"
+    },
+    {
+      "slug": "Limejuice",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Limejuice"
+    },
+    {
+      "slug": "Linaria",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Linaria"
+    },
+    {
+      "slug": "Lindbergh",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lindbergh"
+    },
+    {
+      "slug": "Lines",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lines"
+    },
+    {
+      "slug": "Lionbuta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lionbuta"
+    },
+    {
+      "slug": "Lip_Doughty",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lip_Doughty"
+    },
+    {
+      "slug": "Little_Oars_Jr.",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Little_Oars_Jr."
+    },
+    {
+      "slug": "Loki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Loki"
+    },
+    {
+      "slug": "Lola_(Zombie)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lola_(Zombie)"
+    },
+    {
+      "slug": "Lonz",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lonz"
+    },
+    {
+      "slug": "Lord_of_the_Coast",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lord_of_the_Coast"
+    },
+    {
+      "slug": "Louis_Arnote",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Louis_Arnote"
+    },
+    {
+      "slug": "Lu_Feld",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lu_Feld"
+    },
+    {
+      "slug": "Lucky_Roux",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lucky_Roux"
+    },
+    {
+      "slug": "Lulis",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Lulis"
+    },
+    {
+      "slug": "MAX_Marx",
+      "wiki_url": "https://onepiece.fandom.com/wiki/MAX_Marx"
+    },
+    {
+      "slug": "Machvise",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Machvise"
+    },
+    {
+      "slug": "Macro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Macro"
+    },
+    {
+      "slug": "Macro_(Automaton)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Macro_(Automaton)"
+    },
+    {
+      "slug": "Madilloman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Madilloman"
+    },
+    {
+      "slug": "Mag",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mag"
+    },
+    {
+      "slug": "Magellan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Magellan"
+    },
+    {
+      "slug": "Magra",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Magra"
+    },
+    {
+      "slug": "Maha",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Maha"
+    },
+    {
+      "slug": "Maidy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Maidy"
+    },
+    {
+      "slug": "Maki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Maki"
+    },
+    {
+      "slug": "Makino",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Makino"
+    },
+    {
+      "slug": "Makino's_Child",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Makino's_Child"
+    },
+    {
+      "slug": "Makko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Makko"
+    },
+    {
+      "slug": "Manboshi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Manboshi"
+    },
+    {
+      "slug": "Mani",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mani"
+    },
+    {
+      "slug": "Manjaro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Manjaro"
+    },
+    {
+      "slug": "Manmayer_Gunko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Manmayer_Gunko"
+    },
+    {
+      "slug": "Mansherry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mansherry"
+    },
+    {
+      "slug": "Marco",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Marco"
+    },
+    {
+      "slug": "Margarita",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Margarita"
+    },
+    {
+      "slug": "Marguerite",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Marguerite"
+    },
+    {
+      "slug": "Mari",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mari"
+    },
+    {
+      "slug": "Maria_Napole",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Maria_Napole"
+    },
+    {
+      "slug": "Marianne",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Marianne"
+    },
+    {
+      "slug": "Marie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Marie"
+    },
+    {
+      "slug": "Marilyn",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Marilyn"
+    },
+    {
+      "slug": "Marin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Marin"
+    },
+    {
+      "slug": "Mario",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mario"
+    },
+    {
+      "slug": "Marlon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Marlon"
+    },
+    {
+      "slug": "Marumieta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Marumieta"
+    },
+    {
+      "slug": "Mash",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mash"
+    },
+    {
+      "slug": "Mashikaku_(Marine)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mashikaku_(Marine)"
+    },
+    {
+      "slug": "Masira",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Masira"
+    },
+    {
+      "slug": "Masked_Deuce",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Masked_Deuce"
+    },
+    {
+      "slug": "Massui",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Massui"
+    },
+    {
+      "slug": "Master",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Master"
+    },
+    {
+      "slug": "Master_of_the_Waters",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Master_of_the_Waters"
+    },
+    {
+      "slug": "Mato",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mato"
+    },
+    {
+      "slug": "Matryo_Princesses",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Matryo_Princesses"
+    },
+    {
+      "slug": "Matsuge",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Matsuge"
+    },
+    {
+      "slug": "Maujii",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Maujii"
+    },
+    {
+      "slug": "Maynard",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Maynard"
+    },
+    {
+      "slug": "Mayushika",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mayushika"
+    },
+    {
+      "slug": "McGuy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/McGuy"
+    },
+    {
+      "slug": "McKinley",
+      "wiki_url": "https://onepiece.fandom.com/wiki/McKinley"
+    },
+    {
+      "slug": "Meadows",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Meadows"
+    },
+    {
+      "slug": "Mecha-Shark",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mecha-Shark"
+    },
+    {
+      "slug": "Medaka_Mermaid_Quintuplets",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Medaka_Mermaid_Quintuplets"
+    },
+    {
+      "slug": "Megalo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Megalo"
+    },
+    {
+      "slug": "Mero",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mero"
+    },
+    {
+      "slug": "Merry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Merry"
+    },
+    {
+      "slug": "Mezasuzowan_Pisuo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mezasuzowan_Pisuo"
+    },
+    {
+      "slug": "Michael_and_Hoichael",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Michael_and_Hoichael"
+    },
+    {
+      "slug": "Mihar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mihar"
+    },
+    {
+      "slug": "Mikazuki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mikazuki"
+    },
+    {
+      "slug": "Mikio_Itoo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mikio_Itoo"
+    },
+    {
+      "slug": "Mikita",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mikita"
+    },
+    {
+      "slug": "Miles",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miles"
+    },
+    {
+      "slug": "Milky",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Milky"
+    },
+    {
+      "slug": "Millet_Pine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Millet_Pine"
+    },
+    {
+      "slug": "Milo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Milo"
+    },
+    {
+      "slug": "Minatomo_(East_Blue)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minatomo_(East_Blue)"
+    },
+    {
+      "slug": "Minatomo_(Wano)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minatomo_(Wano)"
+    },
+    {
+      "slug": "Minister_of_the_Left",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minister_of_the_Left"
+    },
+    {
+      "slug": "Minister_of_the_Right",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minister_of_the_Right"
+    },
+    {
+      "slug": "Minochihuahua",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minochihuahua"
+    },
+    {
+      "slug": "Minokoala",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minokoala"
+    },
+    {
+      "slug": "Minorhinoceros",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minorhinoceros"
+    },
+    {
+      "slug": "Minoruba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minoruba"
+    },
+    {
+      "slug": "Minotaurus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minotaurus"
+    },
+    {
+      "slug": "Minozebra",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Minozebra"
+    },
+    {
+      "slug": "Misery",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Misery"
+    },
+    {
+      "slug": "Mishoin_Cashible",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mishoin_Cashible"
+    },
+    {
+      "slug": "Miss_Catherina",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miss_Catherina"
+    },
+    {
+      "slug": "Miss_Father's_Day",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miss_Father's_Day"
+    },
+    {
+      "slug": "Miss_Friday",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miss_Friday"
+    },
+    {
+      "slug": "Miss_Monday",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miss_Monday"
+    },
+    {
+      "slug": "Miss_Mother's_Day",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miss_Mother's_Day"
+    },
+    {
+      "slug": "Miss_Saturday",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miss_Saturday"
+    },
+    {
+      "slug": "Miss_Thursday",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miss_Thursday"
+    },
+    {
+      "slug": "Miss_Tuesday",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miss_Tuesday"
+    },
+    {
+      "slug": "Miyagi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Miyagi"
+    },
+    {
+      "slug": "Mizerka",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mizerka"
+    },
+    {
+      "slug": "Mizuira",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mizuira"
+    },
+    {
+      "slug": "Mizuta_Madaisuki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mizuta_Madaisuki"
+    },
+    {
+      "slug": "Mizuta_Mawaritosuki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mizuta_Mawaritosuki"
+    },
+    {
+      "slug": "Moai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Moai"
+    },
+    {
+      "slug": "MocDonald",
+      "wiki_url": "https://onepiece.fandom.com/wiki/MocDonald"
+    },
+    {
+      "slug": "Mocha",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mocha"
+    },
+    {
+      "slug": "Mochi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mochi"
+    },
+    {
+      "slug": "Moda",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Moda"
+    },
+    {
+      "slug": "Mohji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mohji"
+    },
+    {
+      "slug": "Momonga",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Momonga"
+    },
+    {
+      "slug": "Momoo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Momoo"
+    },
+    {
+      "slug": "Monda",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Monda"
+    },
+    {
+      "slug": "Monet",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Monet"
+    },
+    {
+      "slug": "Monjii",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Monjii"
+    },
+    {
+      "slug": "Monjiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Monjiro"
+    },
+    {
+      "slug": "Monster",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Monster"
+    },
+    {
+      "slug": "Mont_Blanc_Cricket",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mont_Blanc_Cricket"
+    },
+    {
+      "slug": "Mont_Blanc_Noland",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mont_Blanc_Noland"
+    },
+    {
+      "slug": "Moodie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Moodie"
+    },
+    {
+      "slug": "Moon_Isaac_Jr.",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Moon_Isaac_Jr."
+    },
+    {
+      "slug": "Moqueca",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Moqueca"
+    },
+    {
+      "slug": "Morgan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Morgan"
+    },
+    {
+      "slug": "Morgans",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Morgans"
+    },
+    {
+      "slug": "Morley",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Morley"
+    },
+    {
+      "slug": "Mornin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mornin"
+    },
+    {
+      "slug": "Mororon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mororon"
+    },
+    {
+      "slug": "Mosa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mosa"
+    },
+    {
+      "slug": "Mosh",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mosh"
+    },
+    {
+      "slug": "Motobaro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Motobaro"
+    },
+    {
+      "slug": "Mottled",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mottled"
+    },
+    {
+      "slug": "Motzel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Motzel"
+    },
+    {
+      "slug": "Mounblutain",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mounblutain"
+    },
+    {
+      "slug": "Mountain_God",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mountain_God"
+    },
+    {
+      "slug": "Mountain_Ricky",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mountain_Ricky"
+    },
+    {
+      "slug": "Mouseman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mouseman"
+    },
+    {
+      "slug": "Mousse",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mousse"
+    },
+    {
+      "slug": "Mouthto_Mouthyan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mouthto_Mouthyan"
+    },
+    {
+      "slug": "Moyle",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Moyle"
+    },
+    {
+      "slug": "Mozambia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mozambia"
+    },
+    {
+      "slug": "Mozu_and_Kiwi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mozu_and_Kiwi"
+    },
+    {
+      "slug": "Mr._10",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._10"
+    },
+    {
+      "slug": "Mr._11",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._11"
+    },
+    {
+      "slug": "Mr._12",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._12"
+    },
+    {
+      "slug": "Mr._13",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._13"
+    },
+    {
+      "slug": "Mr._6",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._6"
+    },
+    {
+      "slug": "Mr._7",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._7"
+    },
+    {
+      "slug": "Mr._7_(Previous)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._7_(Previous)"
+    },
+    {
+      "slug": "Mr._9",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._9"
+    },
+    {
+      "slug": "Mr._Beans",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._Beans"
+    },
+    {
+      "slug": "Mr._Love",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._Love"
+    },
+    {
+      "slug": "Mr._Mellow",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._Mellow"
+    },
+    {
+      "slug": "Mr._Momora",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._Momora"
+    },
+    {
+      "slug": "Mr._Shimizu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mr._Shimizu"
+    },
+    {
+      "slug": "Muchana",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Muchana"
+    },
+    {
+      "slug": "Muginn",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Muginn"
+    },
+    {
+      "slug": "Mugren",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mugren"
+    },
+    {
+      "slug": "Mukkashimi_Tower",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mukkashimi_Tower"
+    },
+    {
+      "slug": "Mummy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mummy"
+    },
+    {
+      "slug": "Mummy_Mee",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Mummy_Mee"
+    },
+    {
+      "slug": "Muret",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Muret"
+    },
+    {
+      "slug": "Muti",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Muti"
+    },
+    {
+      "slug": "Nakaiwa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nakaiwa"
+    },
+    {
+      "slug": "Nako",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nako"
+    },
+    {
+      "slug": "Namur",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Namur"
+    },
+    {
+      "slug": "Nanday",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nanday"
+    },
+    {
+      "slug": "Nangi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nangi"
+    },
+    {
+      "slug": "Napoleon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Napoleon"
+    },
+    {
+      "slug": "Nash",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nash"
+    },
+    {
+      "slug": "Nashi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nashi"
+    },
+    {
+      "slug": "Natto",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Natto"
+    },
+    {
+      "slug": "Nazu_Ketagari",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nazu_Ketagari"
+    },
+    {
+      "slug": "Needle_God",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Needle_God"
+    },
+    {
+      "slug": "Nefertari_Cobra",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nefertari_Cobra"
+    },
+    {
+      "slug": "Nefertari_D._Lili",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nefertari_D._Lili"
+    },
+    {
+      "slug": "Nefertari_Titi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nefertari_Titi"
+    },
+    {
+      "slug": "Neggy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Neggy"
+    },
+    {
+      "slug": "Negikuma_Maria",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Negikuma_Maria"
+    },
+    {
+      "slug": "Nekomamushi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nekomamushi"
+    },
+    {
+      "slug": "Nekozaemon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nekozaemon"
+    },
+    {
+      "slug": "Neoki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Neoki"
+    },
+    {
+      "slug": "Neptune",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Neptune"
+    },
+    {
+      "slug": "Nerine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nerine"
+    },
+    {
+      "slug": "Nero",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nero"
+    },
+    {
+      "slug": "Nerona_Imu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nerona_Imu"
+    },
+    {
+      "slug": "Nezumi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nezumi"
+    },
+    {
+      "slug": "Nico_Olvia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nico_Olvia"
+    },
+    {
+      "slug": "Nigeratta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nigeratta"
+    },
+    {
+      "slug": "Nightcrab_Girl",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nightcrab_Girl"
+    },
+    {
+      "slug": "Nika",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nika"
+    },
+    {
+      "slug": "Ninjin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ninjin"
+    },
+    {
+      "slug": "Ninth",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ninth"
+    },
+    {
+      "slug": "Nitro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nitro"
+    },
+    {
+      "slug": "Noble_Croc",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Noble_Croc"
+    },
+    {
+      "slug": "Nodoi_Wakan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nodoi_Wakan"
+    },
+    {
+      "slug": "Nojiko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nojiko"
+    },
+    {
+      "slug": "Nokokuwa_Police",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nokokuwa_Police"
+    },
+    {
+      "slug": "Nokotti",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nokotti"
+    },
+    {
+      "slug": "Nola",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nola"
+    },
+    {
+      "slug": "Nora_Gitsune",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nora_Gitsune"
+    },
+    {
+      "slug": "Noriko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Noriko"
+    },
+    {
+      "slug": "Norinosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Norinosuke"
+    },
+    {
+      "slug": "Nosgarl",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nosgarl"
+    },
+    {
+      "slug": "Nubon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nubon"
+    },
+    {
+      "slug": "Nugire_Yainu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nugire_Yainu"
+    },
+    {
+      "slug": "Nure-Onna",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nure-Onna"
+    },
+    {
+      "slug": "Nyasha",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nyasha"
+    },
+    {
+      "slug": "Nyornyo_Nyarmani",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nyornyo_Nyarmani"
+    },
+    {
+      "slug": "Oars",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Oars"
+    },
+    {
+      "slug": "Ochoku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ochoku"
+    },
+    {
+      "slug": "Octopako",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Octopako"
+    },
+    {
+      "slug": "Ohm",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ohm"
+    },
+    {
+      "slug": "Oide",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Oide"
+    },
+    {
+      "slug": "Oimo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Oimo"
+    },
+    {
+      "slug": "Oiwa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Oiwa"
+    },
+    {
+      "slug": "Okame",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Okame"
+    },
+    {
+      "slug": "Okome",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Okome"
+    },
+    {
+      "slug": "Olav",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Olav"
+    },
+    {
+      "slug": "Oli",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Oli"
+    },
+    {
+      "slug": "Oliva",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Oliva"
+    },
+    {
+      "slug": "Omasa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Omasa"
+    },
+    {
+      "slug": "Onigumo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Onigumo"
+    },
+    {
+      "slug": "Onimaru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Onimaru"
+    },
+    {
+      "slug": "Oran",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Oran"
+    },
+    {
+      "slug": "Orlumbus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Orlumbus"
+    },
+    {
+      "slug": "Ossamondo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ossamondo"
+    },
+    {
+      "slug": "Otohime",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Otohime"
+    },
+    {
+      "slug": "Ottoland",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ottoland"
+    },
+    {
+      "slug": "Outlook_III",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Outlook_III"
+    },
+    {
+      "slug": "Pacifista",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pacifista"
+    },
+    {
+      "slug": "Pagaya",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pagaya"
+    },
+    {
+      "slug": "Page_One",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Page_One"
+    },
+    {
+      "slug": "Palms",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Palms"
+    },
+    {
+      "slug": "Pandaman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pandaman"
+    },
+    {
+      "slug": "Pandawomanmi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pandawomanmi"
+    },
+    {
+      "slug": "Pandora",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pandora"
+    },
+    {
+      "slug": "Pankuta_Dakeyan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pankuta_Dakeyan"
+    },
+    {
+      "slug": "Pansy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pansy"
+    },
+    {
+      "slug": "Papaneel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Papaneel"
+    },
+    {
+      "slug": "Papas",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Papas"
+    },
+    {
+      "slug": "Pappag",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pappag"
+    },
+    {
+      "slug": "Part",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Part"
+    },
+    {
+      "slug": "Pascia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pascia"
+    },
+    {
+      "slug": "Patty",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Patty"
+    },
+    {
+      "slug": "Paulie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Paulie"
+    },
+    {
+      "slug": "Pavlik",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pavlik"
+    },
+    {
+      "slug": "Peachbeard",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Peachbeard"
+    },
+    {
+      "slug": "Pearl",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pearl"
+    },
+    {
+      "slug": "Pedro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pedro"
+    },
+    {
+      "slug": "Peepley_Lulu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Peepley_Lulu"
+    },
+    {
+      "slug": "Pekkori",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pekkori"
+    },
+    {
+      "slug": "Pekoms",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pekoms"
+    },
+    {
+      "slug": "Pell",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pell"
+    },
+    {
+      "slug": "Pellini",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pellini"
+    },
+    {
+      "slug": "Penguin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Penguin"
+    },
+    {
+      "slug": "Peppoko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Peppoko"
+    },
+    {
+      "slug": "Perona",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Perona"
+    },
+    {
+      "slug": "Peterman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Peterman"
+    },
+    {
+      "slug": "Petermoo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Petermoo"
+    },
+    {
+      "slug": "Pica",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pica"
+    },
+    {
+      "slug": "Pickles",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pickles"
+    },
+    {
+      "slug": "Pierre",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pierre"
+    },
+    {
+      "slug": "Piiman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Piiman"
+    },
+    {
+      "slug": "Pike",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pike"
+    },
+    {
+      "slug": "Pinky",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pinky"
+    },
+    {
+      "slug": "Piper",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Piper"
+    },
+    {
+      "slug": "Pisaro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pisaro"
+    },
+    {
+      "slug": "Pluming",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pluming"
+    },
+    {
+      "slug": "Poker",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Poker"
+    },
+    {
+      "slug": "Polo_Gram",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Polo_Gram"
+    },
+    {
+      "slug": "Pomp",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pomp"
+    },
+    {
+      "slug": "Pomsky",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pomsky"
+    },
+    {
+      "slug": "Poppoko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Poppoko"
+    },
+    {
+      "slug": "Poppy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Poppy"
+    },
+    {
+      "slug": "Porche",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Porche"
+    },
+    {
+      "slug": "Porchemy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Porchemy"
+    },
+    {
+      "slug": "Poro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Poro"
+    },
+    {
+      "slug": "Portgas_D._Rouge",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Portgas_D._Rouge"
+    },
+    {
+      "slug": "Potato",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Potato"
+    },
+    {
+      "slug": "Potaufeu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Potaufeu"
+    },
+    {
+      "slug": "Potsun",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Potsun"
+    },
+    {
+      "slug": "Pound",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pound"
+    },
+    {
+      "slug": "Prince_Grus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Prince_Grus"
+    },
+    {
+      "slug": "Prometheus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Prometheus"
+    },
+    {
+      "slug": "Pudding_Pudding",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pudding_Pudding"
+    },
+    {
+      "slug": "Pudos",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pudos"
+    },
+    {
+      "slug": "Puppu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Puppu"
+    },
+    {
+      "slug": "Pururu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Pururu"
+    },
+    {
+      "slug": "Queen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Queen"
+    },
+    {
+      "slug": "Queen_Mama_Chanter",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Queen_Mama_Chanter"
+    },
+    {
+      "slug": "Quincy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Quincy"
+    },
+    {
+      "slug": "Rabbitman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rabbitman"
+    },
+    {
+      "slug": "Rabiyan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rabiyan"
+    },
+    {
+      "slug": "Raccoon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Raccoon"
+    },
+    {
+      "slug": "Raideen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Raideen"
+    },
+    {
+      "slug": "Raijin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Raijin"
+    },
+    {
+      "slug": "Raizo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Raizo"
+    },
+    {
+      "slug": "Raki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Raki"
+    },
+    {
+      "slug": "Rakuda",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rakuda"
+    },
+    {
+      "slug": "Rakushitemo_Terusubehainaika",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rakushitemo_Terusubehainaika"
+    },
+    {
+      "slug": "Rakuyo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rakuyo"
+    },
+    {
+      "slug": "Ramba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ramba"
+    },
+    {
+      "slug": "Ramen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ramen"
+    },
+    {
+      "slug": "Rampo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rampo"
+    },
+    {
+      "slug": "Ran",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ran"
+    },
+    {
+      "slug": "Randolph",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Randolph"
+    },
+    {
+      "slug": "Rangram",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rangram"
+    },
+    {
+      "slug": "Ratel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ratel"
+    },
+    {
+      "slug": "Rebecca",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rebecca"
+    },
+    {
+      "slug": "Reck",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Reck"
+    },
+    {
+      "slug": "Recycle-Wan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Recycle-Wan"
+    },
+    {
+      "slug": "Red_King",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Red_King"
+    },
+    {
+      "slug": "Redwolf",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Redwolf"
+    },
+    {
+      "slug": "Reforte",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Reforte"
+    },
+    {
+      "slug": "Renona_Topakka",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Renona_Topakka"
+    },
+    {
+      "slug": "Richie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Richie"
+    },
+    {
+      "slug": "Rika",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rika"
+    },
+    {
+      "slug": "Riku_Doldo_III",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Riku_Doldo_III"
+    },
+    {
+      "slug": "Rimoshifu_Killingham",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rimoshifu_Killingham"
+    },
+    {
+      "slug": "Rindo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rindo"
+    },
+    {
+      "slug": "Rint",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rint"
+    },
+    {
+      "slug": "Ripley",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ripley"
+    },
+    {
+      "slug": "Ripper",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ripper"
+    },
+    {
+      "slug": "Ririka",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ririka"
+    },
+    {
+      "slug": "Risky_Brothers",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Risky_Brothers"
+    },
+    {
+      "slug": "Risky_Brothers_(Zombies)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Risky_Brothers_(Zombies)"
+    },
+    {
+      "slug": "Rivers",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rivers"
+    },
+    {
+      "slug": "Road",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Road"
+    },
+    {
+      "slug": "Rob_Lucci",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rob_Lucci"
+    },
+    {
+      "slug": "Robson",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Robson"
+    },
+    {
+      "slug": "Roche",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Roche"
+    },
+    {
+      "slug": "Roche_Tomson",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Roche_Tomson"
+    },
+    {
+      "slug": "Rock",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rock"
+    },
+    {
+      "slug": "Rocks_D._Xebec",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rocks_D._Xebec"
+    },
+    {
+      "slug": "Rockstar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rockstar"
+    },
+    {
+      "slug": "Roddy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Roddy"
+    },
+    {
+      "slug": "Roji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Roji"
+    },
+    {
+      "slug": "Rokkaku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rokkaku"
+    },
+    {
+      "slug": "Rokki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rokki"
+    },
+    {
+      "slug": "Rolling_Logan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rolling_Logan"
+    },
+    {
+      "slug": "Ronja",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ronja"
+    },
+    {
+      "slug": "Roronoa_Arashi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Roronoa_Arashi"
+    },
+    {
+      "slug": "Roronoa_Pinzoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Roronoa_Pinzoro"
+    },
+    {
+      "slug": "Roshio",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Roshio"
+    },
+    {
+      "slug": "Ross",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ross"
+    },
+    {
+      "slug": "Rosward_Charlos",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rosward_Charlos"
+    },
+    {
+      "slug": "Rosward_Rosward",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rosward_Rosward"
+    },
+    {
+      "slug": "Rosward_Shalria",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rosward_Shalria"
+    },
+    {
+      "slug": "Rowing",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rowing"
+    },
+    {
+      "slug": "Roxanne",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Roxanne"
+    },
+    {
+      "slug": "Royder",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Royder"
+    },
+    {
+      "slug": "Run",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Run"
+    },
+    {
+      "slug": "Rush",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Rush"
+    },
+    {
+      "slug": "Russian",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Russian"
+    },
+    {
+      "slug": "Ryuboshi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ryuboshi"
+    },
+    {
+      "slug": "Ryuma_(Zombie)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ryuma_(Zombie)"
+    },
+    {
+      "slug": "Ryunosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ryunosuke"
+    },
+    {
+      "slug": "S-Bear",
+      "wiki_url": "https://onepiece.fandom.com/wiki/S-Bear"
+    },
+    {
+      "slug": "S-Hawk",
+      "wiki_url": "https://onepiece.fandom.com/wiki/S-Hawk"
+    },
+    {
+      "slug": "S-Shark",
+      "wiki_url": "https://onepiece.fandom.com/wiki/S-Shark"
+    },
+    {
+      "slug": "S-Snake",
+      "wiki_url": "https://onepiece.fandom.com/wiki/S-Snake"
+    },
+    {
+      "slug": "Saber",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Saber"
+    },
+    {
+      "slug": "Sadi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sadi"
+    },
+    {
+      "slug": "Sai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sai"
+    },
+    {
+      "slug": "Saikoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Saikoro"
+    },
+    {
+      "slug": "Saitank",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Saitank"
+    },
+    {
+      "slug": "Saki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Saki"
+    },
+    {
+      "slug": "Saldeath",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Saldeath"
+    },
+    {
+      "slug": "Salome",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Salome"
+    },
+    {
+      "slug": "Sam",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sam"
+    },
+    {
+      "slug": "Samosa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Samosa"
+    },
+    {
+      "slug": "Samurai_Batts",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Samurai_Batts"
+    },
+    {
+      "slug": "Sancrin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sancrin"
+    },
+    {
+      "slug": "Sandayu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sandayu"
+    },
+    {
+      "slug": "Sanjuan_Wolf",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sanjuan_Wolf"
+    },
+    {
+      "slug": "Sapi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sapi"
+    },
+    {
+      "slug": "Sapoten_Graveyard#Buried_People",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sapoten_Graveyard#Buried_People"
+    },
+    {
+      "slug": "Sarahebi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sarahebi"
+    },
+    {
+      "slug": "Sarai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sarai"
+    },
+    {
+      "slug": "Sarfunkel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sarfunkel"
+    },
+    {
+      "slug": "Sarie_Nantokanette",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sarie_Nantokanette"
+    },
+    {
+      "slug": "Sarquiss",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sarquiss"
+    },
+    {
+      "slug": "Saru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Saru"
+    },
+    {
+      "slug": "Sarutobi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sarutobi"
+    },
+    {
+      "slug": "Sasaki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sasaki"
+    },
+    {
+      "slug": "Satchels_Maffey",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Satchels_Maffey"
+    },
+    {
+      "slug": "Satori",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Satori"
+    },
+    {
+      "slug": "Sauce",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sauce"
+    },
+    {
+      "slug": "Scales",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Scales"
+    },
+    {
+      "slug": "Scarlett",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Scarlett"
+    },
+    {
+      "slug": "Schollzo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Schollzo"
+    },
+    {
+      "slug": "Scimitarta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Scimitarta"
+    },
+    {
+      "slug": "Scopper_Gaban",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Scopper_Gaban"
+    },
+    {
+      "slug": "Scorpionlady",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Scorpionlady"
+    },
+    {
+      "slug": "Scotch",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Scotch"
+    },
+    {
+      "slug": "Sea_Boar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sea_Boar"
+    },
+    {
+      "slug": "Seagull_Guns_Nozdon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Seagull_Guns_Nozdon"
+    },
+    {
+      "slug": "Seamars",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Seamars"
+    },
+    {
+      "slug": "Seira",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Seira"
+    },
+    {
+      "slug": "Seki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Seki"
+    },
+    {
+      "slug": "Sennorikyuru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sennorikyuru"
+    },
+    {
+      "slug": "Senor_Pink",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Senor_Pink"
+    },
+    {
+      "slug": "Sentomaru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sentomaru"
+    },
+    {
+      "slug": "Serizawa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Serizawa"
+    },
+    {
+      "slug": "Seto",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Seto"
+    },
+    {
+      "slug": "Shachi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shachi"
+    },
+    {
+      "slug": "Shakuyaku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shakuyaku"
+    },
+    {
+      "slug": "Sham",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sham"
+    },
+    {
+      "slug": "Shanba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shanba"
+    },
+    {
+      "slug": "Shandia_Chief",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shandia_Chief"
+    },
+    {
+      "slug": "Sharinguru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sharinguru"
+    },
+    {
+      "slug": "Sheepshead",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sheepshead"
+    },
+    {
+      "slug": "Shelly",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shelly"
+    },
+    {
+      "slug": "Shepherd_Sommers",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shepherd_Sommers"
+    },
+    {
+      "slug": "Shiki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shiki"
+    },
+    {
+      "slug": "Shikon_Kettai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shikon_Kettai"
+    },
+    {
+      "slug": "Shimotsuki_Furiko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shimotsuki_Furiko"
+    },
+    {
+      "slug": "Shimotsuki_Koushirou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shimotsuki_Koushirou"
+    },
+    {
+      "slug": "Shimotsuki_Kouzaburou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shimotsuki_Kouzaburou"
+    },
+    {
+      "slug": "Shimotsuki_Kuina",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shimotsuki_Kuina"
+    },
+    {
+      "slug": "Shimotsuki_Ryuma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shimotsuki_Ryuma"
+    },
+    {
+      "slug": "Shimotsuki_Ushimaru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shimotsuki_Ushimaru"
+    },
+    {
+      "slug": "Shimotsuki_Yasuie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shimotsuki_Yasuie"
+    },
+    {
+      "slug": "Shin_Detamaruka",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shin_Detamaruka"
+    },
+    {
+      "slug": "Shin_Jaiya",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shin_Jaiya"
+    },
+    {
+      "slug": "Shine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shine"
+    },
+    {
+      "slug": "Shinobu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shinobu"
+    },
+    {
+      "slug": "Shinosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shinosuke"
+    },
+    {
+      "slug": "Shion",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shion"
+    },
+    {
+      "slug": "Shioyaki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shioyaki"
+    },
+    {
+      "slug": "Shirahoshi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shirahoshi"
+    },
+    {
+      "slug": "Shiryu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shiryu"
+    },
+    {
+      "slug": "Shishilian",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shishilian"
+    },
+    {
+      "slug": "Shoujou",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shoujou"
+    },
+    {
+      "slug": "Shu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shu"
+    },
+    {
+      "slug": "Shura",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shura"
+    },
+    {
+      "slug": "Shyarly",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Shyarly"
+    },
+    {
+      "slug": "Sicily",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sicily"
+    },
+    {
+      "slug": "Sig",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sig"
+    },
+    {
+      "slug": "Sind",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sind"
+    },
+    {
+      "slug": "Skaldi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Skaldi"
+    },
+    {
+      "slug": "Skull",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Skull"
+    },
+    {
+      "slug": "Sleepy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sleepy"
+    },
+    {
+      "slug": "Smiley",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Smiley"
+    },
+    {
+      "slug": "Smoker",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Smoker"
+    },
+    {
+      "slug": "Smooge",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Smooge"
+    },
+    {
+      "slug": "Snakeman_(Gifter)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Snakeman_(Gifter)"
+    },
+    {
+      "slug": "Sodom",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sodom"
+    },
+    {
+      "slug": "Solitaire",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Solitaire"
+    },
+    {
+      "slug": "Some",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Some"
+    },
+    {
+      "slug": "Sonieh",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sonieh"
+    },
+    {
+      "slug": "Sora",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sora"
+    },
+    {
+      "slug": "Sora_(fictional)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sora_(fictional)"
+    },
+    {
+      "slug": "Soro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Soro"
+    },
+    {
+      "slug": "Spacey",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Spacey"
+    },
+    {
+      "slug": "Spandam",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Spandam"
+    },
+    {
+      "slug": "Spandine",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Spandine"
+    },
+    {
+      "slug": "Spartan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Spartan"
+    },
+    {
+      "slug": "Spector",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Spector"
+    },
+    {
+      "slug": "Speed",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Speed"
+    },
+    {
+      "slug": "Speed_Jiru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Speed_Jiru"
+    },
+    {
+      "slug": "Spencer",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Spencer"
+    },
+    {
+      "slug": "Sphinx",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sphinx"
+    },
+    {
+      "slug": "Splash_and_Splatter",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Splash_and_Splatter"
+    },
+    {
+      "slug": "Spoil",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Spoil"
+    },
+    {
+      "slug": "Squard",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Squard"
+    },
+    {
+      "slug": "Stainless",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stainless"
+    },
+    {
+      "slug": "Stalker",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stalker"
+    },
+    {
+      "slug": "Stansen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stansen"
+    },
+    {
+      "slug": "Stealth_Black",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stealth_Black"
+    },
+    {
+      "slug": "Stefan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stefan"
+    },
+    {
+      "slug": "Sterry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sterry"
+    },
+    {
+      "slug": "Stevie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stevie"
+    },
+    {
+      "slug": "Stomp",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stomp"
+    },
+    {
+      "slug": "Strawberry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Strawberry"
+    },
+    {
+      "slug": "Streusen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Streusen"
+    },
+    {
+      "slug": "Stroganoff",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stroganoff"
+    },
+    {
+      "slug": "Stronger",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stronger"
+    },
+    {
+      "slug": "Stussy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Stussy"
+    },
+    {
+      "slug": "Su",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Su"
+    },
+    {
+      "slug": "Sugamichi_and_Warazane",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sugamichi_and_Warazane"
+    },
+    {
+      "slug": "Sugar",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sugar"
+    },
+    {
+      "slug": "Sukare_Karehosui",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sukare_Karehosui"
+    },
+    {
+      "slug": "Sukare_Tainen",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sukare_Tainen"
+    },
+    {
+      "slug": "Suke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Suke"
+    },
+    {
+      "slug": "Sukoshiba_Kanishitoru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sukoshiba_Kanishitoru"
+    },
+    {
+      "slug": "Sukune",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sukune"
+    },
+    {
+      "slug": "Suleiman",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Suleiman"
+    },
+    {
+      "slug": "Sunbell",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sunbell"
+    },
+    {
+      "slug": "Super_Spot-Billed_Duck_Troops",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Super_Spot-Billed_Duck_Troops"
+    },
+    {
+      "slug": "Surume",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Surume"
+    },
+    {
+      "slug": "Suzume",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Suzume"
+    },
+    {
+      "slug": "Sweet_Pea",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Sweet_Pea"
+    },
+    {
+      "slug": "T_Bone",
+      "wiki_url": "https://onepiece.fandom.com/wiki/T_Bone"
+    },
+    {
+      "slug": "Tabuhachiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tabuhachiro"
+    },
+    {
+      "slug": "Tacos",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tacos"
+    },
+    {
+      "slug": "Taka",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Taka"
+    },
+    {
+      "slug": "Takao",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Takao"
+    },
+    {
+      "slug": "Take",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Take"
+    },
+    {
+      "slug": "Tama_(Sphinx)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tama_(Sphinx)"
+    },
+    {
+      "slug": "Tamachibi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tamachibi"
+    },
+    {
+      "slug": "Tamago",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tamago"
+    },
+    {
+      "slug": "Tamagon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tamagon"
+    },
+    {
+      "slug": "Tamanegi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tamanegi"
+    },
+    {
+      "slug": "Tamikebao",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tamikebao"
+    },
+    {
+      "slug": "Tank_Lepanto",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tank_Lepanto"
+    },
+    {
+      "slug": "Tansui",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tansui"
+    },
+    {
+      "slug": "Tarara",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tarara"
+    },
+    {
+      "slug": "Tararan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tararan"
+    },
+    {
+      "slug": "Taro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Taro"
+    },
+    {
+      "slug": "Taroimo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Taroimo"
+    },
+    {
+      "slug": "Tashigi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tashigi"
+    },
+    {
+      "slug": "Tate",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tate"
+    },
+    {
+      "slug": "Tea_IV",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tea_IV"
+    },
+    {
+      "slug": "Tegata_Ringana",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tegata_Ringana"
+    },
+    {
+      "slug": "Tenjo-Sagari",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tenjo-Sagari"
+    },
+    {
+      "slug": "Tensei",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tensei"
+    },
+    {
+      "slug": "Tera",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tera"
+    },
+    {
+      "slug": "Terracotta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Terracotta"
+    },
+    {
+      "slug": "Terry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Terry"
+    },
+    {
+      "slug": "Terry_Gilteo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Terry_Gilteo"
+    },
+    {
+      "slug": "Teru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Teru"
+    },
+    {
+      "slug": "Thalassa_Lucas",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Thalassa_Lucas"
+    },
+    {
+      "slug": "Thatch",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Thatch"
+    },
+    {
+      "slug": "Thormann",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Thormann"
+    },
+    {
+      "slug": "Tibany",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tibany"
+    },
+    {
+      "slug": "Tilestone",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tilestone"
+    },
+    {
+      "slug": "Togare",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Togare"
+    },
+    {
+      "slug": "Tokijiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tokijiro"
+    },
+    {
+      "slug": "Tokikake",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tokikake"
+    },
+    {
+      "slug": "Toko",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Toko"
+    },
+    {
+      "slug": "Tom",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tom"
+    },
+    {
+      "slug": "Tomatito",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tomatito"
+    },
+    {
+      "slug": "Tomato_Gang",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tomato_Gang"
+    },
+    {
+      "slug": "Tomozo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tomozo"
+    },
+    {
+      "slug": "Tonjil",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tonjil"
+    },
+    {
+      "slug": "Tonjit",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tonjit"
+    },
+    {
+      "slug": "Tonsfer",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tonsfer"
+    },
+    {
+      "slug": "Topknot",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Topknot"
+    },
+    {
+      "slug": "Torasaburo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Torasaburo"
+    },
+    {
+      "slug": "Tori",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tori"
+    },
+    {
+      "slug": "Tosa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tosa"
+    },
+    {
+      "slug": "Toto",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Toto"
+    },
+    {
+      "slug": "Totts",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Totts"
+    },
+    {
+      "slug": "Toyama_Tsujigiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Toyama_Tsujigiro"
+    },
+    {
+      "slug": "Trafalgar_Lami",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Trafalgar_Lami"
+    },
+    {
+      "slug": "Trebol",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Trebol"
+    },
+    {
+      "slug": "Tristan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tristan"
+    },
+    {
+      "slug": "Tritobu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tritobu"
+    },
+    {
+      "slug": "Tritoma",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tritoma"
+    },
+    {
+      "slug": "Tsugaru_Umi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsugaru_Umi"
+    },
+    {
+      "slug": "Tsukimi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsukimi"
+    },
+    {
+      "slug": "Tsumegeri_Guards",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsumegeri_Guards"
+    },
+    {
+      "slug": "Tsumonsieur_Kamaya",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsumonsieur_Kamaya"
+    },
+    {
+      "slug": "Tsunagoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsunagoro"
+    },
+    {
+      "slug": "Tsunokkov",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsunokkov"
+    },
+    {
+      "slug": "Tsuru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsuru"
+    },
+    {
+      "slug": "Tsurube",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsurube"
+    },
+    {
+      "slug": "Tsurue_Monnosuke",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsurue_Monnosuke"
+    },
+    {
+      "slug": "Tsurujo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tsurujo"
+    },
+    {
+      "slug": "Turco",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Turco"
+    },
+    {
+      "slug": "Tyrannosaurus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tyrannosaurus"
+    },
+    {
+      "slug": "UK",
+      "wiki_url": "https://onepiece.fandom.com/wiki/UK"
+    },
+    {
+      "slug": "Ubau",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ubau"
+    },
+    {
+      "slug": "Ucy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ucy"
+    },
+    {
+      "slug": "Uhho",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uhho"
+    },
+    {
+      "slug": "Uholisia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uholisia"
+    },
+    {
+      "slug": "Ukkari",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ukkari"
+    },
+    {
+      "slug": "Ukon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ukon"
+    },
+    {
+      "slug": "Ulti",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ulti"
+    },
+    {
+      "slug": "Ultraking",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ultraking"
+    },
+    {
+      "slug": "Umit",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Umit"
+    },
+    {
+      "slug": "Underbite",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Underbite"
+    },
+    {
+      "slug": "Unforgivable_Mask",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Unforgivable_Mask"
+    },
+    {
+      "slug": "Uni",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uni"
+    },
+    {
+      "slug": "Unigaro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Unigaro"
+    },
+    {
+      "slug": "Urashima",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Urashima"
+    },
+    {
+      "slug": "Uraya_Mashikatta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uraya_Mashikatta"
+    },
+    {
+      "slug": "Urbain",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Urbain"
+    },
+    {
+      "slug": "Urban",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Urban"
+    },
+    {
+      "slug": "Urouge",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Urouge"
+    },
+    {
+      "slug": "Usagihebi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Usagihebi"
+    },
+    {
+      "slug": "Usakkov",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Usakkov"
+    },
+    {
+      "slug": "Ushiano",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ushiano"
+    },
+    {
+      "slug": "Usunoro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Usunoro"
+    },
+    {
+      "slug": "Uta",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uta"
+    },
+    {
+      "slug": "Uwattsura",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uwattsura"
+    },
+    {
+      "slug": "Uzu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uzu"
+    },
+    {
+      "slug": "Uzuki_Namida",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uzuki_Namida"
+    },
+    {
+      "slug": "Uzuki_Tempura",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Uzuki_Tempura"
+    },
+    {
+      "slug": "Van_Augur",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Van_Augur"
+    },
+    {
+      "slug": "Vander_Decken",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vander_Decken"
+    },
+    {
+      "slug": "Vander_Decken_IX",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vander_Decken_IX"
+    },
+    {
+      "slug": "Vasco_Shot",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vasco_Shot"
+    },
+    {
+      "slug": "Vegapants",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vegapants"
+    },
+    {
+      "slug": "Vegapunk",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vegapunk"
+    },
+    {
+      "slug": "Vegapunk__Atlas",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vegapunk/Atlas"
+    },
+    {
+      "slug": "Vegapunk__Edison",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vegapunk/Edison"
+    },
+    {
+      "slug": "Vegapunk__Lilith",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vegapunk/Lilith"
+    },
+    {
+      "slug": "Vegapunk__Pythagoras",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vegapunk/Pythagoras"
+    },
+    {
+      "slug": "Vegapunk__Shaka",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vegapunk/Shaka"
+    },
+    {
+      "slug": "Vegapunk__York",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vegapunk/York"
+    },
+    {
+      "slug": "Vergo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vergo"
+    },
+    {
+      "slug": "Very_Good",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Very_Good"
+    },
+    {
+      "slug": "Victoria_Cindry",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Victoria_Cindry"
+    },
+    {
+      "slug": "Victoria_Shiruton_Doruyanaika",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Victoria_Shiruton_Doruyanaika"
+    },
+    {
+      "slug": "Vincent",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vincent"
+    },
+    {
+      "slug": "Vinsmoke_Ichiji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vinsmoke_Ichiji"
+    },
+    {
+      "slug": "Vinsmoke_Judge",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vinsmoke_Judge"
+    },
+    {
+      "slug": "Vinsmoke_Niji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vinsmoke_Niji"
+    },
+    {
+      "slug": "Vinsmoke_Reiju",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vinsmoke_Reiju"
+    },
+    {
+      "slug": "Vinsmoke_Sora",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vinsmoke_Sora"
+    },
+    {
+      "slug": "Vinsmoke_Yonji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vinsmoke_Yonji"
+    },
+    {
+      "slug": "Viola",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Viola"
+    },
+    {
+      "slug": "Vista",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vista"
+    },
+    {
+      "slug": "Vitan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vitan"
+    },
+    {
+      "slug": "Vito",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Vito"
+    },
+    {
+      "slug": "Wadatsumi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wadatsumi"
+    },
+    {
+      "slug": "Wakasa",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wakasa"
+    },
+    {
+      "slug": "Wallace",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wallace"
+    },
+    {
+      "slug": "Wallem",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wallem"
+    },
+    {
+      "slug": "Wanda",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wanda"
+    },
+    {
+      "slug": "Wany",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wany"
+    },
+    {
+      "slug": "Wanyudo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wanyudo"
+    },
+    {
+      "slug": "Wanze",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wanze"
+    },
+    {
+      "slug": "Wapol",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wapol"
+    },
+    {
+      "slug": "Warashi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Warashi"
+    },
+    {
+      "slug": "Waruno_Furishiro",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Waruno_Furishiro"
+    },
+    {
+      "slug": "Wellington",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wellington"
+    },
+    {
+      "slug": "Wheel",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wheel"
+    },
+    {
+      "slug": "Whitey_Bay",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Whitey_Bay"
+    },
+    {
+      "slug": "Who's-Who",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Who's-Who"
+    },
+    {
+      "slug": "Wicca",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wicca"
+    },
+    {
+      "slug": "Willie_Gallon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Willie_Gallon"
+    },
+    {
+      "slug": "Wire",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wire"
+    },
+    {
+      "slug": "Wolf_(Elbaph)",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wolf_(Elbaph)"
+    },
+    {
+      "slug": "Woop_Slap",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Woop_Slap"
+    },
+    {
+      "slug": "Wyper",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Wyper"
+    },
+    {
+      "slug": "Yama",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yama"
+    },
+    {
+      "slug": "Yamakaji",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yamakaji"
+    },
+    {
+      "slug": "Yamanba",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yamanba"
+    },
+    {
+      "slug": "Yamato",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yamato"
+    },
+    {
+      "slug": "Yame",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yame"
+    },
+    {
+      "slug": "Yamenahare",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yamenahare"
+    },
+    {
+      "slug": "Yamon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yamon"
+    },
+    {
+      "slug": "Yarisugi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yarisugi"
+    },
+    {
+      "slug": "Yasopp",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yasopp"
+    },
+    {
+      "slug": "Yatappe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yatappe"
+    },
+    {
+      "slug": "Yazaemon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yazaemon"
+    },
+    {
+      "slug": "Yeti_Cool_Brothers",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yeti_Cool_Brothers"
+    },
+    {
+      "slug": "Ylva",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Ylva"
+    },
+    {
+      "slug": "Yokan",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yokan"
+    },
+    {
+      "slug": "Yokozuna",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yokozuna"
+    },
+    {
+      "slug": "Yomo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yomo"
+    },
+    {
+      "slug": "Yorki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yorki"
+    },
+    {
+      "slug": "Yosaku",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yosaku"
+    },
+    {
+      "slug": "Yoshimoto",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yoshimoto"
+    },
+    {
+      "slug": "Yotsubane",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yotsubane"
+    },
+    {
+      "slug": "Yu",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yu"
+    },
+    {
+      "slug": "Yui",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yui"
+    },
+    {
+      "slug": "Yuki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yuki"
+    },
+    {
+      "slug": "Yurikah",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Yurikah"
+    },
+    {
+      "slug": "Zabo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zabo"
+    },
+    {
+      "slug": "Zadie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zadie"
+    },
+    {
+      "slug": "Zala",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zala"
+    },
+    {
+      "slug": "Zambai",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zambai"
+    },
+    {
+      "slug": "Zangirimaru",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zangirimaru"
+    },
+    {
+      "slug": "Zanki",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zanki"
+    },
+    {
+      "slug": "Zeff",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zeff"
+    },
+    {
+      "slug": "Zeo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zeo"
+    },
+    {
+      "slug": "Zepo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zepo"
+    },
+    {
+      "slug": "Zeus",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zeus"
+    },
+    {
+      "slug": "Zodia",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zodia"
+    },
+    {
+      "slug": "Zombie#Jack-in-the-Box",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zombie#Jack-in-the-Box"
+    },
+    {
+      "slug": "Zombie#Rug_Bear",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zombie#Rug_Bear"
+    },
+    {
+      "slug": "Zombie#Wall_Zombie",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zombie#Wall_Zombie"
+    },
+    {
+      "slug": "Zotto",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zotto"
+    },
+    {
+      "slug": "Zucca",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zucca"
+    },
+    {
+      "slug": "Zunesha",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zunesha"
+    },
+    {
+      "slug": "Zururin",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Zururin"
+    },
+    {
+      "slug": "Époni",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Époni"
+    }
+  ],
+  "changed": [
+    {
+      "slug": "Bartolomeo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Bartolomeo",
+      "field_changes": [
+        {
+          "field": "Live-Action Portrayal",
+          "old": null,
+          "new": "Nahum Hughes"
+        }
+      ]
+    },
+    {
+      "slug": "Brook",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Brook",
+      "field_changes": [
+        {
+          "field": "Live-Action Portrayal",
+          "old": null,
+          "new": "Martial T. Batchamen"
+        }
+      ]
+    },
+    {
+      "slug": "Buggy",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Buggy",
+      "field_changes": [
+        {
+          "field": "Affiliations",
+          "old": "Cross Guild;[2]Buggy's Delivery(Unknown status)?[3];Buggy Pirates;[4]Buggy and Alvida Alliance;[5]Four Emperors;[6]Seven Warlords of the Sea[7](former);Roger Pirates[8](former);Impel Down[9](former)",
+          "new": "Cross Guild;[2]Buggy's Delivery(Unknown status)?;[3]Buggy Pirates;[4]Buggy and Alvida Alliance;[5]Four Emperors;[6]Seven Warlords of the Sea[7](former);Roger Pirates[8](former);Impel Down[9](former)"
+        }
+      ]
+    },
+    {
+      "slug": "Crocodile",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Crocodile",
+      "field_changes": [
+        {
+          "field": "Occupations",
+          "old": "Pirate; Cross Guild ChiefOfficer;[2]Baroque WorksPresident[5](former); Proprietor ofRain Dinners(former); Prisoner of the Great Prison (former)",
+          "new": "Pirate; Cross GuildOfficer;[2]Baroque WorksPresident[5](former); Proprietor ofRain Dinners(former); Prisoner of the Great Prison (former)"
+        }
+      ]
+    },
+    {
+      "slug": "Dracule_Mihawk",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Dracule_Mihawk",
+      "field_changes": [
+        {
+          "field": "Occupations",
+          "old": "Pirate; Cross Guild ChiefOfficer;[2]Warlord of the Sea[3](former)[4]",
+          "new": "Pirate; Cross GuildOfficer;[2]Warlord of the Sea[3](former)[4]"
+        }
+      ]
+    },
+    {
+      "slug": "Edward_Newgate",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Edward_Newgate",
+      "field_changes": [
+        {
+          "field": "Affiliations",
+          "old": "Whitebeard Pirates;[1]Rocks Pirates(former);[4]Four Emperors(former)[5]",
+          "new": "Whitebeard Pirates;[1]Rocks Pirates(former);[4]Four Emperors[5]"
+        },
+        {
+          "field": "Occupations",
+          "old": "Pirate Captain;[1]Emperor(former)[5]",
+          "new": "Pirate Captain;[1]Emperor[5]"
+        }
+      ]
+    },
+    {
+      "slug": "Emporio_Ivankov",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Emporio_Ivankov",
+      "field_changes": [
+        {
+          "field": "Epithet",
+          "old": "\"OkamaKing\"(オカマ王,Okama Ō?);\"Miracle Person\"(奇跡の人,Kiseki no Hito?)",
+          "new": "\"Okama King\"(オカマ王,Okama Ō?);\"Miracle Person\"(奇跡の人,Kiseki no Hito?)"
+        }
+      ]
+    },
+    {
+      "slug": "Eustass_Kid",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Eustass_Kid",
+      "field_changes": [
+        {
+          "field": "Affiliations",
+          "old": "Kid Pirates[1]Ninja-Pirate-Mink-Samurai Alliance",
+          "new": "Kid Pirates;[1]Ninja-Pirate-Mink-Samurai Alliance"
+        }
+      ]
+    },
+    {
+      "slug": "Gol_D._Roger",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Gol_D._Roger",
+      "field_changes": [
+        {
+          "field": "Japanese Voice",
+          "old": "Chikao Ohtsuka(Episode 1-Episode 590);Masane Tsukayama(Episode 849+);Takeshi Kusao(young)",
+          "new": "Chikao Ohtsuka(Episode 1-590);Masane Tsukayama(Episode 849-1048);Shunsuke Sakuya(Episode 1153+);Takeshi Kusao(young)"
+        }
+      ]
+    },
+    {
+      "slug": "Jinbe",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Jinbe",
+      "field_changes": [
+        {
+          "field": "Official English Name",
+          "old": "Jinbe (OPCG, Crunchyroll);Jimbei (VIZ)",
+          "new": "Jinbe (OPCG, Crunchyroll);Jimbei (VIZ, Crunchyroll (former))"
+        }
+      ]
+    },
+    {
+      "slug": "Monkey_D._Dragon",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Monkey_D._Dragon",
+      "field_changes": [
+        {
+          "field": "Live-Action Portrayal",
+          "old": "Rigo Sanchez",
+          "new": "Rigo SanchezDean Damonse (young)"
+        }
+      ]
+    },
+    {
+      "slug": "Nefertari_Vivi",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Nefertari_Vivi",
+      "field_changes": [
+        {
+          "field": "Live-Action Portrayal",
+          "old": "Charithra Chandran",
+          "new": "Charithra ChandranAroop Shergill (young)"
+        }
+      ]
+    },
+    {
+      "slug": "Scratchmen_Apoo",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Scratchmen_Apoo",
+      "field_changes": [
+        {
+          "field": "English Voice",
+          "old": "Funimation:Brad Venable (Episode 392-629,One Piece: Stampede)Brent Mukai (Episode 736-)",
+          "new": "Funimation:Brad Venable (Episode 392-629,One Piece: Stampede)Brent Mukai (Episode 736+)"
+        }
+      ]
+    },
+    {
+      "slug": "Tony_Tony_Chopper",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Tony_Tony_Chopper",
+      "field_changes": [
+        {
+          "field": "Live-Action Portrayal",
+          "old": "Mikaela Hoover(voice/facial capture)",
+          "new": "Mikaela Hoover(voice/facial capture);N'kone Mametja (physical performance/on set proxy); Gavin Lee Gomes (Heavy Point Form)"
+        }
+      ]
+    },
+    {
+      "slug": "Topman_Warcury",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Topman_Warcury",
+      "field_changes": [
+        {
+          "field": "English Voice",
+          "old": "Funimation:Kurt KleinmannJohn Swasey(Episodes 1123-1124)",
+          "new": "Funimation:Kurt KleinmannRandy Pearlman (Episode 225)John Swasey(Episodes 1123-1124)"
+        }
+      ]
+    },
+    {
+      "slug": "Usopp",
+      "wiki_url": "https://onepiece.fandom.com/wiki/Usopp",
+      "field_changes": [
+        {
+          "field": "Live-Action Portrayal",
+          "old": "Jacob Romero Gibson;Kevin Saula (young)",
+          "new": "Jacob Romero;Kevin Saula (young)"
+        }
+      ]
+    }
+  ]
+}

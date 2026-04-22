@@ -1,0 +1,24 @@
+Patch run: 2026-04-21T22:44:48.046782 [APPLY]
+Source: diff/2026-04-21_diff.json
+Summary: 0 new, 1467 removed, 16 changed
+============================================================
+CHANGED | Bartolomeo | raw_live-action_portrayal | 'None' -> 'Nahum Hughes'
+CHANGED | Brook | raw_live-action_portrayal | 'None' -> 'Martial T. Batchamen'
+CHANGED | Buggy | raw_affiliations | "Cross Guild;[2]Buggy's Delivery(Unknown status)?[3];Buggy Pi" -> "Cross Guild;[2]Buggy's Delivery(Unknown status)?;[3]Buggy Pi"
+CHANGED | Crocodile | raw_occupations | 'Pirate; Cross Guild ChiefOfficer;[2]Baroque WorksPresident[5' -> 'Pirate; Cross GuildOfficer;[2]Baroque WorksPresident[5](form'
+CHANGED | Dracule_Mihawk | raw_occupations | 'Pirate; Cross Guild ChiefOfficer;[2]Warlord of the Sea[3](fo' -> 'Pirate; Cross GuildOfficer;[2]Warlord of the Sea[3](former)['
+CHANGED | Edward_Newgate | raw_affiliations | 'Whitebeard Pirates;[1]Rocks Pirates(former);[4]Four Emperors' -> 'Whitebeard Pirates;[1]Rocks Pirates(former);[4]Four Emperors'
+CHANGED | Edward_Newgate | raw_occupations | 'Pirate Captain;[1]Emperor(former)[5]' -> 'Pirate Captain;[1]Emperor[5]'
+CHANGED | Emporio_Ivankov | epithet | '"OkamaKing"(オカマ王,Okama Ō?);"Miracle Person"(奇跡の人,Kiseki no H' -> '"Okama King"(オカマ王,Okama Ō?);"Miracle Person"(奇跡の人,Kiseki no '
+CHANGED | Eustass_Kid | raw_affiliations | 'Kid Pirates[1]Ninja-Pirate-Mink-Samurai Alliance' -> 'Kid Pirates;[1]Ninja-Pirate-Mink-Samurai Alliance'
+CHANGED | Gol_D._Roger | raw_japanese_voice | 'Chikao Ohtsuka(Episode 1-Episode 590);Masane Tsukayama(Episo' -> 'Chikao Ohtsuka(Episode 1-590);Masane Tsukayama(Episode 849-1'
+CHANGED | Jinbe | name | 'Jinbe (OPCG, Crunchyroll);Jimbei (VIZ)' -> 'Jinbe (OPCG, Crunchyroll);Jimbei (VIZ, Crunchyroll (former))'
+CHANGED | Monkey_D._Dragon | raw_live-action_portrayal | 'Rigo Sanchez' -> 'Rigo SanchezDean Damonse (young)'
+CHANGED | Nefertari_Vivi | raw_live-action_portrayal | 'Charithra Chandran' -> 'Charithra ChandranAroop Shergill (young)'
+CHANGED | Scratchmen_Apoo | raw_english_voice | 'Funimation:Brad Venable (Episode 392-629,One Piece: Stampede' -> 'Funimation:Brad Venable (Episode 392-629,One Piece: Stampede'
+CHANGED | Tony_Tony_Chopper | raw_live-action_portrayal | 'Mikaela Hoover(voice/facial capture)' -> "Mikaela Hoover(voice/facial capture);N'kone Mametja (physica"
+CHANGED | Topman_Warcury | raw_english_voice | 'Funimation:Kurt KleinmannJohn Swasey(Episodes 1123-1124)' -> 'Funimation:Kurt KleinmannRandy Pearlman (Episode 225)John Sw'
+CHANGED | Usopp | raw_live-action_portrayal | 'Jacob Romero Gibson;Kevin Saula (young)' -> 'Jacob Romero;Kevin Saula (young)'
+REMOVED: skipped — partial snapshot (50/1517)
+============================================================
+Done. Updates applied: 17, Removals marked: 0

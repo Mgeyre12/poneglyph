@@ -22,14 +22,32 @@ Data sourced from [kalnassag/one-piece-ontology](https://github.com/kalnassag/on
 
 ```
 poneglyph/
-├── ingest/       # import_*.py — load data into Neo4j
-├── fixes/        # fix_*.py — normalization and cleanup scripts
-├── query/        # ask.py — natural-language LLM query layer
-├── utils/        # generate_schema.py and other utilities
-├── docs/         # graph_schema.md, test_queries.md, MY_PROJECT_NOTES.md
-├── data/         # raw/processed JSON source files
-└── logs/         # per-run skip/error logs
+├── ingest/           # import_*.py — load data into Neo4j
+├── fixes/            # fix_*.py — normalization and cleanup scripts
+├── query/            # ask.py — natural-language LLM query layer
+├── utils/            # generate_schema.py and other utilities
+├── docs/             # graph_schema.md, test_queries.md, MY_PROJECT_NOTES.md
+├── data/snapshots/   # timestamped per-character scrape snapshots
+├── diff/             # field-level diff reports (md + json)
+├── reports/          # pending_updates detection reports
+├── audit/            # scraper audit, missing character investigation
+├── tests/            # stress test suite and runner
+├── data/             # raw/processed JSON source files
+└── logs/             # per-run skip/error logs + patch logs
 ```
+
+## Refresh workflow (keeping the graph current)
+
+```bash
+python refresh_data.py --test           # scrape 50-char test set
+python refresh_data.py --full           # scrape all 1,517 (~75 min)
+python diff_snapshots.py data/snapshots/baseline data/snapshots/YYYY-MM-DD
+python apply_patch.py --dry-run diff/YYYY-MM-DD_diff.json
+python apply_patch.py --apply   diff/YYYY-MM-DD_diff.json
+python detect_new_content.py            # report new chapters/characters
+```
+
+The scraper uses the MediaWiki API (`action=parse&prop=text`) — direct wiki requests return 403 since ~2025.
 
 ## Running import scripts
 
