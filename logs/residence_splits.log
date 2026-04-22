@@ -1,0 +1,127 @@
+# Residence fusion splits — 2026-04-22T15:15:24
+# 31 fused entries split
+
+[Arlong]
+  BEFORE : 'Fish-Man District(former)Arlong Park(former)'
+  AFTER  : ['Fish-Man District(former)', 'Arlong Park(former)']
+
+[Bellamy]
+  BEFORE : 'Dressrosa(former)Notice(former)'
+  AFTER  : ['Dressrosa(former)', 'Notice(former)']
+
+[Boa_Marigold]
+  BEFORE : 'Amazon LilyMary Geoise(former)'
+  AFTER  : ['Amazon Lily', 'Mary Geoise(former)']
+
+[Carmel]
+  BEFORE : 'Elbaph(former)Whole Cake Island'
+  AFTER  : ['Elbaph(former)', 'Whole Cake Island']
+
+[Denjiro]
+  BEFORE : 'Wano Country (Flower Capital)Wano Country (Kibi)'
+  AFTER  : ['Wano Country (Flower Capital)', 'Wano Country (Kibi)']
+
+[Donquixote_Rosinante]
+  BEFORE : 'Mary Geoise(former)Spider Miles(former)'
+  AFTER  : ['Mary Geoise(former)', 'Spider Miles(former)']
+
+[Dorry]
+  BEFORE : 'ElbaphLittle Garden(former)'
+  AFTER  : ['Elbaph', 'Little Garden(former)']
+
+[Emporio_Ivankov]
+  BEFORE : 'Momoiro IslandMary Geoise(former)'
+  AFTER  : ['Momoiro Island', 'Mary Geoise(former)']
+
+[Enel]
+  BEFORE : 'MoonUpper Yard(former)'
+  AFTER  : ['Moon', 'Upper Yard(former)']
+
+[Inuarashi]
+  BEFORE : 'Zou(former) (Kurau City)Wano Country(Kuri)'
+  AFTER  : ['Zou(former) (Kurau City)', 'Wano Country(Kuri)']
+
+[Izou]
+  BEFORE : 'Wano Country(Ringo)Wano Country (Kuri)'
+  AFTER  : ['Wano Country(Ringo)', 'Wano Country (Kuri)']
+
+[Kurozumi_Kanjuro]
+  BEFORE : 'Wano Country (Kuri)Wano Country (Kibi) (former)'
+  AFTER  : ['Wano Country (Kuri)', 'Wano Country (Kibi) (former)']
+
+[Marshall_D._Teach]
+  BEFORE : 'HachinosuGod Valley(former)Shade Port (former)'
+  AFTER  : ['HachinosuGod Valley(former)', 'Shade Port (former)']
+
+[Nami]
+  BEFORE : 'Oykot Kingdom(former)Cocoyasi Village(former)'
+  AFTER  : ['Oykot Kingdom(former)', 'Cocoyasi Village(former)']
+
+[Nekomamushi]
+  BEFORE : 'Zou(Whale Forest) (Former)Wano Country(Flower Capital)'
+  AFTER  : ['Zou(Whale Forest) (Former)', 'Wano Country(Flower Capital)']
+
+[Oimo]
+  BEFORE : 'ElbaphEnies Lobby(former)Water 7(former)'
+  AFTER  : ['ElbaphEnies Lobby(former)', 'Water 7(former)']
+
+[Pica]
+  BEFORE : 'Downs(former)Spider Miles(former)Dressrosa(former)'
+  AFTER  : ['Downs(former)', 'Spider Miles(former)', 'Dressrosa(former)']
+
+[Trebol]
+  BEFORE : 'Downs(former)Spider Miles(former)Dressrosa(former)'
+  AFTER  : ['Downs(former)', 'Spider Miles(former)', 'Dressrosa(former)']
+
+[Vergo]
+  BEFORE : 'Downs(former)G-5'
+  AFTER  : ['Downs(former)', 'G-5']
+
+[Wapol]
+  BEFORE : 'Evil Black Drum KingdomDrum Kingdom(former)'
+  AFTER  : ['Evil Black Drum Kingdom', 'Drum Kingdom(former)']
+
+[Boa_Hancock]
+  BEFORE : 'Amazon LilyMary Geoise(former)'
+  AFTER  : ['Amazon Lily', 'Mary Geoise(former)']
+
+[Boa_Sandersonia]
+  BEFORE : 'Amazon LilyMary Geoise(former)'
+  AFTER  : ['Amazon Lily', 'Mary Geoise(former)']
+
+[Hack]
+  BEFORE : 'Ryugu Kingdom(former)Baltigo(former)Momoiro Island'
+  AFTER  : ['Ryugu Kingdom(former)', 'Baltigo(former)', 'Momoiro Island']
+
+[Kashii]
+  BEFORE : 'ElbaphEnies Lobby(former)Water 7(former)'
+  AFTER  : ['ElbaphEnies Lobby(former)', 'Water 7(former)']
+
+[Monkey_D._Dragon]
+  BEFORE : 'Baltigo(former)Dawn Island(former)Momoiro Island'
+  AFTER  : ['Baltigo(former)', 'Dawn Island(former)', 'Momoiro Island']
+
+[Brogy]
+  BEFORE : 'ElbaphLittle Garden(former)'
+  AFTER  : ['Elbaph', 'Little Garden(former)']
+
+[Diamante]
+  BEFORE : 'Downs(former)Spider Miles(former)Dressrosa(former)'
+  AFTER  : ['Downs(former)', 'Spider Miles(former)', 'Dressrosa(former)']
+
+[Gedatsu]
+  BEFORE : 'Ukkari Hot-Spring IslandSkypiea (former)Birka(former)'
+  AFTER  : ['Ukkari Hot-Spring IslandSkypiea (former)', 'Birka(former)']
+
+[Issho]
+  BEFORE : 'Aoi Kingdom(former)Soja Island(former)'
+  AFTER  : ['Aoi Kingdom(former)', 'Soja Island(former)']
+
+[Kouzuki_Sukiyaki]
+  BEFORE : 'Wano Country(Amigasa Village, formerlyFlower Capital)'
+  AFTER  : ['Wano Country(Amigasa Village, formerly', 'Flower Capital)']
+
+[Shyarly]
+  BEFORE : 'Mermaid Cove(Coral Hill)Fish-Man District(former)'
+  AFTER  : ['Mermaid Cove(Coral Hill)', 'Fish-Man District(former)']
+

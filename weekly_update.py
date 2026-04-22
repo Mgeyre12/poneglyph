@@ -134,6 +134,24 @@ def parse_diff_summary(today: str) -> dict | None:
     return diff.get("summary", {})
 
 
+_LOC_OCC_FIELDS = {"Origin", "Residence", "Occupations"}
+
+def diff_has_loc_occ_changes(diff_path: str | None) -> tuple[bool, int]:
+    """
+    Check whether the diff JSON contains any changes to Origin, Residence,
+    or Occupations fields. Returns (has_changes, count_of_affected_chars).
+    """
+    if not diff_path or not os.path.exists(diff_path):
+        return False, 0
+    with open(diff_path) as f:
+        diff = json.load(f)
+    affected = [
+        entry for entry in diff.get("changed", [])
+        if any(fc["field"] in _LOC_OCC_FIELDS for fc in entry.get("field_changes", []))
+    ]
+    return bool(affected), len(affected)
+
+
 def parse_chapters_ingested(stdout: str) -> tuple[int, str]:
     """Extract count and range from ingest_new_chapters.py output."""
     m = re.search(r"Gap\s*:\s*(\d+) chapters \((\d+)[–-](\d+)\)", stdout)
@@ -278,6 +296,33 @@ def main():
     )
     log()
 
+    # ── Step 7: Refresh location / occupation relationships ───────────────────
+    log("── Step 7: Refresh location / occupation relationships ──────")
+    loc_occ_changed, loc_occ_count = diff_has_loc_occ_changes(diff_json_path)
+
+    if args.dry_run:
+        log("  [DRY-RUN] Would check diff for Origin/Residence/Occupations changes.")
+        log("  [DRY-RUN] Would run import_locations.py --apply and import_occupations.py --apply if any found.")
+    elif loc_occ_changed:
+        log(f"  {loc_occ_count} character(s) have changed Origin/Residence/Occupations — refreshing...")
+        run_step(
+            "ingest/import_locations.py --apply",
+            [sys.executable, os.path.join("ingest", "import_locations.py"), "--apply"],
+            log, log_raw,
+            abort_on_error=False,
+        )
+        run_step(
+            "ingest/import_occupations.py --apply",
+            [sys.executable, os.path.join("ingest", "import_occupations.py"), "--apply"],
+            log, log_raw,
+            abort_on_error=False,
+        )
+        log("  NOTE: Stale location/occupation rels are NOT removed — only new data is added.")
+        log("  To remove stale rels, re-run imports manually and verify logs/residence_splits.log.")
+    else:
+        log("  No Origin/Residence/Occupations changes in diff — step skipped.")
+    log()
+
     # ── Final summary ─────────────────────────────────────────────────────────
     log(f"{'='*60}")
     log(f"WEEKLY UPDATE COMPLETE [{mode}]")
@@ -310,6 +355,13 @@ def main():
             log(f"    Review doc: {review_path}")
     else:
         log(f"  Characters: nothing new to stage")
+
+    # Location / occupation refresh
+    if not args.dry_run:
+        if loc_occ_changed:
+            log(f"  Location/Occupation refresh: ran ({loc_occ_count} chars had field changes)")
+        else:
+            log(f"  Location/Occupation refresh: skipped (no field changes)")
 
     log()
     log(f"  Log: {log_path}")

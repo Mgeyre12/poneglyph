@@ -1,0 +1,1099 @@
+# Occupation camelCase splits — 2026-04-22T15:17:31
+# 274 entries split
+
+[Absalom]
+  BEFORE : 'ReporterSoldier ZombiesandGeneral ZombiesCommander'
+  AFTER  : 'Reporter Soldier Zombiesand General Zombies Commander'
+
+[Alpha]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Baby_5]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Bartolomeo]
+  BEFORE : 'Captain of the Second Ship of theStraw Hat Grand Fleet'
+  AFTER  : 'Captain of the Second Ship of the Straw Hat Grand Fleet'
+
+[Beer_VI]
+  BEFORE : 'Kingof theRoshwan Kingdom'
+  AFTER  : 'Kingof the Roshwan Kingdom'
+
+[Bell-mère]
+  BEFORE : 'MarineOfficer'
+  AFTER  : 'Marine Officer'
+
+[Bentham]
+  BEFORE : 'Queen ofNewkama Land'
+  AFTER  : 'Queen of Newkama Land'
+
+[Akehende]
+  BEFORE : 'MarineRear Admiral'
+  AFTER  : 'Marine Rear Admiral'
+
+[Amazon]
+  BEFORE : 'Gatekeeper ofSkypiea'
+  AFTER  : 'Gatekeeper of Skypiea'
+
+[Blamenco]
+  BEFORE : '6th DivisionCommander'
+  AFTER  : '6th Division Commander'
+
+[Blueno]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Boa_Marigold]
+  BEFORE : 'Ruler ofAmazon Lily'
+  AFTER  : 'Ruler of Amazon Lily'
+
+[Buchi]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Buffalo]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Buhichuck]
+  BEFORE : 'Surprise ZombieBoss'
+  AFTER  : 'Surprise Zombie Boss'
+
+[Cavendish]
+  BEFORE : 'Captain of the First Ship of theStraw Hat Grand Fleet'
+  AFTER  : 'Captain of the First Ship of the Straw Hat Grand Fleet'
+
+[Chadros_Higelyges]
+  BEFORE : 'Leader of theCentaur Patrol Unit'
+  AFTER  : 'Leader of the Centaur Patrol Unit'
+
+[Charlotte_Amande]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Basans]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Broyé]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Cabaletta]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Cadenza]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Compo]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Custard]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Dosmarche]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Effilée]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Galette]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Kanten]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Linlin]
+  BEFORE : 'QueenofTotto Land'
+  AFTER  : 'Queenof Totto Land'
+
+[Charlotte_Maple]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Marble]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Mascarpone]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Mash]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Melise]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Mondée]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Montb]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Mozart]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Myukuru]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Nusstorte]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Panna]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Perospero]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Poire]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Pudding]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Saint-Marc]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Snack]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Tablet]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Yuen]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Zuccotto]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Chew]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Cho]
+  BEFORE : 'YakuzaBoss'
+  AFTER  : 'Yakuza Boss'
+
+[Clou_D._Clover]
+  BEFORE : 'Professor andarchaeologistof theTree of Knowledge'
+  AFTER  : 'Professor andarchaeologistof the Tree of Knowledge'
+
+[Curly_Dadan]
+  BEFORE : 'Caretaker ofMonkey D. Luffy,Portgas D. Ace, andSabo'
+  AFTER  : 'Caretaker of Monkey D. Luffy,Portgas D. Ace, and Sabo'
+
+[Den]
+  BEFORE : 'Sea ForestResearcher'
+  AFTER  : 'Sea Forest Researcher'
+
+[Donannoyo]
+  BEFORE : 'Prisoner MineGuard'
+  AFTER  : 'Prisoner Mine Guard'
+
+[Donquixote_Doflamingo]
+  BEFORE : 'UnderworldBroker'
+  AFTER  : 'Underworld Broker'
+
+[Donquixote_Rosinante]
+  BEFORE : 'PirateElite Officer'
+  AFTER  : 'Pirate Elite Officer'
+
+[Enel]
+  BEFORE : 'GodofSkypiea'
+  AFTER  : 'Godof Skypiea'
+
+[Ethanbaron_V._Nusjuro]
+  BEFORE : 'Co-Head of theWorld Government'
+  AFTER  : 'Co-Head of the World Government'
+
+[Figarland_Garling]
+  BEFORE : 'Co-Head of theWorld Government'
+  AFTER  : 'Co-Head of the World Government'
+
+[Fossa]
+  BEFORE : '15th DivisionCommander'
+  AFTER  : '15th Division Commander'
+
+[Franky]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Fukurou]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Fullbody]
+  BEFORE : 'MarineLieutenant Commander'
+  AFTER  : 'Marine Lieutenant Commander'
+
+[Fullbody]
+  BEFORE : 'MarineSeaman Recruit , MarineLieutenant'
+  AFTER  : 'Marine Seaman Recruit , Marine Lieutenant'
+
+[Genbo]
+  BEFORE : 'ShandiaWarrior'
+  AFTER  : 'Shandia Warrior'
+
+[Gladius]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Hajrudin]
+  BEFORE : 'Captain of the Sixth Ship of theStraw Hat Grand Fleet'
+  AFTER  : 'Captain of the Sixth Ship of the Straw Hat Grand Fleet'
+
+[Hatchan]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Hattori]
+  BEFORE : "Rob Lucci'sPet"
+  AFTER  : "Rob Lucci's Pet"
+
+[Hippan_Natte]
+  BEFORE : 'Prisoner MineGuard'
+  AFTER  : 'Prisoner Mine Guard'
+
+[Hippo_Gentleman]
+  BEFORE : 'Wild ZombieVice Commander'
+  AFTER  : 'Wild Zombie Vice Commander'
+
+[Hotori_and_Kotori]
+  BEFORE : 'Lieutenants of theDivine Soldiers'
+  AFTER  : 'Lieutenants of the Divine Soldiers'
+
+[Ibiributsu]
+  BEFORE : 'Prisoner MineGuard'
+  AFTER  : 'Prisoner Mine Guard'
+
+[Ida]
+  BEFORE : 'BartenderCircus Performer'
+  AFTER  : 'Bartender Circus Performer'
+
+[Ideaman]
+  BEFORE : 'StaffOfficerof Planning'
+  AFTER  : 'Staff Officerof Planning'
+
+[Izou]
+  BEFORE : '16th DivisionCommander'
+  AFTER  : '16th Division Commander'
+
+[Jack]
+  BEFORE : 'Captain of theMammoth'
+  AFTER  : 'Captain of the Mammoth'
+
+[Jack]
+  BEFORE : 'De Facto Ruler ofKuri'
+  AFTER  : 'De Facto Ruler of Kuri'
+
+[Jaguar_D._Saul]
+  BEFORE : 'History TeacherVice Admiral'
+  AFTER  : 'History Teacher Vice Admiral'
+
+[Jango]
+  BEFORE : 'MarineLieutenant Commander'
+  AFTER  : 'Marine Lieutenant Commander'
+
+[Jango]
+  BEFORE : 'MarineSeaman Recruit'
+  AFTER  : 'Marine Seaman Recruit'
+
+[Jaygarcia_Saturn]
+  BEFORE : 'Co-Head of theWorld Government'
+  AFTER  : 'Co-Head of the World Government'
+
+[Jerry]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Jinbe]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Joseph]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Jozu]
+  BEFORE : '3rd DivisionCommander'
+  AFTER  : '3rd Division Commander'
+
+[Kaku]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Kamakiri]
+  BEFORE : 'ShandiaWarrior'
+  AFTER  : 'Shandia Warrior'
+
+[Koala]
+  BEFORE : 'Revolutionary ArmyOfficer'
+  AFTER  : 'Revolutionary Army Officer'
+
+[Koala]
+  BEFORE : 'AssistantFish-Man KarateInstructor'
+  AFTER  : 'Assistant Fish-Man Karate Instructor'
+
+[Koby]
+  BEFORE : 'PirateShip Caretaker'
+  AFTER  : 'Pirate Ship Caretaker'
+
+[Kokoro]
+  BEFORE : '"Lovely" secretary ofTom'
+  AFTER  : '"Lovely" secretary of Tom'
+
+[Kumadori]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Kyuin]
+  BEFORE : 'SMILE FactoryManager'
+  AFTER  : 'SMILE Factory Manager'
+
+[Lao_G]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Laskey]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Machvise]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Makko]
+  BEFORE : 'MarineEnsign'
+  AFTER  : 'Marine Ensign'
+
+[Manboshi]
+  BEFORE : 'Princeof theRyugu Kingdom'
+  AFTER  : 'Princeof the Ryugu Kingdom'
+
+[Marco]
+  BEFORE : '1st DivisionCommander'
+  AFTER  : '1st Division Commander'
+
+[Maujii]
+  BEFORE : 'Aide to PrincessMansherry'
+  AFTER  : 'Aide to Princess Mansherry'
+
+[Mihar]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Morley]
+  BEFORE : 'Prisoner ofImpel Down'
+  AFTER  : 'Prisoner of Impel Down'
+
+[Nami]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Namur]
+  BEFORE : '8th DivisionCommander'
+  AFTER  : '8th Division Commander'
+
+[Neoki]
+  BEFORE : 'Prisoner MineGuard'
+  AFTER  : 'Prisoner Mine Guard'
+
+[Nero]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Nerona_Imu]
+  BEFORE : 'Founder of theWorld Government'
+  AFTER  : 'Founder of the World Government'
+
+[Nico_Robin]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Nodoi_Wakan]
+  BEFORE : 'Prisoner MineGuard'
+  AFTER  : 'Prisoner Mine Guard'
+
+[Nokotti]
+  BEFORE : 'Prisoner MineGuard'
+  AFTER  : 'Prisoner Mine Guard'
+
+[Ochoku]
+  BEFORE : 'PirateGuru'
+  AFTER  : 'Pirate Guru'
+
+[Orlumbus]
+  BEFORE : 'Captainof the Seventh Ship of theStraw Hat Grand Fleet'
+  AFTER  : 'Captainof the Seventh Ship of the Straw Hat Grand Fleet'
+
+[Pearl]
+  BEFORE : "Commanderof theKrieg Pirates' second unit"
+  AFTER  : "Commanderof the Krieg Pirates' second unit"
+
+[Pell]
+  BEFORE : 'CommanderofRoyal Guards'
+  AFTER  : 'Commanderof Royal Guards'
+
+[Perona]
+  BEFORE : 'Wild ZombiesandSurprise ZombiesCommander'
+  AFTER  : 'Wild Zombiesand Surprise Zombies Commander'
+
+[Pica]
+  BEFORE : 'PirateExecutive Officer'
+  AFTER  : 'Pirate Executive Officer'
+
+[Pierre]
+  BEFORE : "Gan Fall'sPet"
+  AFTER  : "Gan Fall's Pet"
+
+[Pudding_Pudding]
+  BEFORE : 'MarineCommodore'
+  AFTER  : 'Marine Commodore'
+
+[Pudos]
+  BEFORE : 'Prisoner MineGuard'
+  AFTER  : 'Prisoner Mine Guard'
+
+[Rakuyo]
+  BEFORE : '7th DivisionCommander'
+  AFTER  : '7th Division Commander'
+
+[Rebecca]
+  BEFORE : 'Lady-in-waiting,Gladiator ,PrincessOf Dressrosa'
+  AFTER  : 'Lady-in-waiting,Gladiator ,Princess Of Dressrosa'
+
+[Riku_Doldo_III]
+  BEFORE : 'Corrida ColosseumGladiator'
+  AFTER  : 'Corrida Colosseum Gladiator'
+
+[Ryuboshi]
+  BEFORE : 'Princeof theRyugu Kingdom'
+  AFTER  : 'Princeof the Ryugu Kingdom'
+
+[Sabo]
+  BEFORE : 'Chief ofStaff of the Revolutionary Army'
+  AFTER  : 'Chief of Staff of the Revolutionary Army'
+
+[Sai]
+  BEFORE : 'Captainof the Third Ship of theStraw Hat Grand Fleet'
+  AFTER  : 'Captainof the Third Ship of the Straw Hat Grand Fleet'
+
+[Sai]
+  BEFORE : '13thLeaderof the Happo Navy'
+  AFTER  : '13th Leaderof the Happo Navy'
+
+[Senor_Pink]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Sham]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Shepherd_Ju_Peter]
+  BEFORE : 'Co-Head of theWorld Government'
+  AFTER  : 'Co-Head of the World Government'
+
+[Shimotsuki_Kuina]
+  BEFORE : 'TraineeSwordsman'
+  AFTER  : 'Trainee Swordsman'
+
+[Shinobu]
+  BEFORE : 'Retainer of theKouzuki Family'
+  AFTER  : 'Retainer of the Kouzuki Family'
+
+[Shura]
+  BEFORE : 'PriestofEnel'
+  AFTER  : 'Priestof Enel'
+
+[Stalker]
+  BEFORE : 'MarineLieutenant Junior Grade'
+  AFTER  : 'Marine Lieutenant Junior Grade'
+
+[Stussy]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Sugar]
+  BEFORE : 'PirateSpecial Officer'
+  AFTER  : 'Pirate Special Officer'
+
+[Topman_Warcury]
+  BEFORE : 'Co-Head of theWorld Government'
+  AFTER  : 'Co-Head of the World Government'
+
+[Trebol]
+  BEFORE : 'PirateExecutive Officer'
+  AFTER  : 'Pirate Executive Officer'
+
+[Trebol]
+  BEFORE : 'StaffOfficer'
+  AFTER  : 'Staff Officer'
+
+[Usopp]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Uwattsura]
+  BEFORE : 'Prisoner MineChief Guard'
+  AFTER  : 'Prisoner Mine Chief Guard'
+
+[Vergo]
+  BEFORE : 'PirateElite Officer'
+  AFTER  : 'Pirate Elite Officer'
+
+[Vergo]
+  BEFORE : 'Head ofG-5'
+  AFTER  : 'Head of G-5'
+
+[Viola]
+  BEFORE : 'PrincessofDressrosa'
+  AFTER  : 'Princessof Dressrosa'
+
+[Viola]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Wapol]
+  BEFORE : 'King ofDrum Kingdom'
+  AFTER  : 'King of Drum Kingdom'
+
+[Boa_Hancock]
+  BEFORE : 'Empress ofAmazon Lily'
+  AFTER  : 'Empress of Amazon Lily'
+
+[Boa_Sandersonia]
+  BEFORE : 'Ruler ofAmazon Lily'
+  AFTER  : 'Ruler of Amazon Lily'
+
+[Braham]
+  BEFORE : 'ShandiaWarrior'
+  AFTER  : 'Shandia Warrior'
+
+[Brook]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Camie]
+  BEFORE : 'Fashion designing apprenticeTakoyaki sellerWaitress at Mermaid Cafe'
+  AFTER  : 'Fashion designing apprentice Takoyaki seller Waitress at Mermaid Cafe'
+
+[Charlotte_Bavarois]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Citron]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Compote]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Cornstarch]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Counter]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Flampe]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Hachée]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_High-Fat]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Joscarpone]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Laurin]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Mont-d'Or]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Moscato]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Noisette]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Nougat]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Opera]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Oven]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Prim]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Raisin]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Chimney]
+  BEFORE : 'Sunday stationmaster of theShift Station'
+  AFTER  : 'Sunday stationmaster of the Shift Station'
+
+[Crocodile]
+  BEFORE : 'Cross Guild ChiefOfficer'
+  AFTER  : 'Cross Guild Chief Officer'
+
+[Crocodile]
+  BEFORE : 'Baroque WorksPresident'
+  AFTER  : 'Baroque Works President'
+
+[Crocodile]
+  BEFORE : 'Proprietor ofRain Dinners'
+  AFTER  : 'Proprietor of Rain Dinners'
+
+[Diez_Barrels]
+  BEFORE : 'MarineOfficer'
+  AFTER  : 'Marine Officer'
+
+[Dracule_Mihawk]
+  BEFORE : 'Cross Guild ChiefOfficer'
+  AFTER  : 'Cross Guild Chief Officer'
+
+[Fugetsu_Omusubi]
+  BEFORE : 'Daimyo ofKibi'
+  AFTER  : 'Daimyo of Kibi'
+
+[Gaimon]
+  BEFORE : 'Guardian of the Island of Rare AnimalsPirate'
+  AFTER  : 'Guardian of the Island of Rare Animals Pirate'
+
+[Gloriosa]
+  BEFORE : 'EmpressofAmazon Lily'
+  AFTER  : 'Empressof Amazon Lily'
+
+[Hack]
+  BEFORE : 'Revolutionary Army memberFish-Man KarateInstructorFish-Man JujutsuMartial Artist'
+  AFTER  : 'Revolutionary Army member Fish-Man Karate Instructor Fish-Man Jujutsu Martial Artist'
+
+[Ham_Burger]
+  BEFORE : 'Kingof theBallywood Kingdom'
+  AFTER  : 'Kingof the Ballywood Kingdom'
+
+[Hotei]
+  BEFORE : 'Captain of theMimawarigumi'
+  AFTER  : 'Captain of the Mimawarigumi'
+
+[Iceburg]
+  BEFORE : 'President of theGalley-La Company'
+  AFTER  : 'President of the Galley-La Company'
+
+[Iceburg]
+  BEFORE : 'Mayor ofWater 7'
+  AFTER  : 'Mayor of Water 7'
+
+[Ideo]
+  BEFORE : 'Captain of the Fourth Ship of theStraw Hat Grand Fleet'
+  AFTER  : 'Captain of the Fourth Ship of the Straw Hat Grand Fleet'
+
+[Jabari]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Jabra]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Kouzuki_Oden]
+  BEFORE : '2nd DivisionCommander'
+  AFTER  : '2nd Division Commander'
+
+[Kureha]
+  BEFORE : 'Leader of theIsshi-100'
+  AFTER  : 'Leader of the Isshi-100'
+
+[Marcus_Mars]
+  BEFORE : 'Co-Head of theWorld Government'
+  AFTER  : 'Co-Head of the World Government'
+
+[Monet]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Ninjin]
+  BEFORE : 'PretendPirate'
+  AFTER  : 'Pretend Pirate'
+
+[Otohime]
+  BEFORE : 'Queenof theRyugu Kingdom'
+  AFTER  : 'Queenof the Ryugu Kingdom'
+
+[T_Bone]
+  BEFORE : 'MarineVice Admiral'
+  AFTER  : 'Marine Vice Admiral'
+
+[Tamanegi]
+  BEFORE : 'PretendPirate'
+  AFTER  : 'Pretend Pirate'
+
+[Thatch]
+  BEFORE : '4th DivisionCommander'
+  AFTER  : '4th Division Commander'
+
+[Tony_Tony_Chopper]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Uzuki_Tempura]
+  BEFORE : 'DaimyoofUdon'
+  AFTER  : 'Daimyoof Udon'
+
+[Vista]
+  BEFORE : '5th DivisionCommander'
+  AFTER  : '5th Division Commander'
+
+[Wyper]
+  BEFORE : 'ShandiaWarrior'
+  AFTER  : 'Shandia Warrior'
+
+[X_Drake]
+  BEFORE : 'Captain ofSWORD'
+  AFTER  : 'Captain of SWORD'
+
+[X_Drake]
+  BEFORE : 'MarineRear Admiral'
+  AFTER  : 'Marine Rear Admiral'
+
+[Atmos]
+  BEFORE : '13th DivisionCommander'
+  AFTER  : '13th Division Commander'
+
+[Blenheim]
+  BEFORE : '9th DivisionCommander'
+  AFTER  : '9th Division Commander'
+
+[Bomba_(Marine)]
+  BEFORE : 'MarineOfficer'
+  AFTER  : 'Marine Officer'
+
+[Candre]
+  BEFORE : 'MarineOfficer'
+  AFTER  : 'Marine Officer'
+
+[Chaka]
+  BEFORE : 'CommanderofRoyal Guards'
+  AFTER  : 'Commanderof Royal Guards'
+
+[Charlotte_Basskarte]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Chiboust]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Cinnamon]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Dacquoise]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Daifuku]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Joconde]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Marnier]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Charlotte_Mobile]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Chess]
+  BEFORE : 'Head ofStaff'
+  AFTER  : 'Head of Staff'
+
+[Chichilisia]
+  BEFORE : 'Leaderof theNiho Navy'
+  AFTER  : 'Leaderof the Niho Navy'
+
+[Chinjao]
+  BEFORE : '12thLeaderof the Happo Navy'
+  AFTER  : '12th Leaderof the Happo Navy'
+
+[Curiel]
+  BEFORE : '10th DivisionCommander'
+  AFTER  : '10th Division Commander'
+
+[Dalton]
+  BEFORE : 'Kingof theSakura Kingdom'
+  AFTER  : 'Kingof the Sakura Kingdom'
+
+[Dalton]
+  BEFORE : 'Chief Royal Guard of theDrum Kingdom'
+  AFTER  : 'Chief Royal Guard of the Drum Kingdom'
+
+[Dellinger]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Diamante]
+  BEFORE : 'PirateExecutive Officer'
+  AFTER  : 'Pirate Executive Officer'
+
+[Disco]
+  BEFORE : 'Owner ofHuman Auctioning House'
+  AFTER  : 'Owner of Human Auctioning House'
+
+[Dobby_Ibadonbo]
+  BEFORE : 'Prisoner ofImpel Down'
+  AFTER  : 'Prisoner of Impel Down'
+
+[Doha_Ittanka_II]
+  BEFORE : 'Prisoner ofImpel Down'
+  AFTER  : 'Prisoner of Impel Down'
+
+[Fisher_Tiger]
+  BEFORE : 'De-facto Leader ofFish-Man District'
+  AFTER  : 'De-facto Leader of Fish-Man District'
+
+[Fukaboshi]
+  BEFORE : 'Princeof theRyugu Kingdom'
+  AFTER  : 'Princeof the Ryugu Kingdom'
+
+[Gambia]
+  BEFORE : 'StaffOfficer'
+  AFTER  : 'Staff Officer'
+
+[Gedatsu]
+  BEFORE : 'PriestofEnel , Head Clerk ofHot Springs Resort'
+  AFTER  : 'Priestof Enel , Head Clerk of Hot Springs Resort'
+
+[Giolla]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Gismonda]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Guernika]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Haruta]
+  BEFORE : '12th DivisionCommander'
+  AFTER  : '12th Division Commander'
+
+[Hyougoro]
+  BEFORE : 'YakuzaBoss'
+  AFTER  : 'Yakuza Boss'
+
+[Igaram]
+  BEFORE : 'Mayor ofWhisky Peak'
+  AFTER  : 'Mayor of Whisky Peak'
+
+[Iyan'eno_Chinode]
+  BEFORE : 'NewspaperColumnist'
+  AFTER  : 'Newspaper Columnist'
+
+[Kalifa]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Kingdew]
+  BEFORE : '11th DivisionCommander'
+  AFTER  : '11th Division Commander'
+
+[Kumashi]
+  BEFORE : 'Wild ZombieCommander-in-Chief'
+  AFTER  : 'Wild Zombie Commander-in-Chief'
+
+[Kuroobi]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Lord_of_the_Coast]
+  BEFORE : "Foosha Village's localSea King"
+  AFTER  : "Foosha Village's local Sea King"
+
+[Maha]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Mashikaku_(Marine)]
+  BEFORE : 'MarineChief Petty Officer'
+  AFTER  : 'Marine Chief Petty Officer'
+
+[Matryo_Princesses]
+  BEFORE : 'Princessesof theRoshwan Kingdom'
+  AFTER  : 'Princessesof the Roshwan Kingdom'
+
+[Mayushika]
+  BEFORE : 'ShandiaWarrior'
+  AFTER  : 'Shandia Warrior'
+
+[Mishoin_Cashible]
+  BEFORE : 'BullRental Salesman'
+  AFTER  : 'Bull Rental Salesman'
+
+[Mororon]
+  BEFORE : 'Queenof theTajine Kingdom'
+  AFTER  : 'Queenof the Tajine Kingdom'
+
+[Ohm]
+  BEFORE : 'PriestofEnel'
+  AFTER  : 'Priestof Enel'
+
+[Piiman]
+  BEFORE : 'PretendPirate'
+  AFTER  : 'Pretend Pirate'
+
+[Portgas_D._Ace]
+  BEFORE : '2nd DivisionCommander'
+  AFTER  : '2nd Division Commander'
+
+[Queen]
+  BEFORE : 'De Facto Ruler ofUdon'
+  AFTER  : 'De Facto Ruler of Udon'
+
+[Rob_Lucci]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Robson]
+  BEFORE : "Wapol'sPet"
+  AFTER  : "Wapol's Pet"
+
+[Roronoa_Zoro]
+  BEFORE : 'CrewCombatant'
+  AFTER  : 'Crew Combatant'
+
+[Roronoa_Zoro]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Sanji]
+  BEFORE : 'SeniorOfficer'
+  AFTER  : 'Senior Officer'
+
+[Satori]
+  BEFORE : 'PriestofEnel'
+  AFTER  : 'Priestof Enel'
+
+[Shakuyaku]
+  BEFORE : 'Empress ofAmazon Lily'
+  AFTER  : 'Empress of Amazon Lily'
+
+[Sheepshead]
+  BEFORE : 'Shinuchiof theGifters'
+  AFTER  : 'Shinuchiof the Gifters'
+
+[Skull]
+  BEFORE : 'PirateOfficer'
+  AFTER  : 'Pirate Officer'
+
+[Speed_Jiru]
+  BEFORE : '14th DivisionCommander'
+  AFTER  : '14th Division Commander'
+
+[Spoil]
+  BEFORE : "Chairman ofThriller Bark Victim's Association"
+  AFTER  : "Chairman of Thriller Bark Victim's Association"
+
+[Tacos]
+  BEFORE : 'Kingof theShishano Kingdom'
+  AFTER  : 'Kingof the Shishano Kingdom'
+
+[Terracotta]
+  BEFORE : 'Royal HeadChef'
+  AFTER  : 'Royal Head Chef'
+
+[Tritoma]
+  BEFORE : 'Empress ofAmazon Lily'
+  AFTER  : 'Empress of Amazon Lily'
+
+[Tsumonsieur_Kamaya]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Ubau]
+  BEFORE : 'GodofSkypiea'
+  AFTER  : 'Godof Skypiea'
+
+[Wanze]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Warashi]
+  BEFORE : 'ShandiaWarrior'
+  AFTER  : 'Shandia Warrior'
+
+[Who's-Who]
+  BEFORE : 'Cipher PolAgent'
+  AFTER  : 'Cipher Pol Agent'
+
+[Yama]
+  BEFORE : 'Commander of theDivine Soldiers'
+  AFTER  : 'Commander of the Divine Soldiers'
+
+[Yotsubane]
+  BEFORE : 'ShandiaWarrior'
+  AFTER  : 'Shandia Warrior'
+
+[Zeff]
+  BEFORE : 'Head Chef ofBaratie,Pirate Captain'
+  AFTER  : 'Head Chef of Baratie,Pirate Captain'
+
+[Zotto]
+  BEFORE : 'MarineLieutenant'
+  AFTER  : 'Marine Lieutenant'
+

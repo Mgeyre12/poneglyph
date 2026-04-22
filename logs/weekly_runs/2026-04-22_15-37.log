@@ -1,0 +1,164 @@
+[15:37:08] ============================================================
+[15:37:08] Poneglyph weekly update — 2026-04-22 [DRY-RUN]
+[15:37:08] Log: /Users/mussageyre/Desktop/poneglyph/logs/weekly_runs/2026-04-22_15-37.log
+[15:37:08] ============================================================
+[15:37:08] 
+[15:37:08] ── Step 1: Refresh snapshot from wiki ──────────────────────
+[15:37:08]   [DRY-RUN] Would run: python refresh_data.py --full
+[15:37:08]   Skipped — scrape takes ~75 min and hits the wiki.
+[15:37:08]   Assumed new snapshot: /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22
+[15:37:08] 
+[15:37:08] ── Step 2: Diff against previous snapshot ──────────────────
+[15:37:08]   [DRY-RUN] Would run: python diff_snapshots.py /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-21 /Users/mussageyre/Desktop/poneglyph/data/snapshots/2026-04-22
+[15:37:08]   Skipped.
+[15:37:08] 
+[15:37:08] ── Step 3: Apply field-level patch ─────────────────────────
+[15:37:08] ▶ apply_patch.py --dry-run
+[15:37:08]   cmd: /Library/Frameworks/Python.framework/Versions/3.13/bin/python3 apply_patch.py --dry-run /Users/mussageyre/Desktop/poneglyph/diff/2026-04-21_diff.json
+
+Apply patch [DRY-RUN]
+  Source: /Users/mussageyre/Desktop/poneglyph/diff/2026-04-21_diff.json
+  0 new, 1467 removed, 16 changed
+
+
+--- CHANGED (16) ---
+
+Bartolomeo:
+  [DRY-RUN] SET Bartolomeo.raw_live-action_portrayal = 'Nahum Hughes'
+
+Brook:
+  [DRY-RUN] SET Brook.raw_live-action_portrayal = 'Martial T. Batchamen'
+
+Buggy:
+  [DRY-RUN] SET Buggy.raw_affiliations = "Cross Guild;[2]Buggy's Delivery(Unknown status)?;["
+
+Crocodile:
+  [DRY-RUN] SET Crocodile.raw_occupations = 'Pirate; Cross GuildOfficer;[2]Baroque WorksPreside'
+
+Dracule_Mihawk:
+  [DRY-RUN] SET Dracule_Mihawk.raw_occupations = 'Pirate; Cross GuildOfficer;[2]Warlord of the Sea[3'
+
+Edward_Newgate:
+  [DRY-RUN] SET Edward_Newgate.raw_affiliations = 'Whitebeard Pirates;[1]Rocks Pirates(former);[4]Fou'
+  [DRY-RUN] SET Edward_Newgate.raw_occupations = 'Pirate Captain;[1]Emperor[5]'
+
+Emporio_Ivankov:
+  [DRY-RUN] SET Emporio_Ivankov.epithet = '"Okama King"(オカマ王,Okama Ō?);"Miracle Person"(奇跡の人,'
+
+Eustass_Kid:
+  [DRY-RUN] SET Eustass_Kid.raw_affiliations = 'Kid Pirates;[1]Ninja-Pirate-Mink-Samurai Alliance'
+
+Gol_D._Roger:
+  [DRY-RUN] SET Gol_D._Roger.raw_japanese_voice = 'Chikao Ohtsuka(Episode 1-590);Masane Tsukayama(Epi'
+
+Jinbe:
+  [DRY-RUN] SET Jinbe.name = 'Jinbe (OPCG, Crunchyroll);Jimbei (VIZ, Crunchyroll'
+
+Monkey_D._Dragon:
+  [DRY-RUN] SET Monkey_D._Dragon.raw_live-action_portrayal = 'Rigo SanchezDean Damonse (young)'
+
+Nefertari_Vivi:
+  [DRY-RUN] SET Nefertari_Vivi.raw_live-action_portrayal = 'Charithra ChandranAroop Shergill (young)'
+
+Scratchmen_Apoo:
+  [DRY-RUN] SET Scratchmen_Apoo.raw_english_voice = 'Funimation:Brad Venable (Episode 392-629,One Piece'
+
+Tony_Tony_Chopper:
+  [DRY-RUN] SET Tony_Tony_Chopper.raw_live-action_portrayal = "Mikaela Hoover(voice/facial capture);N'kone Mametj"
+
+Topman_Warcury:
+  [DRY-RUN] SET Topman_Warcury.raw_english_voice = 'Funimation:Kurt KleinmannRandy Pearlman (Episode 2'
+
+Usopp:
+  [DRY-RUN] SET Usopp.raw_live-action_portrayal = 'Jacob Romero;Kevin Saula (young)'
+
+--- REMOVED (1467) SKIPPED ---
+  Partial snapshot (50/1517 chars).
+  Run with a full snapshot to safely mark removals.
+
+==================================================
+DRY-RUN complete. No changes written.
+Re-run with --apply to commit.
+Log: /Users/mussageyre/Desktop/poneglyph/logs/patches/2026-04-22_15-37.log
+[15:37:09]   ✓ done (1s)
+[15:37:09] 
+[15:37:09] ── Step 4: Detect new chapters + characters ─────────────────
+[15:37:09] ▶ detect_new_content.py
+[15:37:09]   cmd: /Library/Frameworks/Python.framework/Versions/3.13/bin/python3 detect_new_content.py
+Connecting to Neo4j...
+Connected.
+
+Graph: 1526 characters, latest chapter 1181
+
+Detecting latest chapter via binary search...
+  Latest chapter: 1181
+Wiki latest chapter: 1181
+
+Fetching canon character list from wiki...
+  Found 1525 characters on wiki
+
+New characters not in graph: 2
+  D._D._Tee
+  Rhodes
+
+Report written: reports/pending_updates_2026-04-22.md
+[15:37:12]   ✓ done (3s)
+[15:37:12] 
+[15:37:12] ── Step 5: Ingest new chapters ──────────────────────────────
+[15:37:12] ▶ ingest_new_chapters.py (dry-run)
+[15:37:12]   cmd: /Library/Frameworks/Python.framework/Versions/3.13/bin/python3 ingest_new_chapters.py
+Loaded 33 arcs from /Users/mussageyre/Desktop/poneglyph/data/arcs.json
+Connected to Neo4j.
+
+Auto-detecting chapter gap...
+  Graph max chapter : 1181
+  Wiki max chapter  : 1181
+Graph is already up to date. Nothing to ingest.
+[15:37:13]   ✓ done (1s)
+[15:37:13] 
+[15:37:13] ── Step 6: Stage new characters ─────────────────────────────
+[15:37:13] ▶ stage_new_characters.py
+[15:37:13]   cmd: /Library/Frameworks/Python.framework/Versions/3.13/bin/python3 stage_new_characters.py
+Connected to Neo4j.
+
+Fetching graph character IDs...
+  1526 characters in graph
+Fetching wiki character list...
+  1525 characters on wiki
+  2 new characters detected
+
+Loading scraper...
+Warning: Selenium not available. Install with: pip install selenium webdriver-manager
+
+Scraping 2 characters...
+
+[1/2] D._D._Tee
+  FAIL — no infobox found
+[2/2] Rhodes
+  FAIL — no infobox found
+
+============================================================
+Staged  : 0
+Failed  : 2
+Review  : /Users/mussageyre/Desktop/poneglyph/data/pending_review/REVIEW_2026-04-22.md
+Log     : /Users/mussageyre/Desktop/poneglyph/logs/ingestion/staging_2026-04-22.log
+
+Failed slugs:
+  D._D._Tee: no infobox found
+  Rhodes: no infobox found
+[15:37:17]   ✓ done (4s)
+[15:37:17] 
+[15:37:17] ── Step 7: Refresh location / occupation relationships ──────
+[15:37:17]   [DRY-RUN] Would check diff for Origin/Residence/Occupations changes.
+[15:37:17]   [DRY-RUN] Would run import_locations.py --apply and import_occupations.py --apply if any found.
+[15:37:17] 
+[15:37:17] ============================================================
+[15:37:17] WEEKLY UPDATE COMPLETE [DRY-RUN]
+[15:37:17] ============================================================
+[15:37:17] 
+[15:37:17]   Chapters: graph is up to date (0 new)
+[15:37:17]   Characters: nothing new to stage
+[15:37:17] 
+[15:37:17]   Log: /Users/mussageyre/Desktop/poneglyph/logs/weekly_runs/2026-04-22_15-37.log
+[15:37:17] 
+[15:37:17]   Graph is up to date. Nothing pending review.

@@ -210,7 +210,7 @@ def main():
     results = []
 
     for q in questions:
-        print(f"[{q['num']:02d}/50] {q['question'][:60]}...", end="", flush=True)
+        print(f"[{q['num']:02d}/{len(questions)}] {q['question'][:60]}...", end="", flush=True)
         r = run_one(q, client, schema)
         results.append(r)
         badge = "✅" if r["status"] == "PASS" else "❌"

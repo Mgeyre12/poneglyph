@@ -6,15 +6,21 @@ This schema is used as context for LLM-generated Cypher queries. All property na
 
 | Label / Relationship | Count |
 |---|---|
-| `Character` | 1,517 |
-| `Organization` | 359 |
+| `Character` | 1,526 |
+| `Organization` | 362 |
 | `DevilFruit` | 134 |
-| `Chapter` | 515 |
+| `Chapter` | 534 |
 | `Arc` | 33 |
-| `AFFILIATED_WITH` | 1,927 |
+| `Location` | 247 |
+| `Occupation` | 661 |
+| `AFFILIATED_WITH` | 1,932 |
 | `ATE_FRUIT` | 143 |
-| `DEBUTED_IN` | 1,473 |
-| `IN_ARC` | 514 |
+| `DEBUTED_IN` | 1,480 |
+| `IN_ARC` | 533 |
+| `BORN_IN` | 940 |
+| `RESIDES_IN` | 849 |
+| `LOCATED_IN` | 67 |
+| `HAS_OCCUPATION` | 2,050 |
 
 ## Node labels
 
@@ -59,6 +65,24 @@ Properties: `debut_chapter`: integer, `fruit_id`: string, `japanese_name`: strin
 - `japanese_name` — katakana (e.g. `オペオペの実`)
 - `meaning`, `debut_chapter` — source data fields
 
+### `Location`
+
+Properties: `slug`: string, `name`: string
+
+- `slug` — stable unique key (lowercase, underscored, e.g. `east_blue`, `foosha_village`)
+- `name` — display name as it appears in the wiki data
+
+Coverage: 247 nodes. Origins come from the `Origin` field (38% of characters); residences from `Residence` (46%). Coverage is sparse for minor characters.
+
+### `Occupation`
+
+Properties: `slug`: string, `name`: string
+
+- `slug` — stable unique key (lowercase, underscored, e.g. `pirate_captain`, `marine_officer`)
+- `name` — display name after camelCase normalization (e.g. `Pirate Officer`, not `PirateOfficer`)
+
+Coverage: 661 unique occupations, 84% of characters have at least one. ~20% of entries were camelCase-fused in the source (e.g. `PirateOfficer`) and were split automatically; edge cases are logged in `logs/occupation_splits.log` for hand-patching.
+
 ### `Organization`
 
 Properties: `name`: string, `org_id`: string
@@ -68,10 +92,14 @@ Properties: `name`: string, `org_id`: string
 
 ## Relationships
 
-- `(:Character)-[:AFFILIATED_WITH { `org_id`: string, `status`: string, `status_raw`: string }]->(:Organization)`
-- `(:Character)-[:ATE_FRUIT { `fruit_id`: string, `status`: string }]->(:DevilFruit)`
+- `(:Character)-[:AFFILIATED_WITH { org_id: string, status: string, status_raw: string }]->(:Organization)`
+- `(:Character)-[:ATE_FRUIT { fruit_id: string, status: string }]->(:DevilFruit)`
 - `(:Character)-[:DEBUTED_IN]->(:Chapter)`
 - `(:Chapter)-[:IN_ARC]->(:Arc)`
+- `(:Character)-[:BORN_IN]->(:Location)`
+- `(:Character)-[:RESIDES_IN { status: string }]->(:Location)`
+- `(:Location)-[:LOCATED_IN]->(:Location)`
+- `(:Character)-[:HAS_OCCUPATION { status: string }]->(:Occupation)`
 
 ### Relationship notes
 
@@ -79,6 +107,10 @@ Properties: `name`: string, `org_id`: string
 - `:ATE_FRUIT` — `status`: `current` | `former`. Multi-user fruits (e.g. Gura Gura no Mi) have two relationships: Whitebeard (`former`) and Blackbeard (`current`).
 - `:DEBUTED_IN` — no properties. Links character to their debut chapter node.
 - `:IN_ARC` — no properties. Links a chapter node to its arc.
+- `:BORN_IN` — no properties. A character may have multiple BORN_IN edges: one to the sea (e.g. East Blue) and one to the specific location (e.g. Foosha Village). Fish-Man Island characters have three: Grand Line + Ryugu Kingdom + Fish-Man Island.
+- `:RESIDES_IN` — `status`: `current` | `former` | `temporary`. A character can have multiple RESIDES_IN edges with different statuses.
+- `:LOCATED_IN` — no properties. Hierarchy sourced only from explicit parenthetical in the wiki Origin field (e.g. `East Blue(Foosha Village)`). 67 edges total. Not inferred — only stated.
+- `:HAS_OCCUPATION` — `status`: `current` | `former` | `temporary`. Multiple occupations per character are common.
 
 
 ## Example Cypher patterns
@@ -136,6 +168,67 @@ RETURN c.name, c.status, c.age, c.epithet,
        ch.number AS debut_chapter, a.name AS debut_arc
 ```
 
+### Find where a character is from (origin)
+```cypher
+MATCH (c:Character)-[:BORN_IN]->(l:Location)
+WHERE toLower(c.name) CONTAINS toLower("luffy")
+   OR toLower(c.opwikiID) CONTAINS toLower("luffy")
+RETURN c.name, collect(l.name) AS born_in
+```
+
+### Find all characters from a specific location (including sea-level)
+```cypher
+MATCH (c:Character)-[:BORN_IN]->(l:Location)
+WHERE toLower(l.name) CONTAINS toLower("east blue")
+RETURN c.name, c.status, l.name AS location
+ORDER BY c.name
+```
+
+### Find characters born somewhere inside a sea (via LOCATED_IN)
+```cypher
+MATCH (specific:Location)-[:LOCATED_IN]->(sea:Location)
+WHERE toLower(sea.name) CONTAINS toLower("east blue")
+MATCH (c:Character)-[:BORN_IN]->(specific)
+RETURN c.name, specific.name AS birthplace, sea.name AS sea
+ORDER BY c.name
+```
+
+### Find where a character lives / has lived
+```cypher
+MATCH (c:Character)-[r:RESIDES_IN]->(l:Location)
+WHERE toLower(c.name) CONTAINS toLower("zoro")
+   OR toLower(c.opwikiID) CONTAINS toLower("zoro")
+RETURN c.name, l.name AS location, r.status
+ORDER BY r.status
+```
+
+### Find current residents of a location
+```cypher
+MATCH (c:Character)-[r:RESIDES_IN]->(l:Location)
+WHERE toLower(l.name) CONTAINS toLower("wano")
+  AND r.status = "current"
+RETURN c.name, c.status, l.name
+ORDER BY c.name
+```
+
+### Find all occupations of a character
+```cypher
+MATCH (c:Character)-[r:HAS_OCCUPATION]->(o:Occupation)
+WHERE toLower(c.name) CONTAINS toLower("robin")
+   OR toLower(c.opwikiID) CONTAINS toLower("robin")
+RETURN c.name, o.name AS occupation, r.status
+ORDER BY r.status, o.name
+```
+
+### Find all characters with a given occupation
+```cypher
+MATCH (c:Character)-[r:HAS_OCCUPATION]->(o:Occupation)
+WHERE toLower(o.name) CONTAINS toLower("pirate captain")
+  AND r.status = "current"
+RETURN c.name, c.status, o.name AS occupation
+ORDER BY c.name
+```
+
 ## Important query notes
 
 1. **Always use `toLower()` + `CONTAINS` for name matching** — fans type `luffy`, not `Monkey D. Luffy`.
@@ -144,3 +237,7 @@ RETURN c.name, c.status, c.age, c.epithet,
 4. **Devil fruit type** is on the `:DevilFruit` node, not on the relationship.
 5. **Organization lookup**: prefer matching on `o.name` with `CONTAINS` rather than exact match.
 6. **Arc lookup**: use `a.name` with `CONTAINS` or `a.arc_order` for precise arc targeting.
+7. **BORN_IN is sparse** (38% of characters). Combine with `OPTIONAL MATCH` when origin data may not exist.
+8. **HAS_OCCUPATION coverage**: 84% of characters. Use `OPTIONAL MATCH` when occupation may be absent.
+9. **Occupation name matching**: fans may say "Marine" or "Pirate" loosely — use `CONTAINS` on `o.name`.
+10. **LOCATED_IN hierarchy is shallow** — only 67 edges, all sea→specific. Don't expect multi-hop paths beyond one level.

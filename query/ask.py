@@ -107,6 +107,12 @@ For example, searching "ope ope": toLower(f.name) CONTAINS "ope" OR toLower(f.fr
 r.status IN ["former","defected","disbanded","revoked"] AND exclude characters who \
 still have a current affiliation with the same org using NOT EXISTS. \
 Example: who are former Marines? See few-shot below.
+10. Location queries: use :BORN_IN for birthplace/origin, :RESIDES_IN for where they live. \
+BORN_IN coverage is ~38% of characters; use OPTIONAL MATCH when origin may be absent. \
+A character can have multiple BORN_IN edges (sea + specific location). \
+:LOCATED_IN connects specific locations to their sea (67 edges, one hop only).
+11. Occupation queries: use :HAS_OCCUPATION. Coverage is 84%. Status is current|former|temporary. \
+Occupation names may be imperfect (some camelCase fusions remain) — use CONTAINS matching.
 
 ## Few-shot examples
 
@@ -160,6 +166,43 @@ WHERE toLower(o.name) CONTAINS toLower("marine")
   }}
 RETURN c.name, r.status AS former_status, o.name AS org
 ORDER BY c.name
+
+Q: Where is Luffy from?
+A:
+MATCH (c:Character)-[:BORN_IN]->(l:Location)
+WHERE toLower(c.name) CONTAINS toLower("luffy")
+   OR toLower(c.opwikiID) CONTAINS toLower("luffy")
+RETURN c.name, collect(l.name) AS born_in
+
+Q: Where does Zoro live?
+A:
+MATCH (c:Character)-[r:RESIDES_IN]->(l:Location)
+WHERE toLower(c.name) CONTAINS toLower("zoro")
+   OR toLower(c.opwikiID) CONTAINS toLower("zoro")
+RETURN c.name, l.name AS location, r.status
+ORDER BY r.status
+
+Q: Who are all the characters from East Blue?
+A:
+MATCH (c:Character)-[:BORN_IN]->(l:Location)
+WHERE toLower(l.name) CONTAINS toLower("east blue")
+RETURN c.name, c.status, l.name AS birthplace
+ORDER BY c.name
+
+Q: What does Nami do?
+A:
+MATCH (c:Character)-[r:HAS_OCCUPATION]->(o:Occupation)
+WHERE toLower(c.name) CONTAINS toLower("nami")
+   OR toLower(c.opwikiID) CONTAINS toLower("nami")
+RETURN c.name, o.name AS occupation, r.status
+ORDER BY r.status, o.name
+
+Q: How many current Pirate Captains are in the graph?
+A:
+MATCH (c:Character)-[r:HAS_OCCUPATION]->(o:Occupation)
+WHERE toLower(o.name) CONTAINS toLower("pirate captain")
+  AND r.status = "current"
+RETURN count(c) AS pirate_captain_count
 """
 
 ANSWER_SYSTEM_PROMPT = """\
