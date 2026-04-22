@@ -5,3 +5,8 @@ __pycache__/
 venv/
 *.egg-info/
 .DS_Store
+
+# Snapshot character files — too many to track in git (1500+ per run)
+data/snapshots/baseline/characters/
+data/snapshots/*/characters/
+data/snapshots/*/_tmp/
