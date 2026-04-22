@@ -18,11 +18,24 @@ Data sourced from [kalnassag/one-piece-ontology](https://github.com/kalnassag/on
 - **Browser:** `http://localhost:7474`
 - **Database must be started manually** in Neo4j Desktop before running any script.
 
+## Project structure
+
+```
+poneglyph/
+├── ingest/       # import_*.py — load data into Neo4j
+├── fixes/        # fix_*.py — normalization and cleanup scripts
+├── query/        # ask.py — natural-language LLM query layer
+├── utils/        # generate_schema.py and other utilities
+├── docs/         # graph_schema.md, test_queries.md, MY_PROJECT_NOTES.md
+├── data/         # raw/processed JSON source files
+└── logs/         # per-run skip/error logs
+```
+
 ## Running import scripts
 
 ```bash
 pip install neo4j
-python3 import_characters.py
+python3 ingest/import_characters.py
 ```
 
 All import scripts are idempotent — safe to re-run. They use `MERGE` keyed on `opwikiID` and create a uniqueness constraint on first run.
@@ -53,7 +66,7 @@ Key data quirks to know before writing new import logic:
 
 ## Adding new import scripts
 
-Follow the pattern in `import_characters.py`:
+Follow the pattern in `ingest/import_characters.py`:
 1. Constants block at the top (URI, USER, PASSWORD, DATA_FILE)
 2. Pure helper functions for parsing/cleaning individual fields
 3. `build_node_props(record)` → clean dict with `None` values stripped before writing
