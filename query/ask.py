@@ -24,9 +24,9 @@ load_dotenv()
 
 # ── config ────────────────────────────────────────────────────────────────────
 
-NEO4J_URI = "bolt://localhost:7687"
-NEO4J_USER = "neo4j"
-NEO4J_PASSWORD = "Mussa1234"
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
 MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 1024
@@ -113,6 +113,15 @@ A character can have multiple BORN_IN edges (sea + specific location). \
 :LOCATED_IN connects specific locations to their sea (67 edges, one hop only).
 11. Occupation queries: use :HAS_OCCUPATION. Coverage is 84%. Status is current|former|temporary. \
 Occupation names may be imperfect (some camelCase fusions remain) — use CONTAINS matching.
+12. Five Elders: the "Five Elders" org has exactly 5 members (Saturn, Mars, Nusjuro, Ju Peter, Warcury). \
+Garling Figarland is NOT one of the Five — he is Supreme Commander of the Holy Knights (org: "Knights of God"). \
+If asked "who are the Five Elders", return only the 5 canonical members.
+13. Kaku disambiguation: two characters share the name "Kaku" (debut Ch 323 and Ch 927). \
+If a Kaku query returns 2 rows, describe both and note the ambiguity explicitly.
+14. Aggregation ORDER BY: when RETURN contains an aggregation (count, collect, sum, avg), \
+ORDER BY may only reference aliases defined in that RETURN clause. \
+Wrong: RETURN a.name, count(c) ORDER BY a.arc_order \
+Right: RETURN a.name, a.arc_order, count(c) AS n ORDER BY n DESC
 
 ## Few-shot examples
 

@@ -197,7 +197,15 @@ def write_results(results: list[dict], run_num: int) -> str:
 
 
 def main():
-    run_num = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+    if len(sys.argv) > 1:
+        run_num = int(sys.argv[1])
+    else:
+        existing = [
+            int(m.group(1))
+            for f in os.listdir(THIS_DIR)
+            if (m := __import__("re").match(r"stress_test_run_(\d+)\.md$", f))
+        ]
+        run_num = max(existing, default=0) + 1
 
     print(f"Poneglyph Stress Test — Run {run_num}")
     print("=" * 50)

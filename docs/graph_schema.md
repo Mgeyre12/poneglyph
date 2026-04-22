@@ -241,3 +241,5 @@ ORDER BY c.name
 8. **HAS_OCCUPATION coverage**: 84% of characters. Use `OPTIONAL MATCH` when occupation may be absent.
 9. **Occupation name matching**: fans may say "Marine" or "Pirate" loosely — use `CONTAINS` on `o.name`.
 10. **LOCATED_IN hierarchy is shallow** — only 67 edges, all sea→specific. Don't expect multi-hop paths beyond one level.
+11. **Five Elders**: exactly 5 members — Saturn, Mars, Nusjuro, Ju Peter, Warcury (all have `St.` prefix in their name). Garling Figarland is NOT one of the Five Elders; he is affiliated with `Knights of God` (Supreme Commander of the Holy Knights).
+12. **Kaku disambiguation**: two characters share the name "Kaku" — one debuted in Ch 323 (CP9/Enies Lobby, Water 7), one in Ch 927 (Kyoshiro Family, Wano). If a query for "Kaku" returns 2 rows with different debut chapters, describe both and note the ambiguity.

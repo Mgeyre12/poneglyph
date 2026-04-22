@@ -32,10 +32,13 @@ import sys
 import argparse
 from datetime import datetime
 from neo4j import GraphDatabase
+from dotenv import load_dotenv
 
-URI = "bolt://localhost:7687"
-USER = "neo4j"
-PASSWORD = "Mussa1234"
+load_dotenv()
+
+URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+USER = os.getenv("NEO4J_USER", "neo4j")
+PASSWORD = os.getenv("NEO4J_PASSWORD")
 DATA_FILE = "data/full-character-data-processed-2.json"
 
 ROOT = os.path.dirname(os.path.abspath(__file__))

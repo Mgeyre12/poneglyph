@@ -38,11 +38,14 @@ import json
 import os
 import re
 from neo4j import GraphDatabase
+from dotenv import load_dotenv
 
 # ── connection ────────────────────────────────────────────────────────────────
-NEO4J_URI = "bolt://localhost:7687"
-NEO4J_USER = "neo4j"
-NEO4J_PASSWORD = "Mussa1234"
+load_dotenv()
+
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
 DATA_FILE = os.path.join(
     os.path.dirname(__file__), "..", "data", "full-character-data-processed-2.json"

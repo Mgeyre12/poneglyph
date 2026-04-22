@@ -14,19 +14,22 @@ Usage:
   pip install neo4j
   python import_characters.py
 
-Expects Neo4j running at bolt://localhost:7687 with the password set
-in the NEO4J_PASSWORD constant below.
+Expects NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD set in the environment
+or in a .env file at the project root.
 """
 
 import json
 import re
 import os
 from neo4j import GraphDatabase
+from dotenv import load_dotenv
 
 # ── connection ────────────────────────────────────────────────────────────────
-NEO4J_URI = "bolt://localhost:7687"
-NEO4J_USER = "neo4j"
-NEO4J_PASSWORD = "Mussa1234"  # change if you update your password
+load_dotenv()
+
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
 DATA_FILE = os.path.join(
     os.path.dirname(__file__), "..", "data", "full-character-data-processed-2.json"
