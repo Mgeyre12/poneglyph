@@ -12,11 +12,12 @@ Data sourced from [kalnassag/one-piece-ontology](https://github.com/kalnassag/on
 
 ## Neo4j connection
 
-- **URL:** `bolt://localhost:7687`
-- **User:** `neo4j`
-- **Password:** stored in `NEO4J_PASSWORD` constant at the top of each script — currently `Mussa1234`
+- **URL:** `bolt://localhost:7687` (override with `NEO4J_URI` env var)
+- **User:** `neo4j` (override with `NEO4J_USER`)
+- **Password:** set in `.env` as `NEO4J_PASSWORD` — never hardcoded
 - **Browser:** `http://localhost:7474`
 - **Database must be started manually** in Neo4j Desktop before running any script.
+- Copy `.env.example` → `.env` and fill in credentials before running anything.
 
 ## Project structure
 
