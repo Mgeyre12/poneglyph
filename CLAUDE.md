@@ -94,3 +94,19 @@ Follow the pattern in `ingest/import_characters.py`:
 3. `build_node_props(record)` → clean dict with `None` values stripped before writing
 4. `run_import(driver, records)` → creates constraints, loops with per-record try/except, prints progress every 100 records
 5. `main()` → opens file, connects, calls run_import, closes driver
+
+## Frontend (`web/`)
+
+The Vite + React + Tailwind + shadcn/ui frontend lives in `web/` (merged from the Lovable export in Week 10 Stage 4).
+
+**Before editing anything under `web/`, read `FRONTEND_GUIDELINES.md` at the repo root.** It is the design contract — HSL tokens, surface classes, Robin's voice, the `askRobin` contract, and hard rules (no hardcoded colors, no emoji, no purple/neon, no Next.js, no toast popups for Robin errors).
+
+```bash
+cd web
+npm install
+npm run dev     # http://localhost:8080 (NOT 5173 — configured in vite.config.ts)
+npm run build
+npm run test
+```
+
+`src/lib/askRobin.ts` is a stub until Week 10 Stage 6. Its signature — `askRobin(q: string): Promise<RobinAnswer>` — is the contract the real backend wiring must satisfy. v1 is a blocking call; streaming display is Week 11.

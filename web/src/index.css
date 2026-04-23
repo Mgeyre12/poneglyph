@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Poneglyph design system — sunlit ruin overgrown by jungle.
+   Light-leaning oceanic base, mossy stone slabs, weathered glyphs.
+   All colors HSL. */
+
+@layer base {
+  :root {
+    /* Sky / sea — bright, atmospheric */
+    --background: 196 38% 88%;
+    --foreground: 210 35% 16%;
+
+    /* Stone slab — the Poneglyph itself: cool blue-grey */
+    --card: 208 22% 42%;
+    --card-foreground: 210 30% 92%;
+
+    --popover: 196 30% 94%;
+    --popover-foreground: 210 35% 16%;
+
+    /* Mossy green — the overgrowth */
+    --primary: 142 28% 32%;
+    --primary-foreground: 60 30% 94%;
+
+    /* Aged parchment / sand */
+    --secondary: 42 38% 84%;
+    --secondary-foreground: 210 35% 16%;
+
+    --muted: 196 22% 80%;
+    --muted-foreground: 208 20% 36%;
+
+    /* Brass accent for interactive */
+    --accent: 38 55% 50%;
+    --accent-foreground: 210 35% 12%;
+
+    /* Crimson — the red Poneglyph */
+    --destructive: 358 55% 38%;
+    --destructive-foreground: 60 30% 94%;
+
+    --border: 196 18% 68%;
+    --input: 196 22% 80%;
+    --ring: 38 55% 50%;
+
+    --radius: 0.25rem;
+
+    /* Bespoke tokens */
+    --sky: 196 38% 88%;
+    --sky-deep: 200 35% 72%;
+    --ocean: 205 45% 56%;
+    --stone: 208 22% 42%;
+    --stone-deep: 210 28% 28%;
+    --stone-light: 206 18% 56%;
+    --moss: 142 28% 32%;
+    --moss-bright: 122 38% 42%;
+    --moss-dark: 145 32% 22%;
+    --parchment: 42 38% 84%;
+    --parchment-deep: 38 32% 70%;
+    --brass: 38 55% 50%;
+    --brass-dim: 38 40% 40%;
+    --crimson: 358 55% 38%;
+    --crimson-bright: 358 60% 48%;
+    --ink: 210 35% 16%;
+
+    --gradient-sky: linear-gradient(180deg, hsl(196 50% 92%) 0%, hsl(200 38% 80%) 100%);
+    --gradient-stone: linear-gradient(160deg, hsl(208 22% 48%) 0%, hsl(210 28% 32%) 100%);
+    --gradient-crimson: linear-gradient(160deg, hsl(358 55% 42%) 0%, hsl(355 50% 28%) 100%);
+    --gradient-moss-fade: linear-gradient(180deg, transparent 0%, hsl(142 38% 28% / 0.4) 100%);
+
+    --shadow-carved: inset 0 1px 0 hsl(0 0% 100% / 0.08), inset 0 -2px 4px hsl(0 0% 0% / 0.25), 0 4px 12px hsl(210 35% 16% / 0.18);
+    --shadow-tablet: 0 1px 0 hsl(0 0% 100% / 0.12), 0 4px 14px hsl(210 35% 16% / 0.18);
+    --shadow-soft: 0 2px 8px hsl(210 35% 16% / 0.08);
+
+    --sidebar-background: 196 38% 88%;
+    --sidebar-foreground: 210 35% 16%;
+    --sidebar-primary: 142 28% 32%;
+    --sidebar-primary-foreground: 60 30% 94%;
+    --sidebar-accent: 42 38% 84%;
+    --sidebar-accent-foreground: 210 35% 16%;
+    --sidebar-border: 196 18% 68%;
+    --sidebar-ring: 38 55% 50%;
+  }
+
+  .dark {
+    /* No dark mode — light-themed product */
+    --background: 196 38% 88%;
+    --foreground: 210 35% 16%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html { color-scheme: light; }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    background-image:
+      radial-gradient(ellipse 90% 60% at 50% 0%, hsl(196 60% 96%), transparent 70%),
+      radial-gradient(ellipse 70% 50% at 100% 100%, hsl(142 38% 70% / 0.25), transparent),
+      radial-gradient(ellipse 60% 50% at 0% 80%, hsl(200 45% 78% / 0.4), transparent),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.25 0 0 0 0 0.3 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: hsl(var(--ink));
+  }
+}
+
+@layer components {
+  .font-serif-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  /* The Poneglyph slab — cool blue-grey carved stone */
+  .surface-stone {
+    background: hsl(var(--stone));
+    background-image:
+      linear-gradient(160deg, hsl(0 0% 100% / 0.08) 0%, transparent 40%, hsl(0 0% 0% / 0.15) 100%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' seed='5'/><feColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.9 0 0 0 0 0.95 0 0 0 0.12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    color: hsl(var(--card-foreground));
+    box-shadow: var(--shadow-carved);
+    position: relative;
+  }
+
+  /* Moss creeping in from the edges of a stone slab */
+  .moss-edges {
+    position: relative;
+    isolation: isolate;
+  }
+  .moss-edges::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+      radial-gradient(ellipse 40% 50% at 0% 100%, hsl(142 45% 35% / 0.65), transparent 60%),
+      radial-gradient(ellipse 35% 40% at 100% 0%, hsl(122 40% 38% / 0.5), transparent 65%),
+      radial-gradient(ellipse 25% 30% at 100% 100%, hsl(142 38% 28% / 0.55), transparent 60%),
+      radial-gradient(ellipse 22% 25% at 10% 0%, hsl(142 38% 32% / 0.45), transparent 65%);
+    mix-blend-mode: multiply;
+  }
+  .moss-edges > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Red poneglyph variant */
+  .surface-crimson {
+    background: hsl(var(--crimson));
+    background-image:
+      linear-gradient(160deg, hsl(0 0% 100% / 0.06) 0%, transparent 40%, hsl(0 0% 0% / 0.2) 100%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' seed='9'/><feColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.85 0 0 0 0 0.85 0 0 0 0.1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    color: hsl(60 30% 94%);
+    box-shadow: var(--shadow-carved);
+  }
+
+  /* Aged paper for Robin's journal page */
+  .surface-parchment {
+    background: hsl(var(--parchment));
+    background-image:
+      radial-gradient(ellipse at 30% 0%, hsl(38 30% 76% / 0.6), transparent 60%),
+      radial-gradient(ellipse at 100% 100%, hsl(38 40% 64% / 0.5), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' seed='2'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.15 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    color: hsl(var(--ink));
+  }
+
+  /* Engraved text — looks chiseled into stone */
+  .text-engraved {
+    color: hsl(210 30% 92%);
+    text-shadow:
+      0 -1px 0 hsl(0 0% 0% / 0.4),
+      0 1px 0 hsl(0 0% 100% / 0.12);
+  }
+
+  .text-engraved-dark {
+    color: hsl(var(--ink));
+    text-shadow:
+      0 1px 0 hsl(0 0% 100% / 0.5),
+      0 -1px 0 hsl(0 0% 0% / 0.05);
+  }
+
+  .divider-glyph {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: hsl(var(--moss));
+  }
+  .divider-glyph::before,
+  .divider-glyph::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--moss) / 0.4), transparent);
+  }
+}
+
+@layer utilities {
+  .glyph-bg {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='none' stroke='hsl(208 22%25 35%25)' stroke-opacity='0.18' stroke-width='1.2'><rect x='10' y='10' width='14' height='14'/><rect x='14' y='14' width='6' height='6' fill='hsl(208 22%25 35%25)' fill-opacity='0.12'/><path d='M30 12h12M36 12v12'/><rect x='52' y='10' width='14' height='4'/><rect x='52' y='18' width='4' height='6'/><rect x='62' y='18' width='4' height='6'/><path d='M12 36h12M18 36v12M12 48h12'/><rect x='32' y='36' width='12' height='12'/><path d='M36 40h4M36 44h4'/><circle cx='58' cy='42' r='5'/><path d='M58 37v10M53 42h10'/><rect x='10' y='58' width='4' height='12'/><rect x='18' y='58' width='4' height='12'/><path d='M14 64h4'/><path d='M30 58h14M30 64h14M30 70h8'/><rect x='52' y='58' width='14' height='14'/><path d='M52 58l14 14M66 58L52 72'/></g></svg>");
+  }
+
+  .text-glyph {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.4em;
+  }
+
+  .animate-glyph-flicker {
+    animation: glyph-flicker 2.4s ease-in-out infinite;
+  }
+
+  .animate-pulse-edge {
+    animation: pulse-edge 4s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out both;
+  }
+
+  .animate-glyph-drift {
+    animation: glyph-drift 8s ease-in-out forwards;
+  }
+
+  .animate-slow-sway {
+    animation: slow-sway 12s ease-in-out infinite;
+  }
+}
+
+@keyframes glyph-flicker {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-1px); }
+}
+
+@keyframes pulse-edge {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glyph-drift {
+  0% { opacity: 0; transform: translateY(10px); }
+  20% { opacity: 0.5; }
+  80% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+@keyframes slow-sway {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--brass) / 0.35);
+  color: hsl(var(--ink));
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: hsl(var(--sky-deep) / 0.3); }
+::-webkit-scrollbar-thumb { background: hsl(var(--moss) / 0.5); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--moss)); }
