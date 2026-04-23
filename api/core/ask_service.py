@@ -27,11 +27,25 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent / "query"))
 import ask as _ask
 
 import anthropic
+from neo4j import GraphDatabase
 
 from api.config import get_settings
 from api.core.cache import answer_cache
 
 settings = get_settings()
+
+
+def _run_cypher(cypher: str) -> list[dict]:
+    """Run Cypher using the api's Aura-aware settings (not query/ask.py's CLI env vars)."""
+    driver = GraphDatabase.driver(
+        settings.neo4j_uri, auth=(settings.neo4j_user, settings.neo4j_password)
+    )
+    try:
+        with driver.session(database=settings.neo4j_database) as session:
+            result = session.run(cypher, timeout=5)
+            return [dict(r) for r in result]
+    finally:
+        driver.close()
 
 _client: anthropic.Anthropic | None = None
 _schema: str | None = None
@@ -130,7 +144,7 @@ async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerato
     yield sse("step_start", {"step": "run_query", "label": "Running query against knowledge graph", "ts": _now()})
     t0 = time.time()
     try:
-        results = await asyncio.to_thread(_ask.run_cypher, cypher)
+        results = await asyncio.to_thread(_run_cypher, cypher)
     except Exception as e:
         yield sse("error", {"code": "query_failed", "message": str(e)})
         return
