@@ -2,9 +2,10 @@
 main.py — Poneglyph FastAPI backend
 
 Endpoints:
-  GET  /api/health   — Neo4j + Anthropic connectivity check
-  GET  /api/stats    — Graph node counts (1h cache)
-  POST /api/ask      — Streaming SSE question answering
+  GET  /api/health        — Neo4j + Anthropic connectivity check
+  GET  /api/stats         — Graph node counts (1h cache)
+  POST /api/ask           — Streaming SSE question answering
+  GET  /api/admin/stats   — Admin monitoring (requires X-Admin-Token header)
 
 Run locally:
   uvicorn api.main:app --reload --port 8000
@@ -19,7 +20,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from api.config import get_settings
-from api.routes import ask, health, stats
+from api.middleware.logging import StructuredLoggingMiddleware
+from api.routes import ask, health, stats, admin
 
 logging.basicConfig(
     level=logging.INFO,
@@ -53,6 +55,7 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
+    app.add_middleware(StructuredLoggingMiddleware)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.origins_list,
@@ -63,6 +66,7 @@ def create_app() -> FastAPI:
     app.include_router(health.router, prefix="/api")
     app.include_router(stats.router, prefix="/api")
     app.include_router(ask.router, prefix="/api")
+    app.include_router(admin.router, prefix="/api")
 
     @app.exception_handler(Exception)
     async def global_exception_handler(request: Request, exc: Exception):
