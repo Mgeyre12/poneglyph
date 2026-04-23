@@ -58,6 +58,7 @@ def call_claude(
         max_tokens=MAX_TOKENS,
         system=system_prompt,
         messages=[{"role": "user", "content": user_prompt}],
+        timeout=60.0,
     )
     return message.content[0].text.strip()
 
