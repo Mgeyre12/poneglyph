@@ -732,3 +732,46 @@ python promote_pending.py --reject <slug> --reason "..." # reject
 - [ ] Set Anthropic spend cap in console (REQUIRED before any public access)
 - [ ] Run stress test run 7 against Aura to confirm graph parity
 - [ ] Start Next.js frontend (Week 12 milestone)
+
+---
+
+## Week 10 — Production deploy (Aura + Railway) + security hardening (2026-04-23)
+
+### What shipped
+
+**Stages 1-2 complete.** Poneglyph is live in production.
+
+- **Neo4j Aura:** graph migrated from local; 1,526 characters / 534 chapters / 247 locations / 661 occupations / 134 devil fruits / 362 orgs / 33 arcs all present. Verified via `/api/stats` against Aura.
+- **Railway:** FastAPI backend deployed at https://poneglyph-production-dfaf.up.railway.app. `NEO4J_ENV=aura` toggles the app between local-dev and Aura-prod without code change.
+- **Smoke test (2026-04-23, post-config-fix):** `/api/health` 200 (neo4j connected, anthropic configured), `/api/stats` 200, `/api/ask` 200 SSE with full pipeline (Cypher generate → Aura query → streamed answer with Chapter 1 citation).
+- **Security:** Cloudflare Turnstile enabled (site key `0x4AAAAAADCC3pXeAWpkFhMQ`), per-IP rate limit at 10/hr (verified 403 on null-token curl).
+
+### Deviations from the Week 10 plan — documented and approved
+
+1. **Spend cap: $100/month + $50 alert**, not $15/day (Anthropic doesn't expose a hard daily cap, only monthly caps + alerts).
+   - **Daily check, first week post-launch:** open console.anthropic.com daily for the first 7 days to eyeball usage trend. Set phone/calendar reminder for this.
+   - **Kill-switch procedure if $50 alert fires:**
+     1. Go to Railway → Deployments → click active deploy → "Stop Deployment" (or toggle service to paused).
+     2. Open Anthropic console → Usage → inspect the last hour of calls, identify the bucket that blew up.
+     3. Check Railway request logs for the IPs / user-agents behind the spike.
+     4. Do not restart the deploy until root cause is understood (likely: Turnstile bypass, new bot, or genuine load spike that warrants tightening rate limits further).
+2. **`RATE_LIMIT_PER_HOUR=10`**, not 30. Conservative default while the API sits public with Turnstile-only protection. **Bump to 30/hr in Stage 6 once Turnstile is verified working on the frontend.** (A matching TODO lives in `api/middleware/rate_limit.py`.)
+3. **Stress test baseline:** comparing run 7 against run 6 (75q, 96%, 13.48s avg), not run 5 (60q — older, smaller suite).
+
+### Code changes this week
+
+- `api/config.py` — `NEO4J_ENV=local|aura` toggle + Aura-aware URI/user/password/database properties.
+- `api/core/ask_service.py` — stopped routing `/api/ask` through `query/ask.py`'s CLI-era Neo4j constants; now uses api settings directly (commit `0b204fa`). This was the bug that made `/api/ask` hit `localhost:7687` from inside Railway.
+- `pipeline/` — `RATE_LIMIT_PER_HOUR` + `NEO4J_ENV` env vars honored.
+- `Procfile` + `nixpacks.toml` — Railway-specific build config (commits `e87c5c5`, `ab943ed`).
+
+### Remaining Week 10 stages
+
+- [ ] **Stage 3** — stress test run 7 against Aura (Option A: local runner, Aura env vars). Compare pass rate + latency to run 6.
+- [ ] **Stage 4** — merge Lovable frontend (`https://github.com/Mgeyre12/robin-reads-lore.git`) into `web/`, author `FRONTEND_GUIDELINES.md` at repo root.
+- [ ] **Stage 5** — backend prompt tweak for `[[Ch.NNN|Title]]` citation tokens inline + matching `citations` array. Verify across 5 samples, then stress test run 8.
+- [ ] **Stage 6** — wire `askRobin()` to real backend, Turnstile widget integration. On success, bump rate limit to 30/hr per note above.
+- [ ] **Stage 7** — Robin-voiced error states (rate limit, Turnstile fail, 5xx).
+- [ ] **Stage 8** — `/api/stats` on About page (with safe hardcoded fallback).
+- [ ] **Stage 9** — Vercel deploy, update `ALLOWED_ORIGINS` to specific Vercel domain.
+- [ ] **Stage 10** — Week 10 notes + clean commit.

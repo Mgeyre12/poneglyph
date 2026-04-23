@@ -36,9 +36,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
-USER = os.getenv("NEO4J_USER", "neo4j")
-PASSWORD = os.getenv("NEO4J_PASSWORD")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+from utils.neo4j_env import get_neo4j_config
+
+URI, USER, PASSWORD, _ = get_neo4j_config()
 DATA_FILE = "data/full-character-data-processed-2.json"
 
 ROOT = os.path.dirname(os.path.abspath(__file__))

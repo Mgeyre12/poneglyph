@@ -46,6 +46,9 @@ class InMemoryRateLimiter:
         return {"ip": ip, "calls_this_hour": len(calls), "limit": self._max}
 
 
+# TODO (Week 10 Stage 6): bump RATE_LIMIT_PER_HOUR from 10 back to 30 once
+# Turnstile is verified working on the deployed Vite frontend. See
+# docs/MY_PROJECT_NOTES.md → Week 10 → Deviation 2.
 rate_limiter = InMemoryRateLimiter(
     max_calls=get_settings().rate_limit_per_hour,
     window_seconds=3600,
