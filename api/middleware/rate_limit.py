@@ -2,6 +2,8 @@ import time
 from collections import defaultdict
 from fastapi import Request, HTTPException
 
+from api.config import get_settings
+
 
 class InMemoryRateLimiter:
     """Per-IP sliding window: max_calls per window_seconds."""
@@ -44,4 +46,7 @@ class InMemoryRateLimiter:
         return {"ip": ip, "calls_this_hour": len(calls), "limit": self._max}
 
 
-rate_limiter = InMemoryRateLimiter(max_calls=30, window_seconds=3600)
+rate_limiter = InMemoryRateLimiter(
+    max_calls=get_settings().rate_limit_per_hour,
+    window_seconds=3600,
+)
