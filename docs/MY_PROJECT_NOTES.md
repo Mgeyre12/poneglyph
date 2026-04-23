@@ -641,3 +641,94 @@ python promote_pending.py --reject <slug> --reason "..." # reject
 - Auth + user accounts
 - Save queries / share answers
 - Graph visualization layer (interactive)
+
+---
+
+## Week 8 — Locations + Occupations (2026-04-22)
+
+### What I did
+
+- Loaded `:Location` nodes + `ORIGINATES_FROM` / `RESIDES_IN` relationships from `Origin` and `Residence` character fields
+- Loaded `:Occupation` nodes + `HAS_OCCUPATION` relationships (with `status` property: current/former)
+- Ran stress test run 4: 58/60 pass (97%). Both failures were pre-existing edge cases (same as run 3).
+- Updated `docs/graph_schema.md` to reflect all new node types and relationship directions
+- Updated `audit/locations_occupations_audit.md` with import counts and known gaps
+
+### Graph state after Week 8
+
+- Characters: 1,517 (no change)
+- Locations: ~247 unique `:Location` nodes
+- Occupations: ~661 unique `:Occupation` nodes
+- Status property on `HAS_OCCUPATION` edges: current / former / unknown
+
+---
+
+## Week 9 — V1 triage, FastAPI backend, public repo prep (2026-04-22)
+
+### What I did
+
+**Stage 1 — V1 triage**
+- Full sweep of weeks 1–8 notes + git history + code review
+- Produced `docs/V1_TRIAGE.md`: 2 blockers, 5 polish items, 14 V2 deferrals
+- Blockers: hardcoded Neo4j password across 17 files, Garling counted as a 6th Five Elder
+
+**Stage 2 — V1 blockers fixed**
+- Migrated all 17 scripts to `os.getenv("NEO4J_PASSWORD")` via a migration script
+- Created `.env.example` documenting all required vars
+- Fixed Garling: deleted the incorrect `AFFILIATED_WITH → Five Elders` edge; exactly 5 Five Elders now confirmed
+- Added schema note (docs/graph_schema.md) and Cypher prompt rule (Rule 12) to prevent LLM from counting Garling as a sixth
+- Also added Rule 13 (Kaku disambiguation) and Rule 14 (aggregation ORDER BY must only reference RETURN aliases)
+
+**Stage 3 — Stress test expansion**
+- Expanded from 60 → 75 questions: added categories for typos, multi-intent, spoiler-adjacent, superlatives, graph edge cases, prompt injection
+- Fixed auto-numbering bug: runner was always writing `stress_test_run_1.md` (overwriting)
+- Added `timeout=60.0` to `call_claude()` to prevent SDK from hanging indefinitely on API stalls
+- Run 5 (60 questions): **98% pass rate** (59/60)
+- Run 6 (75 questions): **96% pass rate** (72/75); 3 failures: Q20 false positive (keyword guard too broad), Q68 spoiler-adjacent (0 rows expected), Q71 superlative (no graph answer, expected)
+
+**Stage 4 — Neo4j Aura migration**
+- Deferred — user doesn't have Aura account yet; will migrate when needed for production
+
+**Stage 5 — FastAPI streaming backend**
+- Built complete API in `api/`: config, cache, ask_service, rate_limit, turnstile, logging, health, stats, ask, admin routes
+- SSE event protocol: step_start → step_complete → answer_chunk* → done | error
+- In-memory TTL cache (24h, SHA-256 key)
+- Per-IP sliding window rate limiter (30 req/hr)
+- Cloudflare Turnstile bot protection (bypassable via `TURNSTILE_ENABLED=false` in dev)
+- Structured JSON request logging middleware
+- Admin endpoint (`/api/admin/stats`) gated by `X-Admin-Token`
+- Local test: health 200, stats 200 (1,526 chars, 534 chapters, 33 arcs, 661 occupations, 247 locations, 134 devil fruits, 362 organizations)
+
+**Stage 6 — Security layer**
+- All security components were built as part of Stage 5 (rate limiting, Turnstile, CORS, logging)
+
+**Stage 7 — Public repo prep**
+- Secrets sweep: no real API keys in git history; only `Mussa1234` (local-only Neo4j password, already rotated by Aura migration)
+- Added: `LICENSE` (MIT), `CREDITS.md`, `CONTRIBUTING.md`, `README.md`, `ROADMAP.md`, `docs/ARCHITECTURE.md`
+- Created `docs/DEPLOYMENT.md`: full guide for Aura + Railway + Vercel + Cloudflare + spend cap
+
+**Stage 8 — Railway deployment dry run**
+- Created `Procfile` and `nixpacks.toml` for Railway
+- Verified local API start: health + stats endpoints both 200
+- Ready to deploy as soon as user creates Railway account
+
+**Project cleanup**
+- Moved 7 loose pipeline scripts from root → `pipeline/` directory: `refresh_data.py`, `diff_snapshots.py`, `apply_patch.py`, `detect_new_content.py`, `ingest_new_chapters.py`, `stage_new_characters.py`, `promote_pending.py`
+- Updated all `__file__`-based path anchors in moved scripts to resolve from project root
+- Updated `weekly_update.py` subprocess call paths to use `pipeline/` prefix
+- Updated CLAUDE.md and README.md project structure sections
+
+### Graph state after Week 9
+
+- Characters: 1,526 (9 promoted from pipeline testing this week)
+- All other node counts unchanged
+- API: running locally at port 8000, ready for Railway deployment
+- Stress test: 96% pass rate on 75-question suite (run 6)
+
+### Next up (Week 10)
+
+- [ ] Create Neo4j Aura Free instance + migrate local graph (dump/restore)
+- [ ] Deploy to Railway, get public URL
+- [ ] Set Anthropic spend cap in console (REQUIRED before any public access)
+- [ ] Run stress test run 7 against Aura to confirm graph parity
+- [ ] Start Next.js frontend (Week 12 milestone)

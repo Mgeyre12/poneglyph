@@ -224,7 +224,7 @@ def _scrape_via_api(scraper, char_list: list[str], delay: int = 3) -> list[dict]
 
     if failures:
         fail_path = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             "logs", "scrape_failures_latest.json"
         )
         os.makedirs(os.path.dirname(fail_path), exist_ok=True)
@@ -250,7 +250,7 @@ def main():
     parser.add_argument("--out", type=str, default=None, help="Override snapshot output directory")
     args = parser.parse_args()
 
-    project_root = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     today = date.today().isoformat()
 
     # ── baseline mode ────────────────────────────────────────────────────────

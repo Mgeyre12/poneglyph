@@ -23,11 +23,13 @@ Data sourced from [kalnassag/one-piece-ontology](https://github.com/kalnassag/on
 
 ```
 poneglyph/
+├── api/              # FastAPI backend (routes, middleware, core services)
 ├── ingest/           # import_*.py — load data into Neo4j
+├── pipeline/         # refresh, diff, patch, detect, ingest, stage, promote scripts
 ├── fixes/            # fix_*.py — normalization and cleanup scripts
 ├── query/            # ask.py — natural-language LLM query layer
 ├── utils/            # generate_schema.py and other utilities
-├── docs/             # graph_schema.md, test_queries.md, MY_PROJECT_NOTES.md
+├── docs/             # graph_schema.md, ARCHITECTURE.md, DEPLOYMENT.md, etc.
 ├── data/snapshots/   # timestamped per-character scrape snapshots
 ├── diff/             # field-level diff reports (md + json)
 ├── reports/          # pending_updates detection reports
@@ -40,12 +42,15 @@ poneglyph/
 ## Refresh workflow (keeping the graph current)
 
 ```bash
-python refresh_data.py --test           # scrape 50-char test set
-python refresh_data.py --full           # scrape all 1,517 (~75 min)
-python diff_snapshots.py data/snapshots/baseline data/snapshots/YYYY-MM-DD
-python apply_patch.py --dry-run diff/YYYY-MM-DD_diff.json
-python apply_patch.py --apply   diff/YYYY-MM-DD_diff.json
-python detect_new_content.py            # report new chapters/characters
+python weekly_update.py                 # full pipeline dry-run (safe)
+python weekly_update.py --dry-run       # explicit dry-run
+
+python pipeline/refresh_data.py --test  # scrape 50-char test set
+python pipeline/refresh_data.py --full  # scrape all 1,517 (~75 min)
+python pipeline/diff_snapshots.py data/snapshots/baseline data/snapshots/YYYY-MM-DD
+python pipeline/apply_patch.py --dry-run diff/YYYY-MM-DD_diff.json
+python pipeline/apply_patch.py --apply   diff/YYYY-MM-DD_diff.json
+python pipeline/detect_new_content.py   # report new chapters/characters
 ```
 
 The scraper uses the MediaWiki API (`action=parse&prop=text`) — direct wiki requests return 403 since ~2025.
@@ -61,13 +66,11 @@ All import scripts are idempotent — safe to re-run. They use `MERGE` keyed on 
 
 ## Graph schema (current state)
 
-**Nodes:**
-- `:Character` — 1,517 nodes, keyed on `opwikiID` (wiki URL slug, e.g. `"Monkey_D._Luffy"`)
+**Nodes:** `:Character` (1,526), `:DevilFruit` (134), `:Organization` (~600), `:Occupation` (~400), `:Location` (~800), `:Arc` (33), `:Chapter` (~200)
 
-**Constraints:**
-- `character_id`: `opwikiID IS UNIQUE` on `:Character`
+**Key relationships:** `AFFILIATED_WITH`, `HAS_OCCUPATION`, `ORIGINATES_FROM`, `RESIDES_IN`, `ATE_FRUIT`, `PREVIOUSLY_ATE`, `DEBUTED_IN`, `IN_ARC`
 
-**Not yet loaded** (planned): `:DevilFruit`, `:Location`, `:Affiliation`, `:Occupation` nodes and their relationships.
+Full schema with known quirks: `docs/graph_schema.md`
 
 ## Data files
 

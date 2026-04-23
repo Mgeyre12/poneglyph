@@ -45,10 +45,10 @@ HEADERS = {
 }
 
 PENDING_DIR = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), "data", "pending_review"
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "pending_review"
 )
 LOG_DIR = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), "logs", "ingestion"
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs", "ingestion"
 )
 
 # Characters that warrant extra scrutiny in the review doc.

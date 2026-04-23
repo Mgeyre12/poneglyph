@@ -4,12 +4,12 @@ weekly_update.py
 Full weekly refresh pipeline. Run every Sunday night; review Monday morning.
 
 Steps:
-  1. refresh_data.py --full          → fresh snapshot from wiki (~75 min)
-  2. diff_snapshots.py <prev> <new>  → field-level diff
-  3. apply_patch.py --apply <diff>   → apply field updates to graph
-  4. detect_new_content.py           → find new chapters + characters
-  5. ingest_new_chapters.py --apply  → auto-ingest new chapters
-  6. stage_new_characters.py         → stage new characters to pending_review
+  1. pipeline/refresh_data.py --full          → fresh snapshot from wiki (~75 min)
+  2. pipeline/diff_snapshots.py <prev> <new>  → field-level diff
+  3. pipeline/apply_patch.py --apply <diff>   → apply field updates to graph
+  4. pipeline/detect_new_content.py           → find new chapters + characters
+  5. pipeline/ingest_new_chapters.py --apply  → auto-ingest new chapters
+  6. pipeline/stage_new_characters.py         → stage new characters to pending_review
 
 Usage:
   python weekly_update.py             # full run (~75 min)
@@ -201,15 +201,15 @@ def main():
     # ── Step 1: Refresh snapshot ──────────────────────────────────────────────
     log("── Step 1: Refresh snapshot from wiki ──────────────────────")
     if args.dry_run:
-        log("  [DRY-RUN] Would run: python refresh_data.py --full")
+        log("  [DRY-RUN] Would run: python pipeline/refresh_data.py --full")
         log("  Skipped — scrape takes ~75 min and hits the wiki.")
         new_snapshot_date = today
         new_snapshot_dir = os.path.join(ROOT, "data", "snapshots", today)
         log(f"  Assumed new snapshot: {new_snapshot_dir}")
     else:
         ok, _ = run_step(
-            "refresh_data.py --full",
-            [sys.executable, "refresh_data.py", "--full"],
+            "pipeline/refresh_data.py --full",
+            [sys.executable, os.path.join("pipeline", "refresh_data.py"), "--full"],
             log, log_raw,
         )
         new_snapshot_date = today
@@ -223,7 +223,7 @@ def main():
 
     if args.dry_run:
         if prior_dir:
-            log(f"  [DRY-RUN] Would run: python diff_snapshots.py {prior_dir} {new_snapshot_dir}")
+            log(f"  [DRY-RUN] Would run: python pipeline/diff_snapshots.py {prior_dir} {new_snapshot_dir}")
         else:
             log("  [DRY-RUN] No prior snapshot found — diff would be skipped.")
         log("  Skipped.")
@@ -237,8 +237,8 @@ def main():
             log(f"  Prior snapshot: {prior_dir}")
             log(f"  New snapshot:  {new_snapshot_dir}")
             run_step(
-                "diff_snapshots.py",
-                [sys.executable, "diff_snapshots.py", prior_dir, new_snapshot_dir],
+                "pipeline/diff_snapshots.py",
+                [sys.executable, os.path.join("pipeline", "diff_snapshots.py"), prior_dir, new_snapshot_dir],
                 log, log_raw,
             )
     log()
@@ -248,14 +248,14 @@ def main():
     if diff_json_path and os.path.exists(diff_json_path):
         if args.dry_run:
             run_step(
-                "apply_patch.py --dry-run",
-                [sys.executable, "apply_patch.py", "--dry-run", diff_json_path],
+                "pipeline/apply_patch.py --dry-run",
+                [sys.executable, os.path.join("pipeline", "apply_patch.py"), "--dry-run", diff_json_path],
                 log, log_raw,
             )
         else:
             run_step(
-                "apply_patch.py --apply",
-                [sys.executable, "apply_patch.py", "--apply", diff_json_path],
+                "pipeline/apply_patch.py --apply",
+                [sys.executable, os.path.join("pipeline", "apply_patch.py"), "--apply", diff_json_path],
                 log, log_raw,
             )
     else:
@@ -265,8 +265,8 @@ def main():
     # ── Step 4: Detect new content ────────────────────────────────────────────
     log("── Step 4: Detect new chapters + characters ─────────────────")
     run_step(
-        "detect_new_content.py",
-        [sys.executable, "detect_new_content.py"],
+        "pipeline/detect_new_content.py",
+        [sys.executable, os.path.join("pipeline", "detect_new_content.py")],
         log, log_raw,
     )
     log()
@@ -275,14 +275,14 @@ def main():
     log("── Step 5: Ingest new chapters ──────────────────────────────")
     if args.dry_run:
         _, ch_stdout = run_step(
-            "ingest_new_chapters.py (dry-run)",
-            [sys.executable, "ingest_new_chapters.py"],
+            "pipeline/ingest_new_chapters.py (dry-run)",
+            [sys.executable, os.path.join("pipeline", "ingest_new_chapters.py")],
             log, log_raw,
         )
     else:
         _, ch_stdout = run_step(
-            "ingest_new_chapters.py --apply",
-            [sys.executable, "ingest_new_chapters.py", "--apply"],
+            "pipeline/ingest_new_chapters.py --apply",
+            [sys.executable, os.path.join("pipeline", "ingest_new_chapters.py"), "--apply"],
             log, log_raw,
         )
     log()
@@ -290,8 +290,8 @@ def main():
     # ── Step 6: Stage new characters ─────────────────────────────────────────
     log("── Step 6: Stage new characters ─────────────────────────────")
     run_step(
-        "stage_new_characters.py",
-        [sys.executable, "stage_new_characters.py"],
+        "pipeline/stage_new_characters.py",
+        [sys.executable, os.path.join("pipeline", "stage_new_characters.py")],
         log, log_raw,
     )
     log()
@@ -370,8 +370,8 @@ def main():
     if pending_count > 0:
         log(f"  ┌─ NEXT ACTION ──────────────────────────────────────────┐")
         log(f"  │  Review staged characters, then promote:               │")
-        log(f"  │    python promote_pending.py --list                    │")
-        log(f"  │    python promote_pending.py --promote <slug> --apply  │")
+        log(f"  │    python pipeline/promote_pending.py --list                    │")
+        log(f"  │    python pipeline/promote_pending.py --promote <slug> --apply  │")
         log(f"  └────────────────────────────────────────────────────────┘")
     else:
         log(f"  Graph is up to date. Nothing pending review.")

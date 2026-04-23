@@ -61,7 +61,7 @@ def connect():
 def setup_log(diff_path: str) -> tuple[str, list]:
     """Create log file path and return (path, log_lines list)."""
     now = datetime.now().strftime("%Y-%m-%d_%H-%M")
-    log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs", "patches")
+    log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs", "patches")
     os.makedirs(log_dir, exist_ok=True)
     log_path = os.path.join(log_dir, f"{now}.log")
     return log_path, []

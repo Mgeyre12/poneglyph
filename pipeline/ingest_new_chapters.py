@@ -28,8 +28,8 @@ NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
 NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
-ARCS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "arcs.json")
-LOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs", "ingestion")
+ARCS_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "arcs.json")
+LOG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs", "ingestion")
 
 FANDOM_API = "https://onepiece.fandom.com/api.php"
 HEADERS = {

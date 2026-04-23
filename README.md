@@ -85,10 +85,11 @@ uvicorn api.main:app --reload
 
 ```
 poneglyph/
-├── ingest/           # import_*.py — load data into Neo4j
-├── fixes/            # fix_*.py — normalization and cleanup scripts
-├── query/            # ask.py — CLI query layer
 ├── api/              # FastAPI backend (routes, middleware, core services)
+├── ingest/           # import_*.py — load data into Neo4j
+├── pipeline/         # refresh, diff, patch, detect, ingest, stage, promote
+├── query/            # ask.py — CLI query layer
+├── fixes/            # fix_*.py — normalization and cleanup scripts
 ├── utils/            # generate_schema.py and other utilities
 ├── docs/             # Architecture, schema, deployment guides
 ├── data/             # Raw/processed JSON source files + snapshots
@@ -106,12 +107,13 @@ poneglyph/
 The scraper pulls from the One Piece Wiki via the MediaWiki API. The weekly workflow:
 
 ```bash
-python refresh_data.py --full           # re-scrape all 1,517 characters (~75 min)
-python diff_snapshots.py data/snapshots/baseline data/snapshots/YYYY-MM-DD
-python apply_patch.py --dry-run diff/YYYY-MM-DD_diff.json
-python apply_patch.py --apply   diff/YYYY-MM-DD_diff.json
-python detect_new_content.py            # report new chapters/characters
-python weekly_update.py                 # full pipeline dry-run
+python weekly_update.py                 # full pipeline dry-run (safe)
+
+python pipeline/refresh_data.py --full  # re-scrape all 1,517 characters (~75 min)
+python pipeline/diff_snapshots.py data/snapshots/baseline data/snapshots/YYYY-MM-DD
+python pipeline/apply_patch.py --dry-run diff/YYYY-MM-DD_diff.json
+python pipeline/apply_patch.py --apply  diff/YYYY-MM-DD_diff.json
+python pipeline/detect_new_content.py   # report new chapters/characters
 ```
 
 ---
