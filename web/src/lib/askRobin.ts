@@ -1,49 +1,218 @@
-/**
- * Stub for the real backend. Replace with the actual API call.
- * Returns a markdown-formatted answer with [[Ch.NNN|Title]] tokens
- * that the chat renderer turns into CitationPill components.
- */
+import { API_BASE_URL } from "./config";
+import { BackendError, RateLimitError, TurnstileError } from "./errors";
+
+export type Citation = { chapter: number; title: string };
+
 export type RobinAnswer = {
   text: string;
-  citations: { chapter: number; title: string }[];
+  citations: Citation[];
 };
 
-const MOCKS: Record<string, RobinAnswer> = {
-  default: {
-    text:
-      "An interesting thread. Let me read what the stones remember.\n\nThe record is incomplete in places — there are silences the World Government has worked very hard to keep — but here is what is carved.\n\nIf you'd like, narrow the question and I'll pull the specific edges of the graph that bear on it.",
-    citations: [],
-  },
-  emperors: {
-    text:
-      "The Four Emperors — the *Yonkō* — are the four pirates whose power is recognized as a counterweight to the Marines and the World Government in the New World.\n\nFollowing the events of Wano and the dissolution of the old order, the current four are:\n\n- **Monkey D. Luffy**, captain of the Straw Hat Pirates [[Ch.1053|The New Era]]\n- **Buggy**, figurehead of the Cross Guild [[Ch.1056|The New Emperors of the Sea]]\n- **Shanks**, captain of the Red Hair Pirates [[Ch.1054|Hand of Flame]]\n- **Marshall D. Teach**, captain of the Blackbeard Pirates [[Ch.925|Beasts Pirates' All-Stars]]\n\nKaido and Big Mom held the seats prior to their defeat in Wano [[Ch.1049|The Strongest]]. Whitebeard's seat passed long ago, at Marineford [[Ch.576|The End of the Battle]].",
-    citations: [
-      { chapter: 1053, title: "The New Era" },
-      { chapter: 1056, title: "The New Emperors of the Sea" },
-      { chapter: 1054, title: "Hand of Flame" },
-      { chapter: 925, title: "Beasts Pirates' All-Stars" },
-      { chapter: 1049, title: "The Strongest" },
-      { chapter: 576, title: "The End of the Battle" },
-    ],
-  },
-  void: {
-    text:
-      "A question close to me.\n\nMy connection to the Void Century is through Ohara — the island of scholars where I was born and where my mother, Nico Olvia, studied the Poneglyphs [[Ch.391|Ohara's Tragedy]]. I am, so far as the record shows, the only living person able to read them [[Ch.398|Sabaody Archipelago]].\n\nThe Void Century is the hundred-year gap the World Government erased from history, between roughly 800 and 900 years before the present day. The Poneglyphs are the surviving record — carved in a script the Government could not destroy [[Ch.395|Devil's Inheritance]].\n\nWhat I am still searching for is the *True History* — the account assembled from all the Road Poneglyphs that converge on Laugh Tale [[Ch.967|Roger and Whitebeard]].",
-    citations: [
-      { chapter: 391, title: "Ohara's Tragedy" },
-      { chapter: 398, title: "Sabaody Archipelago" },
-      { chapter: 395, title: "Devil's Inheritance" },
-      { chapter: 967, title: "Roger and Whitebeard" },
-    ],
-  },
+export type AskOptions = {
+  turnstileToken?: string;
+  sessionId?: string;
+  signal?: AbortSignal;
 };
 
-export async function askRobin(question: string): Promise<RobinAnswer> {
-  // Simulate "reading the Poneglyphs"
-  await new Promise((r) => setTimeout(r, 2400));
+/**
+ * Sends a question to /api/ask (SSE) and resolves with the full answer once
+ * the `done` event arrives. v1 is a blocking call — streaming display is
+ * Week 11 work. Any backend `error` event or HTTP failure rejects with a
+ * typed error from ./errors.
+ */
+export async function askRobin(
+  question: string,
+  opts: AskOptions = {},
+): Promise<RobinAnswer> {
+  let response: Response;
+  try {
+    response = await fetch(`${API_BASE_URL}/api/ask`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
+      body: JSON.stringify({
+        question,
+        session_id: opts.sessionId,
+        turnstile_token: opts.turnstileToken,
+      }),
+      signal: opts.signal,
+    });
+  } catch (err) {
+    if (err instanceof Error && err.name === "AbortError") throw err;
+    throw new BackendError(
+      err instanceof Error ? err.message : "Network error",
+    );
+  }
 
-  const q = question.toLowerCase();
-  if (q.includes("emperor") || q.includes("yonko") || q.includes("yonkō")) return MOCKS.emperors;
-  if (q.includes("void") || q.includes("ohara") || q.includes("robin")) return MOCKS.void;
-  return MOCKS.default;
+  if (!response.ok) {
+    throw await httpErrorFor(response);
+  }
+  if (!response.body) {
+    throw new BackendError("Empty response body from /api/ask");
+  }
+
+  return await consumeSSE(response.body);
+}
+
+async function httpErrorFor(response: Response): Promise<Error> {
+  const payload = await safeReadJson(response);
+  const detail =
+    payload && typeof payload === "object" && "detail" in payload
+      ? (payload as { detail: unknown }).detail
+      : undefined;
+  const detailMsg = extractDetailMessage(detail) ?? response.statusText;
+
+  if (response.status === 429) {
+    const retryAfter =
+      numericDetail(detail, "retry_after") ??
+      parseRetryAfter(response.headers.get("Retry-After"));
+    return new RateLimitError(detailMsg, retryAfter);
+  }
+  if (response.status === 403) {
+    return new TurnstileError(detailMsg);
+  }
+  return new BackendError(detailMsg, response.status);
+}
+
+async function safeReadJson(response: Response): Promise<unknown | null> {
+  try {
+    return await response.clone().json();
+  } catch {
+    return null;
+  }
+}
+
+function extractDetailMessage(detail: unknown): string | undefined {
+  if (typeof detail === "string") return detail;
+  if (detail && typeof detail === "object" && "message" in detail) {
+    const m = (detail as { message: unknown }).message;
+    if (typeof m === "string") return m;
+  }
+  return undefined;
+}
+
+function numericDetail(detail: unknown, key: string): number | undefined {
+  if (detail && typeof detail === "object" && key in detail) {
+    const v = (detail as Record<string, unknown>)[key];
+    if (typeof v === "number") return v;
+  }
+  return undefined;
+}
+
+function parseRetryAfter(header: string | null): number | undefined {
+  if (!header) return undefined;
+  const n = Number(header);
+  return Number.isFinite(n) ? n : undefined;
+}
+
+type SSEEvent = { event: string; data: string };
+
+async function consumeSSE(
+  body: ReadableStream<Uint8Array>,
+): Promise<RobinAnswer> {
+  const reader = body.getReader();
+  const decoder = new TextDecoder("utf-8");
+  let buffer = "";
+  const textChunks: string[] = [];
+  let citations: Citation[] = [];
+  let doneSeen = false;
+
+  try {
+    while (!doneSeen) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+
+      let boundary = buffer.indexOf("\n\n");
+      while (boundary !== -1) {
+        const rawEvent = buffer.slice(0, boundary);
+        buffer = buffer.slice(boundary + 2);
+        const parsed = parseSSEBlock(rawEvent);
+        if (parsed) {
+          const handled = handleEvent(parsed, textChunks, (c) => (citations = c));
+          if (handled === "done") {
+            doneSeen = true;
+            break;
+          }
+        }
+        boundary = buffer.indexOf("\n\n");
+      }
+    }
+  } finally {
+    reader.releaseLock();
+  }
+
+  if (!doneSeen) {
+    throw new BackendError("Stream ended before `done` event");
+  }
+  return { text: textChunks.join(""), citations };
+}
+
+function parseSSEBlock(raw: string): SSEEvent | null {
+  let event = "message";
+  const dataLines: string[] = [];
+  for (const line of raw.split("\n")) {
+    if (!line || line.startsWith(":")) continue;
+    const colon = line.indexOf(":");
+    const field = colon === -1 ? line : line.slice(0, colon);
+    const value =
+      colon === -1 ? "" : line.slice(colon + 1).replace(/^ /, "");
+    if (field === "event") event = value;
+    else if (field === "data") dataLines.push(value);
+  }
+  if (!dataLines.length) return null;
+  return { event, data: dataLines.join("\n") };
+}
+
+function handleEvent(
+  evt: SSEEvent,
+  textChunks: string[],
+  setCitations: (c: Citation[]) => void,
+): "done" | "continue" {
+  if (evt.event === "answer_chunk") {
+    const parsed = tryParse(evt.data);
+    if (parsed && typeof parsed.text === "string") textChunks.push(parsed.text);
+    return "continue";
+  }
+  if (evt.event === "done") {
+    const parsed = tryParse(evt.data);
+    if (parsed && Array.isArray(parsed.citations)) {
+      setCitations(parsed.citations.filter(isCitation));
+    }
+    return "done";
+  }
+  if (evt.event === "error") {
+    const parsed = tryParse(evt.data);
+    const code =
+      parsed && typeof parsed.code === "string" ? parsed.code : "backend_error";
+    const message =
+      parsed && typeof parsed.message === "string"
+        ? parsed.message
+        : "Unknown backend error";
+    throw errorForSSECode(code, message);
+  }
+  // step_start / step_complete / unknown — ignored for v1 blocking call
+  return "continue";
+}
+
+function tryParse(data: string): any {
+  try {
+    return JSON.parse(data);
+  } catch {
+    return null;
+  }
+}
+
+function isCitation(c: unknown): c is Citation {
+  return (
+    !!c &&
+    typeof c === "object" &&
+    typeof (c as Citation).chapter === "number" &&
+    typeof (c as Citation).title === "string"
+  );
+}
+
+function errorForSSECode(code: string, message: string): Error {
+  if (code === "rate_limit_exceeded") return new RateLimitError(message);
+  if (code.startsWith("turnstile")) return new TurnstileError(message);
+  return new BackendError(message);
 }

@@ -1,15 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Glyph } from "@/components/Glyph";
 import { CitationPill } from "@/components/CitationPill";
 import { AmbientGlyphs } from "@/components/AmbientGlyphs";
 import { askRobin, type RobinAnswer } from "@/lib/askRobin";
+import {
+  BackendError,
+  RateLimitError,
+  TurnstileError,
+} from "@/lib/errors";
+import { TURNSTILE_SITE_KEY } from "@/lib/config";
 
 type Msg =
   | { id: string; role: "user"; text: string }
-  | { id: string; role: "robin"; answer: RobinAnswer };
+  | { id: string; role: "robin"; answer: RobinAnswer }
+  | { id: string; role: "error"; text: string };
+
+function robinVoiceForError(err: unknown): string {
+  if (err instanceof RateLimitError) {
+    const wait = err.retryAfter ? ` Try again in about ${err.retryAfter}s.` : "";
+    return `The stones grow quiet — too many hands at once.${wait}`;
+  }
+  if (err instanceof TurnstileError) {
+    return "The guardians at the gate didn't recognize you this time. Refresh the page and try again.";
+  }
+  if (err instanceof BackendError) {
+    return "Something disturbed the record. Give me a moment and ask again.";
+  }
+  return "Something unexpected broke the thread. Ask again in a moment.";
+}
 
 const ReadingAnimation = () => {
   const glyphs = ["◰", "◳", "◱", "◲", "▣", "◫", "⌘", "⌬", "⎔", "⏣"];
@@ -132,6 +154,8 @@ const Ask = () => {
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const sentInitial = useRef(false);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
+  const turnstileTokenRef = useRef<string | null>(null);
 
   const submit = async (q: string) => {
     if (!q.trim() || loading) return;
@@ -139,11 +163,20 @@ const Ask = () => {
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setLoading(true);
+    const token = turnstileTokenRef.current ?? undefined;
     try {
-      const ans = await askRobin(q);
+      const ans = await askRobin(q, { turnstileToken: token });
       setMessages((m) => [...m, { id: `r-${Date.now()}`, role: "robin", answer: ans }]);
+    } catch (err) {
+      setMessages((m) => [
+        ...m,
+        { id: `e-${Date.now()}`, role: "error", text: robinVoiceForError(err) },
+      ]);
     } finally {
       setLoading(false);
+      // Tokens are single-use; request a fresh one for the next submission.
+      turnstileTokenRef.current = null;
+      turnstileRef.current?.reset();
     }
   };
 
@@ -196,21 +229,49 @@ const Ask = () => {
             )}
 
             <div className="space-y-10">
-              {messages.map((m) =>
-                m.role === "user" ? (
-                  <div key={m.id} className="flex justify-end animate-fade-in-up">
-                    <div className="surface-stone moss-edges relative max-w-[85%] overflow-hidden rounded-sm border border-stone-deep/40 px-5 py-3">
-                      <p className="font-sans text-[15px] leading-relaxed text-engraved">{m.text}</p>
+              {messages.map((m) => {
+                if (m.role === "user") {
+                  return (
+                    <div key={m.id} className="flex justify-end animate-fade-in-up">
+                      <div className="surface-stone moss-edges relative max-w-[85%] overflow-hidden rounded-sm border border-stone-deep/40 px-5 py-3">
+                        <p className="font-sans text-[15px] leading-relaxed text-engraved">{m.text}</p>
+                      </div>
+                    </div>
+                  );
+                }
+                if (m.role === "robin") return <RobinMessage key={m.id} answer={m.answer} />;
+                return (
+                  <div key={m.id} className="animate-fade-in-up">
+                    <div className="mb-3 flex items-center gap-3">
+                      <Glyph variant="seal" className="h-5 w-5 text-moss" />
+                      <span className="font-serif text-lg italic text-moss">Robin</span>
+                    </div>
+                    <div className="surface-parchment relative rounded-sm border border-parchment-deep/60 px-7 py-5 shadow-soft">
+                      <p className="pl-4 font-serif text-[16px] italic leading-relaxed text-ink/80">{m.text}</p>
                     </div>
                   </div>
-                ) : (
-                  <RobinMessage key={m.id} answer={m.answer} />
-                ),
-              )}
+                );
+              })}
               {loading && <ReadingAnimation />}
             </div>
           </div>
         </main>
+
+        <Turnstile
+          ref={turnstileRef}
+          siteKey={TURNSTILE_SITE_KEY}
+          options={{ size: "invisible" }}
+          onSuccess={(token) => {
+            turnstileTokenRef.current = token;
+          }}
+          onError={() => {
+            turnstileTokenRef.current = null;
+          }}
+          onExpire={() => {
+            turnstileTokenRef.current = null;
+            turnstileRef.current?.reset();
+          }}
+        />
 
         {/* Input */}
         <div className="border-t border-border bg-sky/80 backdrop-blur-md">

@@ -11,6 +11,15 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
+    watch: {
+      // macOS fsevents on ~/Desktop emits spurious change events
+      // (Spotlight + backup indexing) that force Vite into HMR
+      // reload storms. Polling is slower to detect real edits
+      // (500ms lag) but ignores the noise entirely.
+      usePolling: true,
+      interval: 500,
+      ignored: ["**/node_modules/**", "**/dist/**", "**/.git/**"],
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
