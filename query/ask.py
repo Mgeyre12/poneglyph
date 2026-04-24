@@ -224,8 +224,10 @@ Rules:
 2. If results are empty, say so honestly: "The graph doesn't have data to answer this."
 3. If the question asks about something the graph doesn't track (e.g. Haki, abilities, bounties), \
 say so explicitly: "The graph doesn't yet contain [X] data."
-4. When mentioning characters, include their debut chapter as a citation if available in the \
-results — format: (debut: Chapter N).
+4. Cite chapters with inline tokens `[[Ch.NNN|Arc Name]]`, placed after the claim they support. \
+Use the "Chapter → Arc" lookup at the end of the user message. Skip any chapter not in the \
+lookup — do not invent an arc or write "(debut: Chapter N)". \
+Example: "Nami joined the crew in [[Ch.69|Arlong Park Arc]]."
 5. Keep the answer conversational and factual. No fluff, no "based on the knowledge graph...", \
 no preamble. Just answer.
 6. For long lists (>10 items), summarize intelligently — don't dump every row.
@@ -237,21 +239,84 @@ def question_to_cypher(client: anthropic.Anthropic, question: str, schema: str) 
     return call_claude(client, system, question)
 
 
+CHAPTER_KEY_RE = re.compile(r"chapter|number", re.IGNORECASE)
+
+
+def build_arc_map(results: list[dict], run_cypher_fn=None) -> dict[int, str]:
+    """Resolve chapter numbers present in ``results`` to their arc names.
+
+    Returns ``{chapter_number: arc_name}``. Chapters without an :IN_ARC edge
+    (currently only Chapter 0 in the graph) are SKIPPED — we don't fall back to
+    "Unknown Arc" because a dangling citation pill is worse than no pill.
+    Callers must be prepared for a chapter to be absent from the map.
+
+    ``run_cypher_fn`` lets the API layer inject its Aura-configured runner; the
+    CLI and stress test default to this module's ``run_cypher``.
+    """
+    if run_cypher_fn is None:
+        run_cypher_fn = run_cypher
+
+    numbers: set[int] = set()
+    for row in results:
+        for k, v in row.items():
+            if isinstance(v, int) and CHAPTER_KEY_RE.search(k):
+                numbers.add(v)
+
+    if not numbers:
+        return {}
+
+    sorted_nums = sorted(numbers)
+    cypher = (
+        f"MATCH (ch:Chapter)-[:IN_ARC]->(a:Arc) "
+        f"WHERE ch.number IN {sorted_nums} "
+        f"RETURN ch.number AS number, a.name AS arc"
+    )
+    try:
+        rows = run_cypher_fn(cypher)
+    except Exception:
+        return {}
+    return {row["number"]: row["arc"] for row in rows if row.get("arc")}
+
+
 def results_to_answer(
     client: anthropic.Anthropic,
     question: str,
     cypher: str,
     results: list[dict],
+    arc_map: dict[int, str] | None = None,
 ) -> str:
-    user_prompt = f"""Question: {question}
-
-Cypher query that ran:
-{cypher}
-
-Results ({len(results)} rows):
-{json.dumps(results, indent=2, default=str)}
-"""
+    user_prompt = _build_answer_user_prompt(question, cypher, results, arc_map)
     return call_claude(client, ANSWER_SYSTEM_PROMPT, user_prompt)
+
+
+def _build_answer_user_prompt(
+    question: str,
+    cypher: str,
+    results: list[dict],
+    arc_map: dict[int, str] | None,
+) -> str:
+    arc_section = _format_arc_lookup(arc_map)
+    return (
+        f"Question: {question}\n\n"
+        f"Cypher query that ran:\n{cypher}\n\n"
+        f"Results ({len(results)} rows):\n"
+        f"{json.dumps(results, indent=2, default=str)}\n\n"
+        f"{arc_section}"
+    )
+
+
+def _format_arc_lookup(arc_map: dict[int, str] | None) -> str:
+    header = "Chapter → Arc lookup (for `[[Ch.NNN|Arc Name]]` citations):"
+    if not arc_map:
+        return header + "\n(empty — omit all citations)"
+    by_arc: dict[str, list[int]] = {}
+    for num, arc in arc_map.items():
+        by_arc.setdefault(arc, []).append(num)
+    lines = [
+        f"  {arc}: {', '.join(str(n) for n in sorted(nums))}"
+        for arc, nums in sorted(by_arc.items())
+    ]
+    return header + "\n" + "\n".join(lines)
 
 
 # ── Stage 4: Cypher validation + execution ────────────────────────────────────
@@ -331,8 +396,13 @@ def ask(
     if debug:
         print(f"Results: {len(results)} row(s)\n")
 
-    # Step 4: generate answer
-    answer = results_to_answer(client, question, cypher, results)
+    # Step 4: resolve chapter→arc for inline citation tokens
+    arc_map = build_arc_map(results)
+    if debug and arc_map:
+        print(f"Arc map: {arc_map}\n")
+
+    # Step 5: generate answer
+    answer = results_to_answer(client, question, cypher, results, arc_map=arc_map)
     print(answer)
 
 

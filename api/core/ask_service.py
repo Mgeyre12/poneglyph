@@ -73,15 +73,26 @@ def _question_hash(question: str) -> str:
     return hashlib.sha256(question.strip().lower().encode()).hexdigest()[:12]
 
 
-def _extract_citations(cypher: str, results: list[dict]) -> list[dict]:
-    citations = []
-    seen = set()
-    for row in results:
-        for k, v in row.items():
-            if k in ("debut_chapter", "number") and isinstance(v, int) and v not in seen:
-                seen.add(v)
-                citations.append({"type": "chapter", "number": v})
-    return citations[:5]
+_CITATION_TOKEN_RE = re.compile(r"\[\[Ch\.(\d+)\|([^\]]+)\]\]")
+
+
+def _extract_citations(answer_text: str) -> list[dict]:
+    """Return the citations the LLM actually emitted in its answer.
+
+    Scans the rendered answer for `[[Ch.NNN|Arc Name]]` tokens (the same regex
+    the frontend uses) and returns a deduped list shaped to match the
+    frontend's RobinAnswer.citations type: `[{chapter: int, title: str}]`.
+    Order preserved; first occurrence wins on duplicates.
+    """
+    citations: list[dict] = []
+    seen: set[int] = set()
+    for match in _CITATION_TOKEN_RE.finditer(answer_text):
+        chapter = int(match.group(1))
+        if chapter in seen:
+            continue
+        seen.add(chapter)
+        citations.append({"chapter": chapter, "title": match.group(2).strip()})
+    return citations
 
 
 async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerator[str, None]:
@@ -156,18 +167,16 @@ async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerato
         "output": {"rows_returned": len(results)},
     })
 
+    # ── Step 2b: resolve chapter→arc so the answer LLM can emit inline citations
+    arc_map = await asyncio.to_thread(_ask.build_arc_map, results, _run_cypher)
+
     # ── Step 3: stream answer ─────────────────────────────────────────────────
     yield sse("step_start", {"step": "write_answer", "label": "Writing answer", "ts": _now()})
 
     answer_parts: list[str] = []
     try:
         system = _ask.ANSWER_SYSTEM_PROMPT
-        user_prompt = (
-            f"Question: {question}\n\n"
-            f"Cypher query that ran:\n{cypher}\n\n"
-            f"Results ({len(results)} rows):\n"
-            f"{json.dumps(results, indent=2, default=str)}"
-        )
+        user_prompt = _ask._build_answer_user_prompt(question, cypher, results, arc_map)
         stream = await asyncio.to_thread(
             lambda: client.messages.stream(
                 model=_ask.MODEL,
@@ -187,7 +196,7 @@ async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerato
     full_answer = "".join(answer_parts)
     answer_cache.set(question, full_answer)
 
-    citations = _extract_citations(cypher, results)
+    citations = _extract_citations(full_answer)
     total_ms = round((time.time() - t_total) * 1000)
 
     yield sse("done", {

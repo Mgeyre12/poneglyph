@@ -14,6 +14,10 @@ import os
 import time
 import re
 
+# Pacing between questions so we don't graze Anthropic's per-minute input-token
+# ceiling on 75-question runs — run 8 hit 429s on the last 4 questions without this.
+STRESS_TEST_PACING_S = 1.5
+
 # Make query/ importable from project root
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from query.ask import (
@@ -22,6 +26,7 @@ from query.ask import (
     question_to_cypher,
     validate_cypher,
     run_cypher,
+    build_arc_map,
     results_to_answer,
     SCHEMA_FILE,
 )
@@ -105,7 +110,8 @@ def run_one(q: dict, client, schema: str) -> dict:
         return result
 
     try:
-        answer = results_to_answer(client, q["question"], cypher, rows)
+        arc_map = build_arc_map(rows)
+        answer = results_to_answer(client, q["question"], cypher, rows, arc_map=arc_map)
         result["answer"] = answer
         result["status"] = "PASS"
     except Exception as e:
@@ -217,12 +223,14 @@ def main():
     schema = load_schema()
     results = []
 
-    for q in questions:
+    for i, q in enumerate(questions):
         print(f"[{q['num']:02d}/{len(questions)}] {q['question'][:60]}...", end="", flush=True)
         r = run_one(q, client, schema)
         results.append(r)
         badge = "✅" if r["status"] == "PASS" else "❌"
         print(f" {badge} ({r['latency_s']}s, {r['row_count']} rows)")
+        if i < len(questions) - 1:
+            time.sleep(STRESS_TEST_PACING_S)
 
     out_path = write_results(results, run_num)
 
