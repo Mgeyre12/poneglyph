@@ -8,10 +8,17 @@ export type RobinAnswer = {
   citations: Citation[];
 };
 
+export type ChatMessage = { role: "user" | "assistant"; content: string };
+
+// Backend caps history at 6 messages. We trim client-side too so the request
+// payload doesn't carry rejected entries on the wire.
+export const MAX_HISTORY_MESSAGES = 6;
+
 export type AskOptions = {
   turnstileToken?: string;
   sessionId?: string;
   signal?: AbortSignal;
+  history?: ChatMessage[];
 };
 
 /**
@@ -33,6 +40,7 @@ export async function askRobin(
         question,
         session_id: opts.sessionId,
         turnstile_token: opts.turnstileToken,
+        history: (opts.history ?? []).slice(-MAX_HISTORY_MESSAGES),
       }),
       signal: opts.signal,
     });

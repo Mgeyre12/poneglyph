@@ -1,13 +1,19 @@
 """
 fix_data_bugs.py
 ----------------
-Patches known data bugs identified during Week 5 stress testing.
+Patches known data bugs identified during stress testing.
 
 Fixes:
   1. Luffy height_cm: 91.0 → 174.0 (upstream scraper bug)
   2. Koby: remove the Marine 153rd Branch (former) relationship —
      he's still an active Marine (SWORD); the sub-branch "former" is
      misleading and causes false positives in former-Marine queries.
+  3. Zeus: re-status the Straw Hat Pirates affiliation from 'current'
+     to 'companion'. Source JSON has the affiliation un-qualified, so
+     the importer marked it 'current' — but Zeus is Nami's living-weapon
+     homie (occupations: Partner, Living Weapon, Servant), not a crew
+     member. The 'current' tag pollutes "name the crew" queries. Other
+     homies aren't in the graph yet, so this is a one-character fix.
 """
 
 import os
@@ -55,6 +61,20 @@ def run_fixes(driver):
         row = result.single()
         removed = row["removed"] if row else 0
         print(f"[2] Koby former-Marine relationships removed: {removed} ✓")
+
+        # Fix 3: Re-status Zeus's Straw Hat affiliation: current → companion
+        result = session.run(
+            """
+            MATCH (c:Character {name:'Zeus'})-[r:AFFILIATED_WITH]->(o:Organization)
+            WHERE toLower(o.name) CONTAINS 'straw hat'
+              AND r.status = 'current'
+            SET r.status = 'companion'
+            RETURN count(r) AS updated
+            """
+        )
+        row = result.single()
+        updated = row["updated"] if row else 0
+        print(f"[3] Zeus Straw Hat affiliation re-statused (current→companion): {updated} ✓")
 
 
 def main():

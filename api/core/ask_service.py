@@ -95,7 +95,11 @@ def _extract_citations(answer_text: str) -> list[dict]:
     return citations
 
 
-async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerator[str, None]:
+async def run_ask(
+    question: str,
+    session_id: str | None = None,
+    history: list[dict] | None = None,
+) -> AsyncGenerator[str, None]:
     """
     Async generator that yields SSE-formatted strings.
     Each yield is a complete SSE event (event: ...\ndata: ...\n\n).
@@ -104,9 +108,12 @@ async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerato
         return f"event: {event}\ndata: {json.dumps(data)}\n\n"
 
     t_total = time.time()
+    has_history = bool(history)
 
     # ── Cache check ───────────────────────────────────────────────────────────
-    cached = answer_cache.get(question)
+    # Cache is keyed on question only; same Q with different conversational
+    # context can yield different answers, so any history bypasses the cache.
+    cached = None if has_history else answer_cache.get(question)
     if cached:
         yield sse("step_start", {"step": "cache_hit", "label": "Serving cached answer", "ts": _now()})
         for chunk in _chunk_text(cached):
@@ -129,7 +136,9 @@ async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerato
     yield sse("step_start", {"step": "generate_cypher", "label": "Generating graph query", "ts": _now()})
     t0 = time.time()
     try:
-        cypher = await asyncio.to_thread(_ask.question_to_cypher, client, question, schema)
+        cypher = await asyncio.to_thread(
+            _ask.question_to_cypher, client, question, schema, history
+        )
     except Exception as e:
         yield sse("error", {"code": "cypher_generation_failed", "message": str(e)})
         return
@@ -176,7 +185,9 @@ async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerato
     answer_parts: list[str] = []
     try:
         system = _ask.ANSWER_SYSTEM_PROMPT
-        user_prompt = _ask._build_answer_user_prompt(question, cypher, results, arc_map)
+        user_prompt = _ask._build_answer_user_prompt(
+            question, cypher, results, arc_map, history
+        )
         stream = await asyncio.to_thread(
             lambda: client.messages.stream(
                 model=_ask.MODEL,
@@ -194,7 +205,8 @@ async def run_ask(question: str, session_id: str | None = None) -> AsyncGenerato
         return
 
     full_answer = "".join(answer_parts)
-    answer_cache.set(question, full_answer)
+    if not has_history:
+        answer_cache.set(question, full_answer)
 
     citations = _extract_citations(full_answer)
     total_ms = round((time.time() - t_total) * 1000)

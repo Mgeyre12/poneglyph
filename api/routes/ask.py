@@ -33,7 +33,8 @@ async def ask(body: AskRequest, request: Request):
         cypher_captured = None
         rows_captured = 0
 
-        async for chunk in run_ask(body.question, body.session_id):
+        history_payload = [m.model_dump() for m in body.history]
+        async for chunk in run_ask(body.question, body.session_id, history_payload):
             # Capture cypher + row count for structured logging
             if '"step": "run_query"' in chunk and '"rows_returned"' in chunk:
                 try:

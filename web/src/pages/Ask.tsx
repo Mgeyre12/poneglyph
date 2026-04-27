@@ -6,7 +6,12 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Glyph } from "@/components/Glyph";
 import { CitationPill } from "@/components/CitationPill";
 import { AmbientGlyphs } from "@/components/AmbientGlyphs";
-import { askRobin, type RobinAnswer } from "@/lib/askRobin";
+import {
+  askRobin,
+  MAX_HISTORY_MESSAGES,
+  type ChatMessage,
+  type RobinAnswer,
+} from "@/lib/askRobin";
 import { ErrorMessage, MAX_RETRIES } from "@/components/ErrorMessage";
 import { TURNSTILE_SITE_KEY } from "@/lib/config";
 
@@ -23,6 +28,25 @@ type Msg =
     };
 
 const FRESH_TOKEN_TIMEOUT_MS = 5000;
+
+const CITATION_TOKEN_RE = /\[\[Ch\.\d+\|[^\]]+\]\]/g;
+
+// Map the chat-state messages into the wire shape the backend expects:
+// - drop error messages (incomplete turns shouldn't influence reference resolution)
+// - strip citation tokens from Robin's answers (text-only history per design)
+// - cap at MAX_HISTORY_MESSAGES tail
+function buildHistoryFromMessages(messages: Msg[]): ChatMessage[] {
+  const out: ChatMessage[] = [];
+  for (const m of messages) {
+    if (m.role === "user") {
+      out.push({ role: "user", content: m.text });
+    } else if (m.role === "robin") {
+      const stripped = m.answer.text.replace(CITATION_TOKEN_RE, "").trim();
+      if (stripped) out.push({ role: "assistant", content: stripped });
+    }
+  }
+  return out.slice(-MAX_HISTORY_MESSAGES);
+}
 
 const ReadingAnimation = () => {
   const glyphs = ["◰", "◳", "◱", "◲", "▣", "◫", "⌘", "⌬", "⎔", "⏣"];
@@ -167,13 +191,16 @@ const Ask = () => {
 
   const submit = async (q: string) => {
     if (!q.trim() || loading) return;
+    // `messages` at this call site is the prior conversation — the new user
+    // turn hasn't been appended yet (setMessages below is async).
+    const history = buildHistoryFromMessages(messages);
     const userMsg: Msg = { id: `u-${Date.now()}`, role: "user", text: q.trim() };
     setMessages((m) => [...m, userMsg]);
     setInput("");
     setLoading(true);
     const token = turnstileTokenRef.current ?? undefined;
     try {
-      const ans = await askRobin(q, { turnstileToken: token });
+      const ans = await askRobin(q, { turnstileToken: token, history });
       setMessages((m) => [...m, { id: `r-${Date.now()}`, role: "robin", answer: ans }]);
     } catch (err) {
       setMessages((m) => [
@@ -196,6 +223,16 @@ const Ask = () => {
   };
 
   const retry = async (errorMsgId: string) => {
+    // The error message replaces what would have been the Robin reply, so the
+    // user turn that triggered it is at errorIdx - 1. History for the retry is
+    // everything BEFORE that user turn — we don't want to feed the failed
+    // question back to itself as context.
+    const errorIdx = messages.findIndex((m) => m.id === errorMsgId);
+    const history =
+      errorIdx > 0
+        ? buildHistoryFromMessages(messages.slice(0, errorIdx - 1))
+        : [];
+
     let target: Msg | undefined;
     setMessages((m) =>
       m.map((msg) => {
@@ -219,7 +256,7 @@ const Ask = () => {
     const tokenArg = freshToken ?? undefined;
 
     try {
-      const ans = await askRobin(question, { turnstileToken: tokenArg });
+      const ans = await askRobin(question, { turnstileToken: tokenArg, history });
       setMessages((m) =>
         m.map((msg) =>
           msg.id === errorMsgId

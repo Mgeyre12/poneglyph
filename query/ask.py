@@ -84,6 +84,23 @@ that retrieves the data needed to answer it.
 
 {schema}
 
+## Conversation context
+
+If a "Recent conversation" block is present in the user message, the current question may use \
+pronouns ("them", "they", "him", "her", "it") or definite references ("the crew", "that fight", \
+"those characters") that depend on the prior turns. Resolve those references against the recent \
+turns before generating Cypher — treat the question as if the user had asked it explicitly with \
+the resolved entity in place.
+
+If a reference is genuinely ambiguous after consulting history, generate Cypher for the most \
+likely interpretation. Never write Cypher that literally matches the pronoun string \
+(e.g. `CONTAINS "them"`).
+
+If no history is provided and the question is unresolvable on its own (e.g. just "name them"), \
+still emit a single read-only Cypher query that returns zero rows — for example \
+`MATCH (c:Character) WHERE false RETURN c.name`. Do NOT emit prose, hedging, or explanations. \
+The answer step will report the empty result honestly. Rule 1 (raw Cypher only) always wins.
+
 ## Rules
 
 1. Return ONLY the raw Cypher query. No explanations, no markdown code fences, no commentary, \
@@ -214,6 +231,33 @@ MATCH (c:Character)-[r:HAS_OCCUPATION]->(o:Occupation)
 WHERE toLower(o.name) CONTAINS toLower("pirate captain")
   AND r.status = "current"
 RETURN count(c) AS pirate_captain_count
+
+## Few-shot examples — with conversation history
+
+Recent conversation:
+  user: how many in the straw hat crew?
+  assistant: My crew, the Straw Hat Pirates, has 10 members.
+Q: name them
+A:
+MATCH (c:Character)-[r:AFFILIATED_WITH]->(o:Organization)
+WHERE toLower(o.name) CONTAINS toLower("straw hat pirates")
+  AND r.status = "current"
+RETURN c.name, c.epithet, c.debutChapter AS debut_chapter
+ORDER BY c.debutChapter
+
+Recent conversation:
+  user: who are the four emperors?
+  assistant: The current Yonko are Luffy, Shanks, Buggy, and Blackbeard.
+Q: which of them have devil fruits
+A:
+MATCH (c:Character)
+WHERE toLower(c.name) CONTAINS toLower("luffy")
+   OR toLower(c.name) CONTAINS toLower("shanks")
+   OR toLower(c.name) CONTAINS toLower("buggy")
+   OR toLower(c.name) CONTAINS toLower("blackbeard")
+   OR toLower(c.name) CONTAINS toLower("teach")
+OPTIONAL MATCH (c)-[r:ATE_FRUIT]->(f:DevilFruit)
+RETURN c.name, f.name AS fruit, f.type AS fruit_type, r.status AS ownership
 """
 
 ANSWER_SYSTEM_PROMPT = """\
@@ -243,12 +287,60 @@ not in the lookup — do not invent an arc or write "(debut: Chapter N)". \
 Example: "Nami joined my crew in [[Ch.69|Arlong Park Arc]]."
 5. No preamble. No "based on the knowledge graph...". Just answer.
 6. For long lists (>10 items), summarize intelligently — don't dump every row.
+7. Always name the entity you are talking about, even in short answers. A reader picking \
+up your reply mid-conversation should know who or what it concerns. \
+Wrong: "There are 11." \
+Right: "My crew, the Straw Hat Pirates, has 11 members."
+8. If a "Recent conversation" block is present, you are continuing that conversation. The \
+reader remembers what was just said — don't restart from scratch or repeat their question \
+back. Reference prior turns naturally when relevant. If the current question uses a pronoun \
+or definite reference resolved from history, surface the resolved entity in your answer so \
+the next follow-up has an anchor.
+
+## Few-shot example — conversational continuity
+
+Recent conversation:
+  user: how many in the straw hat crew?
+  assistant: My crew, the Straw Hat Pirates, has 10 members.
+Question: name them
+[results: 10 rows of crew members]
+Answer:
+The Straw Hats, in order of joining: my captain Luffy, then Zoro, Nami, Usopp, Sanji, \
+Chopper, myself, Franky, Brook, and most recently Jinbe. Luffy founded the crew in \
+[[Ch.1|Romance Dawn Arc]].
 """
 
 
-def question_to_cypher(client: anthropic.Anthropic, question: str, schema: str) -> str:
+def _format_history_block(history: list[dict] | None) -> str:
+    """Render the recent-conversation block injected into both prompts.
+
+    Returns "" when history is empty so prompts pass through unchanged for the
+    stateless path. Each turn is rendered on its own indented line.
+    """
+    if not history:
+        return ""
+    lines = ["Recent conversation:"]
+    for turn in history:
+        role = turn.get("role", "")
+        content = (turn.get("content") or "").strip()
+        if not content or role not in ("user", "assistant"):
+            continue
+        lines.append(f"  {role}: {content}")
+    if len(lines) == 1:
+        return ""
+    return "\n".join(lines)
+
+
+def question_to_cypher(
+    client: anthropic.Anthropic,
+    question: str,
+    schema: str,
+    history: list[dict] | None = None,
+) -> str:
     system = CYPHER_SYSTEM_PROMPT.format(schema=schema)
-    return call_claude(client, system, question)
+    history_block = _format_history_block(history)
+    user = f"{history_block}\n\nQ: {question}" if history_block else question
+    return call_claude(client, system, user)
 
 
 CHAPTER_KEY_RE = re.compile(r"chapter|number", re.IGNORECASE)
@@ -296,8 +388,9 @@ def results_to_answer(
     cypher: str,
     results: list[dict],
     arc_map: dict[int, str] | None = None,
+    history: list[dict] | None = None,
 ) -> str:
-    user_prompt = _build_answer_user_prompt(question, cypher, results, arc_map)
+    user_prompt = _build_answer_user_prompt(question, cypher, results, arc_map, history)
     return call_claude(client, ANSWER_SYSTEM_PROMPT, user_prompt)
 
 
@@ -306,9 +399,13 @@ def _build_answer_user_prompt(
     cypher: str,
     results: list[dict],
     arc_map: dict[int, str] | None,
+    history: list[dict] | None = None,
 ) -> str:
     arc_section = _format_arc_lookup(arc_map)
+    history_block = _format_history_block(history)
+    history_section = f"{history_block}\n\n" if history_block else ""
     return (
+        f"{history_section}"
         f"Question: {question}\n\n"
         f"Cypher query that ran:\n{cypher}\n\n"
         f"Results ({len(results)} rows):\n"
