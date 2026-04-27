@@ -1,16 +1,39 @@
+import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Glyph } from "@/components/Glyph";
 import { AmbientGlyphs } from "@/components/AmbientGlyphs";
+import { API_BASE_URL } from "@/lib/config";
 
-const NODE_TYPES = [
-  { count: "1,526", label: "Characters" },
-  { count: "534",   label: "Chapters" },
-  { count: "372",   label: "Organizations" },
-  { count: "134",   label: "Devil Fruits" },
-  { count: "33",    label: "Arcs" },
-  { count: "~223",  label: "Locations" },
-  { count: "~663",  label: "Occupations" },
+type StatsKey =
+  | "characters"
+  | "chapters"
+  | "organizations"
+  | "devil_fruits"
+  | "arcs"
+  | "locations"
+  | "occupations";
+
+type StatsCounts = Record<StatsKey, number>;
+
+const FALLBACK_COUNTS: StatsCounts = {
+  characters: 1526,
+  chapters: 534,
+  organizations: 372,
+  devil_fruits: 134,
+  arcs: 33,
+  locations: 223,
+  occupations: 663,
+};
+
+const NODE_TYPES: { key: StatsKey; label: string }[] = [
+  { key: "characters",    label: "Characters" },
+  { key: "chapters",      label: "Chapters" },
+  { key: "organizations", label: "Organizations" },
+  { key: "devil_fruits",  label: "Devil Fruits" },
+  { key: "arcs",          label: "Arcs" },
+  { key: "locations",     label: "Locations" },
+  { key: "occupations",   label: "Occupations" },
 ];
 
 const LIMITS = [
@@ -21,6 +44,23 @@ const LIMITS = [
 ];
 
 const About = () => {
+  const [counts, setCounts] = useState<StatsCounts>(FALLBACK_COUNTS);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`${API_BASE_URL}/api/stats`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((data: StatsCounts) => {
+        if (!cancelled) setCounts(data);
+      })
+      .catch(() => {
+        // Keep FALLBACK_COUNTS — stats failures are silent.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-background">
       <AmbientGlyphs />
@@ -57,7 +97,7 @@ const About = () => {
               {NODE_TYPES.map((n) => (
                 <div key={n.label} className="surface-stone moss-edges border border-stone-deep/40 p-6 text-center">
                   <Glyph variant="node" className="mx-auto h-5 w-5 text-engraved/80" />
-                  <p className="mt-3 font-serif text-4xl text-engraved">{n.count}</p>
+                  <p className="mt-3 font-serif text-4xl text-engraved">{counts[n.key].toLocaleString()}</p>
                   <p className="mt-1 text-[11px] uppercase tracking-[0.25em] text-engraved/70">{n.label}</p>
                 </div>
               ))}
