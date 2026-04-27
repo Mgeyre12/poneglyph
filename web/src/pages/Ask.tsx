@@ -7,31 +7,22 @@ import { Glyph } from "@/components/Glyph";
 import { CitationPill } from "@/components/CitationPill";
 import { AmbientGlyphs } from "@/components/AmbientGlyphs";
 import { askRobin, type RobinAnswer } from "@/lib/askRobin";
-import {
-  BackendError,
-  RateLimitError,
-  TurnstileError,
-} from "@/lib/errors";
+import { ErrorMessage, MAX_RETRIES } from "@/components/ErrorMessage";
 import { TURNSTILE_SITE_KEY } from "@/lib/config";
 
 type Msg =
   | { id: string; role: "user"; text: string }
   | { id: string; role: "robin"; answer: RobinAnswer }
-  | { id: string; role: "error"; text: string };
+  | {
+      id: string;
+      role: "error";
+      error: unknown;
+      question: string;
+      retryCount: number;
+      retryInFlight: boolean;
+    };
 
-function robinVoiceForError(err: unknown): string {
-  if (err instanceof RateLimitError) {
-    const wait = err.retryAfter ? ` Try again in about ${err.retryAfter}s.` : "";
-    return `The stones grow quiet — too many hands at once.${wait}`;
-  }
-  if (err instanceof TurnstileError) {
-    return "The guardians at the gate didn't recognize you this time. Refresh the page and try again.";
-  }
-  if (err instanceof BackendError) {
-    return "Something disturbed the record. Give me a moment and ask again.";
-  }
-  return "Something unexpected broke the thread. Ask again in a moment.";
-}
+const FRESH_TOKEN_TIMEOUT_MS = 5000;
 
 const ReadingAnimation = () => {
   const glyphs = ["◰", "◳", "◱", "◲", "▣", "◫", "⌘", "⌬", "⎔", "⏣"];
@@ -156,6 +147,23 @@ const Ask = () => {
   const sentInitial = useRef(false);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
   const turnstileTokenRef = useRef<string | null>(null);
+  const pendingTokenResolverRef = useRef<((t: string | null) => void) | null>(
+    null,
+  );
+
+  const waitForFreshToken = (): Promise<string | null> => {
+    turnstileTokenRef.current = null;
+    turnstileRef.current?.reset();
+    return new Promise((resolve) => {
+      pendingTokenResolverRef.current = resolve;
+      setTimeout(() => {
+        if (pendingTokenResolverRef.current === resolve) {
+          pendingTokenResolverRef.current = null;
+          resolve(null);
+        }
+      }, FRESH_TOKEN_TIMEOUT_MS);
+    });
+  };
 
   const submit = async (q: string) => {
     if (!q.trim() || loading) return;
@@ -170,11 +178,69 @@ const Ask = () => {
     } catch (err) {
       setMessages((m) => [
         ...m,
-        { id: `e-${Date.now()}`, role: "error", text: robinVoiceForError(err) },
+        {
+          id: `e-${Date.now()}`,
+          role: "error",
+          error: err,
+          question: q.trim(),
+          retryCount: 0,
+          retryInFlight: false,
+        },
       ]);
     } finally {
       setLoading(false);
       // Tokens are single-use; request a fresh one for the next submission.
+      turnstileTokenRef.current = null;
+      turnstileRef.current?.reset();
+    }
+  };
+
+  const retry = async (errorMsgId: string) => {
+    let target: Msg | undefined;
+    setMessages((m) =>
+      m.map((msg) => {
+        if (
+          msg.id === errorMsgId &&
+          msg.role === "error" &&
+          msg.retryCount < MAX_RETRIES &&
+          !msg.retryInFlight
+        ) {
+          target = msg;
+          return { ...msg, retryInFlight: true };
+        }
+        return msg;
+      }),
+    );
+    if (!target || target.role !== "error") return;
+    const question = target.question;
+    const prevCount = target.retryCount;
+
+    const freshToken = await waitForFreshToken();
+    const tokenArg = freshToken ?? undefined;
+
+    try {
+      const ans = await askRobin(question, { turnstileToken: tokenArg });
+      setMessages((m) =>
+        m.map((msg) =>
+          msg.id === errorMsgId
+            ? ({ id: `r-${Date.now()}`, role: "robin", answer: ans } as Msg)
+            : msg,
+        ),
+      );
+    } catch (err) {
+      setMessages((m) =>
+        m.map((msg) =>
+          msg.id === errorMsgId && msg.role === "error"
+            ? {
+                ...msg,
+                error: err,
+                retryCount: prevCount + 1,
+                retryInFlight: false,
+              }
+            : msg,
+        ),
+      );
+    } finally {
       turnstileTokenRef.current = null;
       turnstileRef.current?.reset();
     }
@@ -241,15 +307,13 @@ const Ask = () => {
                 }
                 if (m.role === "robin") return <RobinMessage key={m.id} answer={m.answer} />;
                 return (
-                  <div key={m.id} className="animate-fade-in-up">
-                    <div className="mb-3 flex items-center gap-3">
-                      <Glyph variant="seal" className="h-5 w-5 text-moss" />
-                      <span className="font-serif text-lg italic text-moss">Robin</span>
-                    </div>
-                    <div className="surface-parchment relative rounded-sm border border-parchment-deep/60 px-7 py-5 shadow-soft">
-                      <p className="pl-4 font-serif text-[16px] italic leading-relaxed text-ink/80">{m.text}</p>
-                    </div>
-                  </div>
+                  <ErrorMessage
+                    key={m.id}
+                    error={m.error}
+                    retryCount={m.retryCount}
+                    retryInFlight={m.retryInFlight}
+                    onRetry={() => retry(m.id)}
+                  />
                 );
               })}
               {loading && <ReadingAnimation />}
@@ -263,6 +327,11 @@ const Ask = () => {
           options={{ size: "invisible" }}
           onSuccess={(token) => {
             turnstileTokenRef.current = token;
+            if (pendingTokenResolverRef.current) {
+              const resolve = pendingTokenResolverRef.current;
+              pendingTokenResolverRef.current = null;
+              resolve(token);
+            }
           }}
           onError={() => {
             turnstileTokenRef.current = null;
