@@ -765,13 +765,45 @@ python promote_pending.py --reject <slug> --reason "..." # reject
 - `pipeline/` — `RATE_LIMIT_PER_HOUR` + `NEO4J_ENV` env vars honored.
 - `Procfile` + `nixpacks.toml` — Railway-specific build config (commits `e87c5c5`, `ab943ed`).
 
-### Remaining Week 10 stages
+### Stages shipped
 
-- [ ] **Stage 3** — stress test run 7 against Aura (Option A: local runner, Aura env vars). Compare pass rate + latency to run 6.
-- [ ] **Stage 4** — merge Lovable frontend (`https://github.com/Mgeyre12/robin-reads-lore.git`) into `web/`, author `FRONTEND_GUIDELINES.md` at repo root.
-- [ ] **Stage 5** — backend prompt tweak for `[[Ch.NNN|Title]]` citation tokens inline + matching `citations` array. Verify across 5 samples, then stress test run 8.
-- [ ] **Stage 6** — wire `askRobin()` to real backend, Turnstile widget integration. On success, bump rate limit to 30/hr per note above.
-- [ ] **Stage 7** — Robin-voiced error states (rate limit, Turnstile fail, 5xx).
-- [ ] **Stage 8** — `/api/stats` on About page (with safe hardcoded fallback).
-- [ ] **Stage 9** — Vercel deploy, update `ALLOWED_ORIGINS` to specific Vercel domain.
-- [ ] **Stage 10** — Week 10 notes + clean commit.
+- [x] **Stage 3** — Aura stress test run 7: 74/75 pass (99%), 12.98s avg latency. Up 2 questions vs local run 6, zero regressions. Commit `e7cd44f`.
+- [x] **Stage 4** — Lovable frontend merged into `web/`, `FRONTEND_GUIDELINES.md` authored at repo root. `bun.lockb` removed (npm is the lockfile). Commit `ef7137c`.
+- [x] **Stage 5** — answer LLM emits inline `[[Ch.NNN|Arc]]` citation tokens. Arc resolution via `build_arc_map()` (one Neo4j lookup). `_extract_citations` in `api/core/ask_service.py` dedupes for the frontend. Stress test run 9: 73/75 = 97%, 12.82s avg, 115 inline tokens, 0 malformed. Commit `a3bd7c5`.
+- [x] **Stage 6** — `web/src/lib/askRobin.ts` wired to real backend, `@marsidev/react-turnstile` invisible widget on `/ask`. Typed errors (RateLimitError/TurnstileError/BackendError). Rate limit bumped 10→30/hr on Railway. Commit `e62cbf3`.
+- [x] **Stage 7** — Robin-voiced parchment error panels with retry + 3-attempt exhaustion. Live countdown sourced from `Retry-After` (60s fallback). All three panels visually verified locally. Commit `4051943`.
+- [x] **Stage 8** — `/api/stats` fetched on About mount; hardcoded fallback persists silently if backend down. Live values replace fallback after ~1s. Commit `48d038a`.
+- [x] **Stage 9** — Vercel deployed at https://poneglyph-seven.vercel.app. `web/vercel.json` adds SPA rewrites. Cloudflare Turnstile + Railway `ALLOWED_ORIGINS` both updated to allow the Vercel domain. Production live end-to-end 2026-04-26 — first prod-to-prod question ("who is luffy") returned a Robin-voiced answer with citation pill. Prep commit `67d1b54`.
+- [x] **Stage 10** — these notes + clean commit.
+
+### Week 10 wrap-up
+
+**What I actually shipped this week:**
+- A live, public Robin: anyone with the URL can ask the graph anything, end-to-end on real infra.
+- Real security at the edge: Turnstile gating, per-IP rate limit, no hardcoded credentials anywhere in the repo.
+- A real frontend: parchment design system, Robin's voice, citation pills, error states that don't break character.
+- Operational discipline: env-var single-source-of-truth (`utils/neo4j_env.py`), every deploy verifiable via `/api/health` + `/api/stats`.
+
+**What surprised me:**
+
+1. **Stage 9 had six different infrastructure gates I had to walk through one by one** — Vercel root directory, env-var injection at build time, Cloudflare Turnstile per-hostname allowlist, Railway CORS allowlist, the production-alias vs deployment-URL distinction, and the Vercel "Environments" vs "Environment Variables" UI trap. None of these were in the plan. Each one was a 20-minute debug. The lesson: prod deploy is not "one big step" — it's a chain of small misconfigurations, and you can only find them by triggering each one.
+2. **The `git commit` hang from Stage 6 was specifically post-`npm ci`, not a permanent fsevents curse** — Stages 7, 8, 9 all committed cleanly via plain `git commit` with no plumbing fallback. Memory has been corrected.
+3. **The accidental BackendError test in Stage 7** — when Railway CORS-rejected localhost during the Turnstile smoke, it gave me a real `STONES DISTURBED` parchment panel from a network failure. That was a free production-style validation of the BackendError path I would have had to mock otherwise.
+4. **Vercel preview/deployment URLs do not work end-to-end** — only the production alias `poneglyph-seven.vercel.app` is allowed by Cloudflare and Railway. If I ever want preview deploys to function (Week 11+ when I start branching), I'll need `allow_origin_regex=r".*\.vercel\.app$"` on the FastAPI CORSMiddleware and `*.vercel.app` on the Cloudflare hostname list.
+
+**What to remember next time:**
+
+- **Push to `origin/main` before configuring Vercel.** Vercel's import wizard reads the default branch's directory tree to populate the Root Directory dropdown — if `web/` only exists locally, it won't appear there.
+- **Vercel env vars only inject at build time.** Adding them after a failed first deploy means redeploying with cache disabled. Set vars in the import wizard before the first build whenever possible.
+- **The Cloudflare Turnstile site key has a hostname allowlist.** Every new domain (including `localhost` for dev) must be added explicitly, otherwise the widget fails silently with error 110200 and the backend gets `turnstile_missing` 403s. Local dev without Turnstile validation is the cleanest path — set `TURNSTILE_ENABLED=false` locally and let the backend short-circuit.
+- **The FastAPI CORS default in `api/config.py:26` is `http://localhost:3000`** — useless for production. `ALLOWED_ORIGINS` must be set explicitly on Railway and on every new origin we onboard.
+- **Stress test pacing matters.** Run 9 added 1.5s between questions to stay under Anthropic's 30k input-TPM ceiling on 75-q runs. Don't fire 75 questions back-to-back into the API.
+
+**Spend over Week 10:** below the $50 alert. Anthropic console shows usage trending fine for current traffic (just me + smoke tests). Will recheck weekly.
+
+**The product as of 2026-04-26:**
+- 1,526 characters / 534 chapters / 247 locations / 661 occupations / 134 devil fruits / 362 orgs / 33 arcs in Neo4j Aura
+- ~97-99% stress test pass rate (Aura, 75 questions, ~13s avg latency)
+- Prod URL: https://poneglyph-seven.vercel.app
+- Backend: https://poneglyph-production-dfaf.up.railway.app
+- The graph + Robin, end-to-end, public, gated, paid for, alive.
