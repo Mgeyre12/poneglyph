@@ -807,3 +807,49 @@ python promote_pending.py --reject <slug> --reason "..." # reject
 - Prod URL: https://poneglyph-seven.vercel.app
 - Backend: https://poneglyph-production-dfaf.up.railway.app
 - The graph + Robin, end-to-end, public, gated, paid for, alive.
+
+---
+
+## Sprint 1 Polish — Conversation Memory (2026-04-27)
+
+### The gap
+
+My brothers tested the live site the day Week 10 shipped. They asked "how many in the crew?" → got "11" → asked "name them" → and Robin had no idea what "them" referred to. Each `/api/ask` request was stateless. Reference resolution was impossible because nothing on the wire carried prior turns. Real-user feedback exposed something the 75-question stress test never could — every test question was self-contained and so was the system.
+
+### Design choices (locked, in the code)
+
+- **History depth:** last 6 messages (3 user + 3 assistant pairs). Frontend caps client-side, backend re-validates and truncates. `MAX_HISTORY_MESSAGES = 6` in both `web/src/lib/askRobin.ts` and `api/core/schemas.py`.
+- **Stateless backend:** history is sent on every request. Nothing cached server-side. Refresh / logo-click / new tab = clean slate, by design.
+- **Both prompts get history:** the Cypher generator uses it to resolve references ("them" → which group); the answer synthesizer uses it for natural conversational continuity.
+- **Text only:** wire format is `[{role, content}, ...]`. No prior Cypher, no citation tokens, no step events. Citation tokens are stripped from Robin's text before it goes back into history (clutter, not context).
+- **Cache bypass when history present:** the answer cache is keyed on question only. Same question with different conversational context can yield different answers, so any non-empty history skips the cache. Stateless requests still cache as before.
+- **Brevity tweak bundled:** answer prompt now requires the entity name even in short answers. Wrong: "There are 11." Right: "My crew, the Straw Hat Pirates, has 10 members." This is the anchor that lets the *next* follow-up resolve.
+
+### Side-fix: Zeus
+
+Smoke testing surfaced a data quirk — "name the crew" returned **11** members because Zeus (Nami's homie/living weapon) was tagged as a `current` Straw Hat affiliate in the source JSON. Source was unambiguous (`Affiliations: Straw Hat Pirates` with no qualifier), so the importer correctly marked it `current`. But fans don't think Zeus is a crewmate. Fix added to `fixes/fix_data_bugs.py` Fix #3 — re-statuses that one edge from `current` → `companion`. Standard `r.status = "current"` queries now return the 10 humans cleanly. One-character fix, no other homies in the graph yet.
+
+### Validation
+
+- 7-step browser smoke at localhost passed: 3-turn pronoun chain (crew → name them → which have fruits) resolved correctly; refresh + logo-click both reset history; no-history pronoun gracefully asks for clarification.
+- Curl 2-turn and 3-turn tests pre-frontend confirmed the backend wiring before the frontend touched it.
+- Multi-turn stress test cases (Q76–83 in `stress_test_questions.md`, runner extended to support the `||` turn separator) — full results in `tests/stress_test_run_10.md` once Run 10 completes.
+- Stateless 75-question regression run alongside Run 10 — should match Week 10's ~97-99% baseline. Any drop is a real regression and needs prompt iteration.
+
+### Known limitations
+
+- **Reference span is exactly 6 messages.** A reference to an entity discussed >3 turns ago will be lost. Acceptable for v1; revisit if real users hit it.
+- **Ambiguous references are guessed at, not flagged in-Cypher.** If someone asks "what about her" with two female characters in recent history, the LLM picks one. The answer step doesn't currently surface the ambiguity to the user.
+- **Errors aren't in history.** A failed turn (rate limit, network) leaves no breadcrumb, so a follow-up may try to resolve a reference to an answer that was never delivered. Probably correct behavior — but worth knowing.
+- **Path C blocker confirmed.** Q81 ("who killed ace || what happened next") will hit the wall — the graph records *who*, not *what came after*. The graceful failure ("the records don't yet contain that") is the correct answer until chapter summaries land in Sprint 2.
+
+### Discovered, not fixed this stage
+
+- **Multi-turn stress test PASS criterion is binary** (pipeline completed without exception + Cypher passed validation). Qualitative correctness — pronoun resolved properly, entity surfaced for the next anchor, graceful failure phrasing — still requires human review of the markdown output. Worth investing in a follow-up if the test set grows past ~20 multi-turn cases.
+- **The "vite hangs forever" symptom from this session was a corrupt `node_modules`**, not a vite bug. `du -sh web/node_modules` is the diagnostic — should be ~300 MB; 65 MB or `@radix-ui` at 0 bytes means a kill killed something mid-extract. Fix: `rm -rf node_modules && npm ci`. Already in the local-dev memory but worth noting it bit again here.
+
+### Items this exposed for future sprints
+
+- **Sprint 2 (Path C):** chapter summaries + RAG. Q81's "what happened next" is the canonical failing case — store it as a regression target.
+- **Cross-conversation memory** (deeper than 6 turns) is a v2 feature, not v1 polish. If real users start asking about it, that's a signal to consider session persistence — not before.
+- **Conversation-level analytics:** how often do users ask follow-ups? Is the 6-message window enough? Need backend logging that captures `len(history)` per request to find out. Cheap to add when we re-touch logging.

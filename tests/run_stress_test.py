@@ -39,7 +39,14 @@ THIS_DIR = os.path.dirname(__file__)
 
 
 def parse_questions(path: str) -> list[dict]:
-    """Parse stress_test_questions.md → list of {num, category, question}."""
+    """Parse stress_test_questions.md → list of question records.
+
+    Stateless item:  {"num", "category", "question"}
+    Multi-turn item: {"num", "category", "turns": [str, str, ...]}
+
+    Multi-turn questions use `||` as the turn separator on a single line:
+      76. who's in the crew || do any of them have fruits
+    """
     questions = []
     current_category = "Unknown"
     category_re = re.compile(r"^##\s+Category\s+\d+\s+[—–-]+\s+(.+)", re.IGNORECASE)
@@ -54,24 +61,38 @@ def parse_questions(path: str) -> list[dict]:
                 continue
             m = question_re.match(line)
             if m:
-                questions.append(
-                    {
-                        "num": int(m.group(1)),
-                        "category": current_category,
-                        "question": m.group(2).strip(),
-                    }
-                )
+                text = m.group(2).strip()
+                turns = [t.strip() for t in text.split("||") if t.strip()]
+                if len(turns) > 1:
+                    questions.append(
+                        {
+                            "num": int(m.group(1)),
+                            "category": current_category,
+                            "turns": turns,
+                        }
+                    )
+                else:
+                    questions.append(
+                        {
+                            "num": int(m.group(1)),
+                            "category": current_category,
+                            "question": text,
+                        }
+                    )
     return questions
 
 
 # ── run one question through the full pipeline ────────────────────────────────
 
 
-def run_one(q: dict, client, schema: str) -> dict:
+def run_one(q: dict, client, schema: str, history: list[dict] | None = None) -> dict:
+    """Run one question (optionally with prior conversation history) end-to-end."""
     result = {
         "num": q["num"],
         "category": q["category"],
         "question": q["question"],
+        "turn": q.get("turn"),
+        "of_turns": q.get("of_turns"),
         "cypher": "",
         "validation": "",
         "cypher_ok": False,
@@ -84,7 +105,7 @@ def run_one(q: dict, client, schema: str) -> dict:
     t0 = time.time()
 
     try:
-        cypher = question_to_cypher(client, q["question"], schema)
+        cypher = question_to_cypher(client, q["question"], schema, history=history)
         result["cypher"] = cypher
     except Exception as e:
         result["answer"] = f"[cypher generation error] {e}"
@@ -111,7 +132,9 @@ def run_one(q: dict, client, schema: str) -> dict:
 
     try:
         arc_map = build_arc_map(rows)
-        answer = results_to_answer(client, q["question"], cypher, rows, arc_map=arc_map)
+        answer = results_to_answer(
+            client, q["question"], cypher, rows, arc_map=arc_map, history=history
+        )
         result["answer"] = answer
         result["status"] = "PASS"
     except Exception as e:
@@ -119,6 +142,35 @@ def run_one(q: dict, client, schema: str) -> dict:
 
     result["latency_s"] = round(time.time() - t0, 2)
     return result
+
+
+def run_multi_turn(q: dict, client, schema: str) -> list[dict]:
+    """Run a multi-turn conversation. Returns one result per turn.
+
+    History accumulates from each turn's PASS answer. If a turn fails we still
+    record it but stop the cascade — feeding broken state into the next turn
+    just produces more noise.
+    """
+    history: list[dict] = []
+    out: list[dict] = []
+    turns = q["turns"]
+    for i, text in enumerate(turns, start=1):
+        sub_q = {
+            "num": q["num"],
+            "category": q["category"],
+            "question": text,
+            "turn": i,
+            "of_turns": len(turns),
+        }
+        r = run_one(sub_q, client, schema, history=history)
+        out.append(r)
+        if r["status"] != "PASS":
+            break
+        history.append({"role": "user", "content": text})
+        history.append({"role": "assistant", "content": r["answer"]})
+        if i < len(turns):
+            time.sleep(STRESS_TEST_PACING_S)
+    return out
 
 
 # ── markdown output ───────────────────────────────────────────────────────────
@@ -159,9 +211,12 @@ def build_detail(results: list[dict]) -> str:
     sections = []
     for r in results:
         status_badge = "✅" if r["status"] == "PASS" else "❌"
+        turn_suffix = (
+            f" — turn {r['turn']}/{r['of_turns']}" if r.get("turn") else ""
+        )
         block = f"""---
 
-### {r['num']}. {r['question']} {status_badge}
+### {r['num']}{turn_suffix}. {r['question']} {status_badge}
 
 **Category:** {r['category']}
 **Latency:** {r['latency_s']}s
@@ -224,11 +279,23 @@ def main():
     results = []
 
     for i, q in enumerate(questions):
-        print(f"[{q['num']:02d}/{len(questions)}] {q['question'][:60]}...", end="", flush=True)
-        r = run_one(q, client, schema)
-        results.append(r)
-        badge = "✅" if r["status"] == "PASS" else "❌"
-        print(f" {badge} ({r['latency_s']}s, {r['row_count']} rows)")
+        if "turns" in q:
+            preview = " || ".join(q["turns"])[:60]
+            print(
+                f"[{q['num']:02d}/{len(questions)}] [multi-turn x{len(q['turns'])}] {preview}...",
+                flush=True,
+            )
+            multi_results = run_multi_turn(q, client, schema)
+            for r in multi_results:
+                badge = "✅" if r["status"] == "PASS" else "❌"
+                print(f"  └ turn {r['turn']}/{r['of_turns']} {badge} ({r['latency_s']}s, {r['row_count']} rows)")
+            results.extend(multi_results)
+        else:
+            print(f"[{q['num']:02d}/{len(questions)}] {q['question'][:60]}...", end="", flush=True)
+            r = run_one(q, client, schema)
+            results.append(r)
+            badge = "✅" if r["status"] == "PASS" else "❌"
+            print(f" {badge} ({r['latency_s']}s, {r['row_count']} rows)")
         if i < len(questions) - 1:
             time.sleep(STRESS_TEST_PACING_S)
 
